@@ -3,7 +3,7 @@ import { Image, View, Text } from 'react-native';
 import { screenWidth } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
 
-class Intro extends PureComponent{
+class Splash extends PureComponent{
   constructor(props){
     super(props);
   }
@@ -15,8 +15,6 @@ class Intro extends PureComponent{
         <View style={{
           height: 130,
           width: screenWidth,
-          marginLeft: 5,
-          marginRight: 5,
           backgroundColor: '#2e70ac',
           justifyContent: 'center',
           alignItems: 'center'
@@ -37,4 +35,4 @@ class Intro extends PureComponent{
   }
 }
 
-export default Intro;
+export default Splash;
