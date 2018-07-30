@@ -1,5 +1,5 @@
 # cv
-My Curriculum Vitae in an App
+**My Curriculum Vitae in an App**
 
 This time I wanted to make an experiment in order to increase my skills in react-native, because is a new technology for me, and I think that only practice makes a master.
 
@@ -25,3 +25,18 @@ So, at this point, I got enough information to make some mockups for every inter
 
 5 mockups, each one for every module that I defined at the beginning of this article.
 
+Now I need to create some of the activities that I'll do.
+
+This part is a little complex, so, I'm going to simplify the process. I'm gonna make a basic baseline (without dates) with some activities per interface, and I'm gonna put them on Trello, which is a pretty good tool for get a Kanban board.
+
+I made an structure to define the project better. I know, is an small project, maybe doesn't require so much, but, I'd rather this way to avoid noise in my execution.
+
+![enter image description here](https://lh3.googleusercontent.com/tlLbnJoiji_F3-b0PEZDDW3WV2P_oDmZTc5-5t3L23LpA1lsWXkB0nd0vwcB5uQj7AG6nHpFqZ7H=s428 "General baseline")
+
+Through the above list, I trying to define every stage on my project. Some of them are done, another are on the way, and the rest is waiting.
+
+In less than 140 characters, is just a little document that explain that I'm making an application with client side, and server side.
+
+I hope to publish it at least in the play store.
+
+Now, is time to write the EDT, in order to make all the activities that Trello require.
