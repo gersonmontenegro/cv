@@ -35,7 +35,7 @@ I made an structure to define the project better. I know, is an small project, m
 
 Through the above list, I trying to define every stage on my project. Some of them are done, another are on the way, and the rest is waiting.
 
-In less than 140 characters, is just a little document that explain that I'm making an application with client side, and server side.
+In less than 140 characters, is just a little document that explain what I'm making an application with client side, and server side.
 
 I hope to publish it at least in the play store.
 
