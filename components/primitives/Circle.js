@@ -19,7 +19,8 @@ class Circle extends PureComponent{
         borderRadius: 150/2,
         borderColor: '#000000',
         borderWidth: this.props.borderWidth,
-        backgroundColor: this.props.color
+        backgroundColor: this.props.color,
+        marginTop: this.props.marginTop
       }} />
     );
   };

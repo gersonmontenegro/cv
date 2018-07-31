@@ -19,7 +19,7 @@ class Splash extends PureComponent{
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-          <Circle width={150} height={150} color="white" borderWidth={8} />
+          <Circle width={150} height={150} color="white" borderWidth={8} marginTop={0} />
           <Image source={require('./../assets/img/grs.png')} style={{width: 100, height: 100, resizeMode: 'contain', marginTop: -125}} />
         </View>
         <View style={{width: screenWidth, justifyContent: 'center', alignItems: 'center', marginTop: 50}}>
