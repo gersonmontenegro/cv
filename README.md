@@ -35,8 +35,15 @@ I made an structure to define the project better. I know, is an small project, m
 
 Through the above list, I trying to define every stage on my project. Some of them are done, another are on the way, and the rest is waiting.
 
-In less than 140 characters, is just a little document that explain what I'm making an application with client side, and server side.
+In less than 140 characters, is just a little document that explain that I'm making an application with client side, and server side.
 
 I hope to publish it at least in the play store.
 
-Now, is time to write the EDT, in order to make all the activities that Trello require.
+Now, is time to write the EDT (not an strict one, course), in order to make all the activities that Trello require.
+
+This is the final version for this project. I tried to be concise, but, at the same time, pragmatic (very) in order to get the final goal in a realistic way. Although, I tried involve almost all the stages considered in a more complex project.
+![enter image description here](https://lh3.googleusercontent.com/PsnRKJfx0v_LQhkoYLnk_HHCkZq3bxdE1C2gLZAa-N8jindNWXZi0KA0YN-MIFDCHu-MvalOuFQX=s700)
+
+Now, I'm ready to put the activities in my board (I mean, Trello).
+
+Meanwhile, I've been had worked in the code, and at the time of write this lines, I already got the layout of the Splash, and the Profile Interface, at least in their first version each one.
