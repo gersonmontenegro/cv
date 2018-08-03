@@ -65,3 +65,8 @@ Splash, Profile, and some scratch for Skills
 
 And yes, the lasts two ones are the same, pero with a little difference that I've been considering right now. It was an advice from a designer friend: Remove the border!, so, probably I will do that :)
 
+I've has had some problems with the charts plugin. Initially, I tried to use [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper), and, in spite of it looks beautiful, I couldn't use it, because require a different version of Xcode that I can't get, and the reason (in less than 140 characters) is because I changed by myself the SSD of my laptop, and macOS High Sierra is not compatible, so, I need to back to Sierra, and that's why I can't install Xcode 9.3, or highest. Yea, is a really sad love history, but, it's the life, so, we need to keep going and work with what we have.
+
+So, I tried another library, simpler than the previous one, but effective: [Victory](https://formidable.com/open-source/victory/gallery/). 
+
+It works like a charm from the beginning, and I don't needed to make an special setup on Xcode, just react-native coding.
