@@ -63,10 +63,25 @@ Splash, Profile, and some scratch for Skills
 
 ![enter image description here](https://lh3.googleusercontent.com/8T7XMV69F9MltlLwlZ78kJmUYMN2tKXDBeMwMnVTWEyVjgAQfuDovGiCPnrK9igP21th2cIjTox4=s900 "v0.0.1")
 
-And yes, the lasts two ones are the same, but with a little difference that I've been considering right now. It was an advice from a designer friend: Remove the border!, so, probably I will do that :)
+And yes, the lasts two ones are the same, pero with a little difference that I've been considering right now. It was an advice from a designer friend: Remove the border!, so, probably I will do that :)
 
 I've has had some problems with the charts plugin. Initially, I tried to use [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper), and, in spite of it looks beautiful, I couldn't use it, because require a different version of Xcode that I can't get, and the reason (in less than 140 characters) is because I changed by myself the SSD of my laptop, and macOS High Sierra is not compatible, so, I need to back to Sierra, and that's why I can't install Xcode 9.3, or highest. Yea, is a really sad love history, but, it's the life, so, we need to keep going and work with what we have.
 
 So, I tried another library, simpler than the previous one, but effective: [Victory](https://formidable.com/open-source/victory/gallery/). 
 
 It works like a charm from the beginning, and I don't needed to make an special setup on Xcode, just react-native coding.
+
+I'll try to apply a technic or artesanal methodology in the execution of every interface, not only because I like it, but, it was very useful for me in many projects with agile methodologies, and has been allow us make faster prototypes.
+
+I don't even remember where and when I learned it (I don't even know if is ok do that), but it consist in 3 stages:
+
+![enter image description here](https://lh3.googleusercontent.com/ca7hbSEDnNLoCSSknKVb_0-6tnqnml8HeD6J1QP2QcTDXSX_V9nPxZUctUOI5FntQhSN-RQMHVo6 "3 stages")
+
+**Do it**
+Consist in to make the things works, that's all. No matter how, but, usually the client requiere to see results, without concern what's behind the scene.
+
+**Do it well**
+Normally, we got here after a milestone, or a owner review, I mean, when the storm has passed, and we have enough time (not always) to make the things in a better way. Usually, is not necessary make big changes, just correct details.
+
+**Optimize**
+Here is when we can take code, and turn it in a real master piece, a piece of art that deserve a place in a museum :) ...ok, maybe not, and it only can be the second part of the "Do it well" stage.
