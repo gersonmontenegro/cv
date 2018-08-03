@@ -42,8 +42,26 @@ I hope to publish it at least in the play store.
 Now, is time to write the EDT (not an strict one, course), in order to make all the activities that Trello require.
 
 This is the final version for this project. I tried to be concise, but, at the same time, pragmatic (very) in order to get the final goal in a realistic way. Although, I tried involve almost all the stages considered in a more complex project.
-![enter image description here](https://lh3.googleusercontent.com/PsnRKJfx0v_LQhkoYLnk_HHCkZq3bxdE1C2gLZAa-N8jindNWXZi0KA0YN-MIFDCHu-MvalOuFQX=s700)
+
+![enter image description here](https://lh3.googleusercontent.com/LhgseX34BSH8PAvh-a5kGPMHm4ARwDCi_15o2lXKYwmtrWYuIFFgLnIXUn5eNCZgjjLmh7yKwMRH=s740 "Inicial Baseline")
 
 Now, I'm ready to put the activities in my board (I mean, Trello).
 
 Meanwhile, I've been had worked in the code, and at the time of write this lines, I already got the layout of the Splash, and the Profile Interface, at least in their first version each one.
+
+I've been working on the code, like as said before, so, I got some material in their firsts versions, such as Splash, Profile, and Skill interfaces.
+
+My Trello Board right looks like below:
+
+![enter image description here](https://lh3.googleusercontent.com/nPPbY5DOsGcVRTMlTx5kJ3TE0XxvVKqXMZzui0oE8wF89Rh6rwPnAAfesiCJrOYZhePwHVqfI3KE=s700 "Trello")
+
+If you want, you can see the original board on Trello using this link: https://trello.com/b/j1knHu14/cv
+
+Right now, I got the next interfaces:
+
+Splash, Profile, and some scratch for Skills
+
+![enter image description here](https://lh3.googleusercontent.com/8T7XMV69F9MltlLwlZ78kJmUYMN2tKXDBeMwMnVTWEyVjgAQfuDovGiCPnrK9igP21th2cIjTox4=s900 "v0.0.1")
+
+And yes, the lasts two ones are the same, pero with a little difference that I've been considering right now. It was an advice from a designer friend: Remove the border!, so, probably I will do that :)
+
