@@ -24,11 +24,11 @@ class Skills extends PureComponent{
         </View>
         <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
           <ScrollView style={{marginTop: 20}}>
-            <PieDetail percent={95} pie_title="ActionScript" pie_description="iOS, Android, and Desktop developer" />
-            <PieDetail percent={70} pie_title="Ionic" pie_description="iOS and Android developer" />
-            <PieDetail percent={50} pie_title="React-Native" pie_description="iOS and Android developer" />
-            <PieDetail percent={70} pie_title="PHP" pie_description="Web developer" />
-            <PieDetail percent={60} pie_title="Laravel" pie_description="PHP developer" />
+            <PieDetail color="green" percent={95} pie_title="ActionScript" pie_description="iOS, Android, and Desktop developer" />
+            <PieDetail color="lightblue" percent={70} pie_title="Ionic" pie_description="iOS and Android developer" />
+            <PieDetail color="blue" percent={50} pie_title="React-Native" pie_description="iOS and Android developer" />
+            <PieDetail color="orange" percent={70} pie_title="PHP" pie_description="Web developer" />
+            <PieDetail color="red" percent={50} pie_title="Laravel" pie_description="PHP developer" />
           </ScrollView>
           <View style={{position: 'absolute', alignItems: 'center', marginLeft: (screenWidth/2) - 45, marginTop: -115}}>
             <Circle width={90} height={90} color="white" borderWidth={5} marginTop={40} />
