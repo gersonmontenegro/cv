@@ -17,7 +17,7 @@ class Circle extends PureComponent{
         width: this.props.width,
         height: this.props.height,
         borderRadius: 150/2,
-        borderColor: '#000000',
+        borderColor: '#ffffff',
         borderWidth: this.props.borderWidth,
         backgroundColor: this.props.color,
         marginTop: this.props.marginTop
