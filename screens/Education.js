@@ -2,14 +2,16 @@ import React, { PureComponent } from 'react';
 import { ScrollView, Image, View, Text } from 'react-native';
 import { screenWidth } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
-import { VictoryPie } from 'victory-native';
-import PieDetail from './../components/PieDetail';
+import TimeLine from 'react-native-timeline-listview';
 
-const timer = require('react-native-timer');
-
-class Skills extends PureComponent{
+class Education extends PureComponent{
   constructor(props){
     super(props);
+    this.data = [
+      { time: '2017', title: 'Software engineering specialist', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' },
+      { time: '2017', title: 'Requirement engineering', description: 'Complete course about requirements' },
+      { time: '2006', title: 'Systems engineering', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' },
+    ];
   }
 
   render(){
@@ -24,11 +26,7 @@ class Skills extends PureComponent{
         </View>
         <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
           <ScrollView style={{marginTop: 20}}>
-            <PieDetail color="green" percent={95} pie_title="ActionScript" pie_description="iOS, Android, and Desktop developer" />
-            <PieDetail color="lightblue" percent={70} pie_title="Ionic" pie_description="iOS and Android developer" />
-            <PieDetail color="blue" percent={50} pie_title="React-Native" pie_description="iOS and Android developer" />
-            <PieDetail color="orange" percent={70} pie_title="PHP" pie_description="Web developer" />
-            <PieDetail color="red" percent={50} pie_title="Laravel" pie_description="PHP developer" />
+            <TimeLine data={this.data} />
           </ScrollView>
           <View style={{position: 'absolute', alignItems: 'center', marginLeft: (screenWidth/2) - 45, marginTop: -115}}>
             <Circle width={90} height={90} color="white" borderWidth={5} marginTop={40} />
@@ -40,4 +38,4 @@ class Skills extends PureComponent{
   }
 }
 
-export default Skills;
+export default Education;

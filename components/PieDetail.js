@@ -40,8 +40,10 @@ class PieDetail extends PureComponent{
           labels={() => null}
           style={{
             data: {
+              stroke: "#000000",
+              strokeWidth: 1,
               fill: (d) => {
-                const color = d.y > 30 ? "green" : "red";
+                const color = d.y > 30 ? this.props.color : this.props.color;
                 return d.x === 1 ? color : "transparent"
               }
             }

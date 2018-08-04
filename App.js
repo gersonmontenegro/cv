@@ -3,6 +3,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import Splash from './screens/Splash';
 import Profile from './screens/Profile';
 import Skills from './screens/Skills';
+import Education from './screens/Education';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,7 +17,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Skills />
+        <Education />
       </View>
     );
   }
