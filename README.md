@@ -78,10 +78,23 @@ I don't even remember where and when I learned it (I don't even know if is ok do
 ![enter image description here](https://lh3.googleusercontent.com/ca7hbSEDnNLoCSSknKVb_0-6tnqnml8HeD6J1QP2QcTDXSX_V9nPxZUctUOI5FntQhSN-RQMHVo6 "3 stages")
 
 **Do it**
+
 Consist in to make the things works, that's all. No matter how, but, usually the client requiere to see results, without concern what's behind the scene.
 
 **Do it well**
+
 Normally, we got here after a milestone, or a owner review, I mean, when the storm has passed, and we have enough time (not always) to make the things in a better way. Usually, is not necessary make big changes, just correct details.
 
 **Optimize**
+
 Here is when we can take code, and turn it in a real master piece, a piece of art that deserve a place in a museum :) ...ok, maybe not, and it only can be the second part of the "Do it well" stage.
+
+At this time I has been working in many detail of the project, so, I can show you my status. I almost finish the front-end according to the baseline plan.
+
+I already have all the interfaces, and there is only one thing left: The tab controller, but I'm going to do that tomorrow.
+
+Right now, the project looks like below:
+
+![enter image description here](https://lh3.googleusercontent.com/VlwPczZU_o-738LPrMeBEGmRHAmCqtJJsP5GxS4Eyxqgy6zG77Hd21RinQFKAf9b3DjxsiOEsqU9=s900 "Current status")
+
+I'm thinking in to change a few details before publish the app, but that doesn't means I'm going ti publish it soon. Maybe some details in the Skills interface, and, as you can see, I removed the circle border, or, in other words, I turned white the black border.
