@@ -98,3 +98,15 @@ Right now, the project looks like below:
 ![enter image description here](https://lh3.googleusercontent.com/VlwPczZU_o-738LPrMeBEGmRHAmCqtJJsP5GxS4Eyxqgy6zG77Hd21RinQFKAf9b3DjxsiOEsqU9=s900 "Current status")
 
 I'm thinking in to change a few details before publish the app, but that doesn't means I'm going ti publish it soon. Maybe some details in the Skills interface, and, as you can see, I removed the circle border, or, in other words, I turned white the black border.
+
+Next step on the list is the Footer menu, and after two days trying different plugins that allow me a clean, fast, and customizable handle, not only  with the installation, but the configuration and implementation, I got a good one with the FooterTab from [native-base](https://docs.nativebase.io/Components.html#footer-tabs-def-headref) framework.
+
+It was funny, because Native Base was my second framework and I used it in a lot of experiments 2, or 4 months ago, but, suddenly, I forgot it, and I started to work with pure react components.
+
+Use FooterTab is absolutely easy, and is easier if we can combine it with the rest of the NativeBase basic structure to make a responsive design.
+
+So, finally, I used FooterTab with Content components to put my stuff where it supposed to be.
+
+Next image is the preliminary view of the Tab menu in action with a charged interface.
+
+![enter image description here](https://lh3.googleusercontent.com/ywvvsU0DRkT50AEb0INrAWJjA5Q81TVMECeo_wtEcAqmfaWseEuEtAOrKJdQJP0eBVH761pfKNKA "Preliminary Tab menu")
