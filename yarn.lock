@@ -1503,7 +1503,7 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-color-convert@^1.9.0:
+color-convert@^1.9.0, color-convert@^1.9.1:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.2.tgz#49881b8fba67df12a96bdf3f56c0aab9e7913147"
   dependencies:
@@ -1513,9 +1513,27 @@ color-name@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.1.tgz#4b1415304cf50028ea81643643bd82ea05803689"
 
+color-name@^1.0.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
+
+color-string@^1.5.2:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.5.3.tgz#c9bbc5f01b58b5492f3d6857459cb6590ce204cc"
+  dependencies:
+    color-name "^1.0.0"
+    simple-swizzle "^0.2.2"
+
 color-support@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
+
+color@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/color/-/color-2.0.1.tgz#e4ed78a3c4603d0891eba5430b04b86314f4c839"
+  dependencies:
+    color-convert "^1.9.1"
+    color-string "^1.5.2"
 
 combined-stream@1.0.6, combined-stream@~1.0.5:
   version "1.0.6"
@@ -1632,6 +1650,72 @@ cssstyle@^1.0.0:
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-1.0.0.tgz#79b16d51ec5591faec60e688891f15d2a5705129"
   dependencies:
     cssom "0.3.x"
+
+d3-array@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.1.tgz#d1ca33de2f6ac31efadb8e050a021d7e2396d5dc"
+
+d3-collection@1:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/d3-collection/-/d3-collection-1.0.4.tgz#342dfd12837c90974f33f1cc0a785aea570dcdc2"
+
+d3-color@1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-1.2.0.tgz#d1ea19db5859c86854586276ec892cf93148459a"
+
+d3-ease@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-1.0.3.tgz#68bfbc349338a380c44d8acc4fbc3304aa2d8c0e"
+
+d3-format@1:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.3.0.tgz#a3ac44269a2011cdb87c7b5693040c18cddfff11"
+
+d3-interpolate@1, d3-interpolate@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.2.0.tgz#40d81bd8e959ff021c5ea7545bc79b8d22331c41"
+  dependencies:
+    d3-color "1"
+
+d3-path@1:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/d3-path/-/d3-path-1.0.5.tgz#241eb1849bd9e9e8021c0d0a799f8a0e8e441764"
+
+d3-scale@^1.0.0:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-1.0.7.tgz#fa90324b3ea8a776422bd0472afab0b252a0945d"
+  dependencies:
+    d3-array "^1.2.0"
+    d3-collection "1"
+    d3-color "1"
+    d3-format "1"
+    d3-interpolate "1"
+    d3-time "1"
+    d3-time-format "2"
+
+d3-shape@^1.0.0, d3-shape@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.2.0.tgz#45d01538f064bafd05ea3d6d2cb748fd8c41f777"
+  dependencies:
+    d3-path "1"
+
+d3-time-format@2:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-2.1.1.tgz#85b7cdfbc9ffca187f14d3c456ffda268081bb31"
+  dependencies:
+    d3-time "1"
+
+d3-time@1:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-1.0.8.tgz#dbd2d6007bf416fe67a76d17947b784bffea1e84"
+
+d3-timer@^1.0.0:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/d3-timer/-/d3-timer-1.0.7.tgz#df9650ca587f6c96607ff4e60cc38229e8dd8531"
+
+d3-voronoi@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/d3-voronoi/-/d3-voronoi-1.1.2.tgz#1687667e8f13a2d158c80c1480c5a29cb0d8973c"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -2460,6 +2544,10 @@ is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
 
+is-arrayish@^0.3.1:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
+
 is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
@@ -3239,7 +3327,7 @@ lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
-lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.16.6, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -4052,7 +4140,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -4115,9 +4203,50 @@ react-devtools-core@^3.2.2:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
+react-fast-compare@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.1.tgz#92c91ac4814aa8cfcfb04780ad1bfff2bbe3a3c6"
+
 react-is@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
+
+react-native-charts-wrapper@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-native-charts-wrapper/-/react-native-charts-wrapper-0.4.3.tgz#a7423fe210f753fd8934566b16fba1172bcfa981"
+  dependencies:
+    prop-types "^15.5.10"
+    react "16.1.1"
+
+react-native-svg@^6.5.1:
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-6.5.2.tgz#1105896b8873b0856821b18daa0c6898cea6c00c"
+  dependencies:
+    color "^2.0.1"
+    lodash "^4.16.6"
+    pegjs "^0.10.0"
+
+react-native-tab-view@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-1.0.2.tgz#66e0bc6d38a227ed2b212e3a256b7902f6ce02ed"
+  dependencies:
+    prop-types "^15.6.1"
+
+react-native-timeline-listview@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-timeline-listview/-/react-native-timeline-listview-0.2.3.tgz#e46b7f0fd2c2206329eee6194795e03899afe882"
+
+react-native-timer@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/react-native-timer/-/react-native-timer-1.3.4.tgz#3aedc59fed43a74314416a36cb28b093b685f393"
+
+react-native-vector-icons@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-5.0.0.tgz#d0bd6fdda01159db409810718dd04904951a98f5"
+  dependencies:
+    lodash "^4.0.0"
+    prop-types "^15.5.10"
+    yargs "^8.0.2"
 
 react-native@0.56.0:
   version "0.56.0"
@@ -4201,6 +4330,15 @@ react-transform-hmr@^1.0.4:
   dependencies:
     global "^4.3.0"
     react-proxy "^1.1.7"
+
+react@16.1.1:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.1.1.tgz#d5c4ef795507e3012282dd51261ff9c0e824fe1f"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 react@16.4.1:
   version "16.4.1"
@@ -4607,6 +4745,12 @@ simple-plist@^0.2.1:
     bplist-creator "0.0.7"
     bplist-parser "0.1.1"
     plist "2.0.1"
+
+simple-swizzle@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
+  dependencies:
+    is-arrayish "^0.3.1"
 
 sisteransi@^0.1.1:
   version "0.1.1"
@@ -5100,6 +5244,260 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+victory-area@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-area/-/victory-area-30.2.0.tgz#bc11f3aad5286636d6f2aa74a86b4ff383d9b019"
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-axis@^30.1.0, victory-axis@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-axis/-/victory-axis-30.2.0.tgz#3cd72667fd6fea86b481d0daaadb03070866ea81"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-bar@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-bar/-/victory-bar-30.2.0.tgz#2880c1eaca4db6768ed32fef88234e2e43d2b1c5"
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-box-plot@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-box-plot/-/victory-box-plot-30.2.0.tgz#a49ceea13a040aea18d18494b6db8cf80c854626"
+  dependencies:
+    d3-array "^1.2.0"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-brush-container@^30.1.0, victory-brush-container@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-brush-container/-/victory-brush-container-30.2.0.tgz#ec12e34b0863fae78026ac02ce71480b57232945"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-brush-line@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-brush-line/-/victory-brush-line-30.2.0.tgz#da4e04d11010821ce68735864fee233639fdfe73"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-candlestick@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-candlestick/-/victory-candlestick-30.2.0.tgz#00875955d3e394a529ebb43590b1d55c55d99107"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-chart@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-chart/-/victory-chart-30.2.0.tgz#e52b27adb9df635df1b3d809e0ae6d184bf31f4b"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+    victory-axis "^30.2.0"
+    victory-core "^30.2.0"
+    victory-polar-axis "^30.2.0"
+    victory-shared-events "^30.2.0"
+
+victory-core@^30.1.0, victory-core@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-30.2.0.tgz#4764c1b6fd784ab3bcc7d528c44edc031425e7ff"
+  dependencies:
+    d3-ease "^1.0.0"
+    d3-interpolate "^1.1.1"
+    d3-scale "^1.0.0"
+    d3-shape "^1.2.0"
+    d3-timer "^1.0.0"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    react-fast-compare "^2.0.0"
+
+victory-create-container@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-create-container/-/victory-create-container-30.2.0.tgz#1d179f96196acd9a1bcd0bb6fa5e97255e476c85"
+  dependencies:
+    lodash "^4.17.5"
+    victory-brush-container "^30.2.0"
+    victory-core "^30.2.0"
+    victory-cursor-container "^30.2.0"
+    victory-selection-container "^30.2.0"
+    victory-voronoi-container "^30.2.0"
+    victory-zoom-container "^30.2.0"
+
+victory-cursor-container@^30.1.0, victory-cursor-container@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-cursor-container/-/victory-cursor-container-30.2.0.tgz#297d235322b0f4e8c6454ae1a4f7959b6dda7499"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-errorbar@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-errorbar/-/victory-errorbar-30.2.0.tgz#9a37190e70857cb2cc4a937ca43f9f64360f45a3"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-group@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-group/-/victory-group-30.2.0.tgz#fc3d7e334d012af017baed033f8d03b08f48e75d"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-legend@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-legend/-/victory-legend-30.2.0.tgz#5a395853af52bf25c72f71d41cb9c78de7b4f4c9"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-line@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-line/-/victory-line-30.2.0.tgz#8a0cb8460cb91847fcf6f21a31e9931d83612ae2"
+  dependencies:
+    d3-shape "^1.2.0"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-native@^30.1.0:
+  version "30.1.0"
+  resolved "https://registry.yarnpkg.com/victory-native/-/victory-native-30.1.0.tgz#8865e6bc9a9e3d6520297d324f02d3c49ef1f1d8"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.10"
+    react-fast-compare "^2.0.0"
+    victory-area "^30.1.0"
+    victory-axis "^30.1.0"
+    victory-bar "^30.1.0"
+    victory-box-plot "^30.1.0"
+    victory-brush-container "^30.1.0"
+    victory-brush-line "^30.1.0"
+    victory-candlestick "^30.1.0"
+    victory-chart "^30.1.0"
+    victory-core "^30.1.0"
+    victory-create-container "^30.1.0"
+    victory-cursor-container "^30.1.0"
+    victory-errorbar "^30.1.0"
+    victory-group "^30.1.0"
+    victory-legend "^30.1.0"
+    victory-line "^30.1.0"
+    victory-pie "^30.1.0"
+    victory-polar-axis "^30.1.0"
+    victory-scatter "^30.1.0"
+    victory-selection-container "^30.1.0"
+    victory-shared-events "^30.1.0"
+    victory-stack "^30.1.0"
+    victory-tooltip "^30.1.0"
+    victory-voronoi "^30.1.0"
+    victory-voronoi-container "^30.1.0"
+    victory-zoom-container "^30.1.0"
+
+victory-pie@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-pie/-/victory-pie-30.2.0.tgz#d6355622fe646809b58d22e80b693e8493df09bf"
+  dependencies:
+    d3-shape "^1.0.0"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-polar-axis@^30.1.0, victory-polar-axis@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-polar-axis/-/victory-polar-axis-30.2.0.tgz#691e81bd418a603239444a203c0be71fd13f9f21"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-scatter@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-scatter/-/victory-scatter-30.2.0.tgz#e2914e6c648ae1d75cc5982bf0057e9e938291c3"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-selection-container@^30.1.0, victory-selection-container@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-selection-container/-/victory-selection-container-30.2.0.tgz#d47856193234df5ac50a936b1e522723142a0e2c"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-shared-events@^30.1.0, victory-shared-events@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-shared-events/-/victory-shared-events-30.2.0.tgz#fa415adfa112936ccd00958df74ed7c236e1914c"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-stack@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-stack/-/victory-stack-30.2.0.tgz#2e75a3c0f6c4a120538fb38b35464caa4b79539c"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-tooltip@^30.1.0, victory-tooltip@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-tooltip/-/victory-tooltip-30.2.0.tgz#c71c4a3421bdfd904f9790d8f6fb19beb0b3f43d"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-voronoi-container@^30.1.0, victory-voronoi-container@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-voronoi-container/-/victory-voronoi-container-30.2.0.tgz#0a5e7927cb6c30968e6f0d788cafb14072aa964e"
+  dependencies:
+    d3-voronoi "^1.1.2"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+    victory-tooltip "^30.2.0"
+
+victory-voronoi@^30.1.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-voronoi/-/victory-voronoi-30.2.0.tgz#d490a16be7163c5f3d995ca5380c52d6fdc8b3be"
+  dependencies:
+    d3-voronoi "^1.1.2"
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
+victory-zoom-container@^30.1.0, victory-zoom-container@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/victory-zoom-container/-/victory-zoom-container-30.2.0.tgz#87c367da6bd970c904fd79a872c7af058174de7e"
+  dependencies:
+    lodash "^4.17.5"
+    prop-types "^15.5.8"
+    victory-core "^30.2.0"
+
 w3c-hr-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
@@ -5303,6 +5701,24 @@ yargs@^11.0.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
+
+yargs@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-8.0.2.tgz#6299a9055b1cefc969ff7e79c1d918dceb22c360"
+  dependencies:
+    camelcase "^4.1.0"
+    cliui "^3.2.0"
+    decamelize "^1.1.1"
+    get-caller-file "^1.0.1"
+    os-locale "^2.0.0"
+    read-pkg-up "^2.0.0"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^2.0.0"
+    which-module "^2.0.0"
+    y18n "^3.2.1"
+    yargs-parser "^7.0.0"
 
 yargs@^9.0.0:
   version "9.0.1"
