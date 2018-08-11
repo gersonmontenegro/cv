@@ -12,7 +12,7 @@ class Experience extends PureComponent{
         time: '2013',
         title: 'Soft. Team leader (currently)',
         icon: require('./../assets/img/work.png'),
-        description: 'Full time job.\n∙Software team leader.\n∙Technical support to coworkers.\n∙Software developer (JS, Ionic, MySQL, Laravel).\n∙AWS basic support (Balancing, Nginx, Distribuited apps).\n∙Requirement engineering.',
+        description: 'Full time job.\n∙Software team leader.\n∙Technical support to coworkers.\n∙Frontend engineer (JS, Ionic).\n∙Backend engineer (MySQL, MariaDB, PHP, Laravel).\n∙AWS basic support (Balancing, Nginx, Distribuited apps).\n∙Requirement engineering.',
       },
       {
         time: '2015',
