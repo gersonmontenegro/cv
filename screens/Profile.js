@@ -35,7 +35,7 @@ class Profile extends PureComponent{
               I like to much learn to code and learn better ways to do my apps, but it doesn't mean that I'm only a coder, because in the last years I've had the oportunity to lead developer teams in many projects, such as C4 Systems, and
             </Text>
           </ScrollView>
-          <View style={{position: 'absolute', alignItems: 'center', marginLeft: (screenWidth/2) - 45, marginTop: -100}}>
+          <View style={{position: 'absolute', alignItems: 'center', marginLeft: (screenWidth/2) - 45, marginTop: -115}}>
             <Circle width={90} height={90} color="white" borderWidth={5} marginTop={40} />
             <Image source={require('./../assets/img/grs.png')} style={{width: 60, height: 60, resizeMode: 'contain', marginTop: -75}} />
           </View>
