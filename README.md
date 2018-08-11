@@ -1,3 +1,4 @@
+
 # cv
 **My Curriculum Vitae in an App**
 
@@ -110,3 +111,9 @@ So, finally, I used FooterTab with Content components to put my stuff where it s
 Next image is the preliminary view of the Tab menu in action with a charged interface.
 
 ![enter image description here](https://lh3.googleusercontent.com/ywvvsU0DRkT50AEb0INrAWJjA5Q81TVMECeo_wtEcAqmfaWseEuEtAOrKJdQJP0eBVH761pfKNKA "Preliminary Tab menu")
+
+And well, at this moment, I already have done the first part of this project, I mean, the *Do it* stage, like I show in the next video show:
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/doIt_done.gif" width="200px">
+
+Now, I'm going to make a better version (*Do it well* stage) of this application, using separate files for the whole CSS, improving the container for the tabs, maybe customizing the icons, and achieve some details in order to make a good user experience.
