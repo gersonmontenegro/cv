@@ -37,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N0J-78-TMg">
-                    <rect key="frame" x="0.0" y="351" width="480" height="71"/>
+                    <rect key="frame" x="0.0" y="376" width="480" height="71"/>
                     <attributedString key="attributedText">
                         <fragment content="Mobile developer">
                             <attributes>
@@ -62,20 +62,20 @@
                 <constraint firstItem="89e-x0-g1r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2En-XR-257"/>
                 <constraint firstItem="89e-x0-g1r" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4ou-9T-uli"/>
                 <constraint firstItem="Jk5-w5-2sx" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="6Qx-ir-ugV"/>
-                <constraint firstItem="N0J-78-TMg" firstAttribute="top" secondItem="89e-x0-g1r" secondAttribute="bottom" constant="11" id="7FE-88-1Qn"/>
-                <constraint firstItem="aCT-Cq-q2l" firstAttribute="leading" secondItem="N0J-78-TMg" secondAttribute="leading" id="F7T-06-sOc"/>
+                <constraint firstItem="N0J-78-TMg" firstAttribute="trailing" secondItem="aCT-Cq-q2l" secondAttribute="trailing" id="7rd-Gs-Pjp"/>
                 <constraint firstItem="aCT-Cq-q2l" firstAttribute="leading" secondItem="RAf-pk-QE6" secondAttribute="leading" id="GyP-eO-pIF"/>
-                <constraint firstAttribute="bottom" secondItem="N0J-78-TMg" secondAttribute="bottom" constant="58" id="I0i-8T-Ju4"/>
                 <constraint firstItem="Jk5-w5-2sx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jbj-OR-bco"/>
                 <constraint firstItem="aCT-Cq-q2l" firstAttribute="top" secondItem="RAf-pk-QE6" secondAttribute="bottom" constant="6" id="Off-Xo-SdG"/>
+                <constraint firstAttribute="bottom" secondItem="N0J-78-TMg" secondAttribute="bottom" constant="33" id="SCT-9S-pMY"/>
                 <constraint firstItem="aCT-Cq-q2l" firstAttribute="trailing" secondItem="RAf-pk-QE6" secondAttribute="trailing" id="Wd2-jT-TYS"/>
                 <constraint firstAttribute="bottom" secondItem="Jk5-w5-2sx" secondAttribute="bottom" constant="39" id="XHm-Ch-7Z2"/>
+                <constraint firstItem="N0J-78-TMg" firstAttribute="leading" secondItem="aCT-Cq-q2l" secondAttribute="leading" id="ZcK-JI-Vvg"/>
                 <constraint firstItem="Jk5-w5-2sx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="41" id="Zxu-Vp-8pJ"/>
-                <constraint firstItem="aCT-Cq-q2l" firstAttribute="trailing" secondItem="N0J-78-TMg" secondAttribute="trailing" id="auL-3C-Pkh"/>
                 <constraint firstItem="RAf-pk-QE6" firstAttribute="centerX" secondItem="89e-x0-g1r" secondAttribute="centerX" id="eVf-Zr-gNH"/>
                 <constraint firstItem="RAf-pk-QE6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fbv-gT-gSi"/>
                 <constraint firstItem="RAf-pk-QE6" firstAttribute="centerY" secondItem="89e-x0-g1r" secondAttribute="centerY" id="nZI-tf-5Re"/>
                 <constraint firstAttribute="bottom" secondItem="aCT-Cq-q2l" secondAttribute="bottom" constant="99" id="tmi-FR-HvW"/>
+                <constraint firstItem="N0J-78-TMg" firstAttribute="top" secondItem="89e-x0-g1r" secondAttribute="bottom" constant="36" id="y3x-fC-zUB"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
