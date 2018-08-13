@@ -1,4 +1,5 @@
 
+
 # cv
 **My Curriculum Vitae in an App**
 
@@ -114,6 +115,17 @@ Next image is the preliminary view of the Tab menu in action with a charged inte
 
 And well, at this moment, I already have done the first part of this project, I mean, the *Do it* stage, like I show in the next video show:
 
-<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/doIt_done.gif" width="200px">
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/doIt_done.gif" width="300px">
 
 Now, I'm going to make a better version (*Do it well* stage) of this application, using separate files for the whole CSS, improving the container for the tabs, maybe customizing the icons, and achieve some details in order to make a good user experience.
+
+After struggling a little with my forgotten memories, I made the Splash screen in pure Xcode. I think this will be temporary for four reasons:
+
+ 1. I need to recover my old memories about the layout in pure Xcode. I was really good on this the last year, but, without practice, now days I'm a amateur again.
+ 2. I would like to figure out the way to use my react-native version of the Splash screen. Right now I think is not possible, but maybe I don't know some tool/framework/toy to make it.
+ 3. Between the Splash screen, and the Profile screen, there is a time gap that have to be removed.
+ 4. To be honest, is not as pretty as I want, and definitely, I need to change it soon.
+
+Meanwhile, at this moment, the app looks like below when I open it.
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash.gif" width="300px">
