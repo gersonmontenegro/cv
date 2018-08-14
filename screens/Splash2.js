@@ -13,6 +13,8 @@ class Splash2 extends PureComponent{
     //   yPos: 100
     // }
     this.spinValue = new Animated.Value(0);
+    this.fadeInValue = new Animated.Value(0);
+    this.fadeInValueBottomText = new Animated.Value(0);
   }
 
   spin(){
@@ -26,8 +28,32 @@ class Splash2 extends PureComponent{
     ).start();
   }
 
+  fadeInText(){
+    this.fadeInValue.setValue(0);
+    Animated.timing(
+      this.fadeInValue,
+      {
+        toValue: 1,
+        duration: 2000
+      }
+    ).start(() => this.fadeInTextBottomText());
+  }
+
+  fadeInTextBottomText(){
+    this.fadeInValueBottomText.setValue(0);
+    Animated.timing(
+      this.fadeInValueBottomText,
+      {
+        toValue: 1,
+        duration: 1000
+      }
+    ).start();
+  }
+
   componentDidMount(){
-    this.spin();
+    //this.spin();
+    this.fadeInText();
+
     // this.state.fadeIn.setValue(0);
     // Animated.timing(
     //   this.state.yPos,
@@ -55,6 +81,8 @@ class Splash2 extends PureComponent{
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg']
     });
+    let opacityAnim = this.fadeInValue;
+    let opacityBottomTextAnim = this.fadeInValueBottomText;
     return (
       <View style={{marginTop: 0}}>
         <View style={{
@@ -78,12 +106,25 @@ class Splash2 extends PureComponent{
           flexDirection: 'column',
           marginTop: (screenWidth / 2)
         }}>
-          <Text style={{fontFamily: 'CocoGothic-Bold', fontSize: 25}}>
-            Gerson Montenegro
-          </Text>
-          <Text style={{marginTop: 230, fontFamily: 'CocoGothic', fontSize: 20}}>
-            Mobile developer
-          </Text>
+          <Animated.View
+            style={{
+              opacity: opacityAnim
+            }}
+          >
+            <Text style={{fontFamily: 'CocoGothic-Bold', fontSize: 25}}>
+              Gerson Montenegro
+            </Text>
+          </Animated.View>
+
+          <Animated.View
+          style={{
+            opacity: opacityBottomTextAnim
+          }}
+          >
+            <Text style={{marginTop: 230, fontFamily: 'CocoGothic', fontSize: 20}}>
+              Mobile developer
+            </Text>
+          </Animated.View>
         </View>
       </View>
     );
