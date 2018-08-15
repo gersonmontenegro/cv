@@ -7,14 +7,11 @@ import SplashScreen from 'react-native-splash-screen';
 class Splash2 extends PureComponent{
   constructor(props){
     super(props);
-    // this.state = {
-    //   fadeIn: new Animated.Value(0),
-    //   fadeOut: new Animated.Value(1),
-    //   yPos: 100
-    // }
     this.spinValue = new Animated.Value(0);
     this.fadeInValue = new Animated.Value(0);
     this.fadeInValueBottomText = new Animated.Value(0);
+    this.marginTopAvatar = new Animated.Value((screenHeight / 2)-100);
+    this.marginTopTexts = new Animated.Value((screenHeight / 2) - 150);
   }
 
   spin(){
@@ -47,33 +44,24 @@ class Splash2 extends PureComponent{
         toValue: 1,
         duration: 1000
       }
+    ).start(() => {
+      this.getUpAvatar();
+    });
+  }
+
+  getUpAvatar = () => {
+    Animated.timing(
+      this.marginTopAvatar,
+      {
+        toValue: 22,
+        duration: 2000
+      }
     ).start();
   }
 
   componentDidMount(){
-    //this.spin();
     this.fadeInText();
-
-    // this.state.fadeIn.setValue(0);
-    // Animated.timing(
-    //   this.state.yPos,
-    //   {
-    //     toValue: 600,
-    //     duration: 6000
-    //   }
-    // ).start(() => this.fadeOut());
   }
-
-  // fadeOut() {
-  //   this.state.fadeIn.setValue(1);
-  //   Animated.timing(
-  //      this.state.fadeIn,
-  //      {
-  //        toValue: 0,
-  //        duration: 3000,
-  //      }
-  //   ).start();
-  // }
 
   render(){
     //<Image source={require('./../assets/img/face.png')} style={{width: 150, resizeMode: 'contain', marginTop: 50}} />
@@ -92,7 +80,7 @@ class Splash2 extends PureComponent{
           <Animated.View
             style={{
               transform: [{rotate: spin}],
-              marginTop: (screenHeight / 2)-100,
+              marginTop: this.marginTopAvatar,
               marginLeft: (screenWidth / 2)-100,
             }}
           >
@@ -104,7 +92,7 @@ class Splash2 extends PureComponent{
           position: 'absolute',
           alignItems: 'center',
           flexDirection: 'column',
-          marginTop: (screenWidth / 2)
+          marginTop: this.marginTopTexts
         }}>
           <Animated.View
             style={{
