@@ -8,7 +8,7 @@ import Profile from './Profile';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
-import { screenWidth, screenHeight } from './../assets/css/general.js';
+import { mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
 
 const footerFontSize = 12;
 const footerHeight = 70;

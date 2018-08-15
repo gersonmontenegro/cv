@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { ScrollView, Image, View, Text } from 'react-native';
-import { screenWidth } from './../assets/css/general';
+import { mainBackgroundColor, screenWidth } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
 
 class Profile extends PureComponent{
