@@ -13,6 +13,8 @@ class Splash2 extends PureComponent{
     this.marginTopTexts = new Animated.Value((screenHeight / 2) - 150);
     this.opacityAnim = this.fadeInValue;
     this.opacityBottomTextAnim = this.fadeInValueBottomText;
+    this.avatarWidth = new Animated.Value(200);
+    this.avatarHeight = new Animated.Value(200);
   }
 
   fadeInText(){
@@ -35,10 +37,28 @@ class Splash2 extends PureComponent{
         duration: 1000
       }
     ).start(() => {
+      this.changeAvatarScale();
       this.getUpAvatar();
       this.getDownTexts();
       this.fadeOutTexts();
     });
+  }
+
+  changeAvatarScale = () => {
+    Animated.timing(
+      this.avatarWidth,
+      {
+        toValue: 100,
+        duration: 1000
+      }
+    ).start();
+    Animated.timing(
+      this.avatarHeight,
+      {
+        toValue: 100,
+        duration: 1000
+      }
+    ).start();
   }
 
   fadeOutTexts = () => {
@@ -91,15 +111,17 @@ class Splash2 extends PureComponent{
         <View style={{
           width: screenWidth,
           height: screenHeight,
+          alignItems: 'center'
         }}>
-          <Animated.View
+          <Animated.Image
+            source={require('./../assets/img/grs_pixel_with_circle_200.png')}
             style={{
               marginTop: this.marginTopAvatar,
-              marginLeft: (screenWidth / 2)-100,
+              marginLeft: (screenWidth / 2)-(this.avatarWidth / 2),
+              width: this.avatarWidth,
+              height: this.avatarHeight
             }}
-          >
-            <Image source={require('./../assets/img/grs_pixel_with_circle_200.png')} style={{width: 200, height: 200}} />
-          </Animated.View>
+          />
         </View>
         <View style={{
           width: screenWidth,
