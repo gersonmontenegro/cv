@@ -11,6 +11,7 @@ import SplashScreen from 'react-native-splash-screen';
 export default class App extends Component<Props> {
   constructor(props){
     super(props);
+    this.state = { splash: true };
     SplashScreen.hide();
   }
 
@@ -18,10 +19,22 @@ export default class App extends Component<Props> {
     SplashScreen.hide();
   }
 
+  showUpMessage = (v: boolean) => {
+    this.setState( { splash: v } )
+  }
+
+  renderInterface = () => {
+    if(this.state.splash){
+      return <Splash2 callback={this.showUpMessage} />;
+    }else{
+      return <TabScreen />;
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Splash2 />
+        {this.renderInterface()}
       </View>
     );
   }
