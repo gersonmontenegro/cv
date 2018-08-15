@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen';
 class Splash2 extends PureComponent{
   constructor(props){
     super(props);
+    this.callback = props.callback;
     this.fadeInValue = new Animated.Value(0);
     this.fadeInValueBottomText = new Animated.Value(0);
     this.marginTopAvatar = new Animated.Value((screenHeight / 2)-100);
@@ -15,6 +16,7 @@ class Splash2 extends PureComponent{
     this.opacityBottomTextAnim = this.fadeInValueBottomText;
     this.avatarWidth = new Animated.Value(200);
     this.avatarHeight = new Animated.Value(200);
+    this.topBarHeight = new Animated.Value(0);
   }
 
   fadeInText(){
@@ -48,14 +50,14 @@ class Splash2 extends PureComponent{
     Animated.timing(
       this.avatarWidth,
       {
-        toValue: 100,
+        toValue: 82,
         duration: 1000
       }
     ).start();
     Animated.timing(
       this.avatarHeight,
       {
-        toValue: 100,
+        toValue: 82,
         duration: 1000
       }
     ).start();
@@ -93,10 +95,28 @@ class Splash2 extends PureComponent{
     Animated.timing(
       this.marginTopAvatar,
       {
-        toValue: 22,
-        duration: 2000
+        toValue: 50,
+        duration: 1200
       }
-    ).start();
+    ).start(() => {
+      this.showUpTopBar();
+    });
+  }
+
+  showUpTopBar = () => {
+    Animated.timing(
+      this.topBarHeight,
+      {
+        toValue: 120,
+        duration: 500
+      }
+    ).start(() => {
+      this.openTabMenu();
+    });
+  }
+
+  openTabMenu(){
+    this.callback(false);
   }
 
   componentDidMount(){
@@ -113,6 +133,16 @@ class Splash2 extends PureComponent{
           height: screenHeight,
           alignItems: 'center'
         }}>
+          <Animated.View
+            style={{
+              height: this.topBarHeight,
+              width: screenWidth,
+              backgroundColor: '#2e70ac',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'absolute'
+            }}
+          />
           <Animated.Image
             source={require('./../assets/img/grs_pixel_with_circle_200.png')}
             style={{
