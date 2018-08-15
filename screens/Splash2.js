@@ -7,25 +7,12 @@ import SplashScreen from 'react-native-splash-screen';
 class Splash2 extends PureComponent{
   constructor(props){
     super(props);
-    // this.state = {
-    //   fadeIn: new Animated.Value(0),
-    //   fadeOut: new Animated.Value(1),
-    //   yPos: 100
-    // }
-    this.spinValue = new Animated.Value(0);
     this.fadeInValue = new Animated.Value(0);
     this.fadeInValueBottomText = new Animated.Value(0);
-  }
-
-  spin(){
-    this.spinValue.setValue(0);
-    Animated.timing(
-      this.spinValue,
-      {
-        toValue: 1,
-        duration: 4000
-      }
-    ).start();
+    this.marginTopAvatar = new Animated.Value((screenHeight / 2)-100);
+    this.marginTopTexts = new Animated.Value((screenHeight / 2) - 150);
+    this.opacityAnim = this.fadeInValue;
+    this.opacityBottomTextAnim = this.fadeInValueBottomText;
   }
 
   fadeInText(){
@@ -47,42 +34,58 @@ class Splash2 extends PureComponent{
         toValue: 1,
         duration: 1000
       }
+    ).start(() => {
+      this.getUpAvatar();
+      this.getDownTexts();
+      this.fadeOutTexts();
+    });
+  }
+
+  fadeOutTexts = () => {
+    Animated.timing(
+      this.opacityAnim,
+      {
+        toValue: 0,
+        duration: 1000
+      }
+    ).start();
+
+    Animated.timing(
+      this.opacityBottomTextAnim,
+      {
+        toValue: 0,
+        duration: 1000
+      }
+    ).start();
+  }
+
+  getDownTexts = () => {
+    Animated.timing(
+      this.marginTopTexts,
+      {
+        toValue: screenHeight,
+        duration: 2000
+      }
+    ).start();
+  }
+
+  getUpAvatar = () => {
+    Animated.timing(
+      this.marginTopAvatar,
+      {
+        toValue: 22,
+        duration: 2000
+      }
     ).start();
   }
 
   componentDidMount(){
-    //this.spin();
     this.fadeInText();
-
-    // this.state.fadeIn.setValue(0);
-    // Animated.timing(
-    //   this.state.yPos,
-    //   {
-    //     toValue: 600,
-    //     duration: 6000
-    //   }
-    // ).start(() => this.fadeOut());
   }
 
-  // fadeOut() {
-  //   this.state.fadeIn.setValue(1);
-  //   Animated.timing(
-  //      this.state.fadeIn,
-  //      {
-  //        toValue: 0,
-  //        duration: 3000,
-  //      }
-  //   ).start();
-  // }
-
   render(){
-    //<Image source={require('./../assets/img/face.png')} style={{width: 150, resizeMode: 'contain', marginTop: 50}} />
-    const spin = this.spinValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['0deg', '360deg']
-    });
-    let opacityAnim = this.fadeInValue;
-    let opacityBottomTextAnim = this.fadeInValueBottomText;
+    // let opacityAnim = this.fadeInValue;
+    // let opacityBottomTextAnim = this.fadeInValueBottomText;
     return (
       <View style={{marginTop: 0}}>
         <View style={{
@@ -91,8 +94,7 @@ class Splash2 extends PureComponent{
         }}>
           <Animated.View
             style={{
-              transform: [{rotate: spin}],
-              marginTop: (screenHeight / 2)-100,
+              marginTop: this.marginTopAvatar,
               marginLeft: (screenWidth / 2)-100,
             }}
           >
@@ -103,12 +105,12 @@ class Splash2 extends PureComponent{
           width: screenWidth,
           position: 'absolute',
           alignItems: 'center',
-          flexDirection: 'column',
-          marginTop: (screenWidth / 2)
+          flexDirection: 'column'
         }}>
           <Animated.View
             style={{
-              opacity: opacityAnim
+              opacity: this.opacityAnim,
+              marginTop: this.marginTopTexts
             }}
           >
             <Text style={{fontFamily: 'CocoGothic-Bold', fontSize: 25}}>
@@ -118,7 +120,7 @@ class Splash2 extends PureComponent{
 
           <Animated.View
           style={{
-            opacity: opacityBottomTextAnim
+            opacity: this.opacityBottomTextAnim
           }}
           >
             <Text style={{marginTop: 230, fontFamily: 'CocoGothic', fontSize: 20}}>

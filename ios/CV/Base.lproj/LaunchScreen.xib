@@ -22,16 +22,20 @@
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashIcon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89e-x0-g1r">
                     <rect key="frame" x="140" y="140" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="HUo-1I-edJ"/>
+                        <constraint firstAttribute="width" constant="200" id="xcL-5O-9Wv"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.98039215686274506" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Jk5-w5-2sx" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="6Qx-ir-ugV"/>
+                <constraint firstItem="89e-x0-g1r" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ewt-dw-kTQ"/>
+                <constraint firstItem="89e-x0-g1r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FiJ-Db-6oO"/>
                 <constraint firstItem="Jk5-w5-2sx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jbj-OR-bco"/>
                 <constraint firstAttribute="bottom" secondItem="Jk5-w5-2sx" secondAttribute="bottom" constant="39" id="XHm-Ch-7Z2"/>
                 <constraint firstItem="Jk5-w5-2sx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="41" id="Zxu-Vp-8pJ"/>
-                <constraint firstItem="89e-x0-g1r" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yQ5-CJ-9BU"/>
-                <constraint firstItem="89e-x0-g1r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ySn-u4-IKw"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -39,6 +43,6 @@
         </view>
     </objects>
     <resources>
-        <image name="SplashIcon" width="200" height="200"/>
+        <image name="SplashIcon" width="100" height="100"/>
     </resources>
 </document>
