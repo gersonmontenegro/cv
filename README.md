@@ -119,7 +119,7 @@ And well, at this moment, I already have done the first part of this project, I 
 
 Now, I'm going to make a better version (*Do it well* stage) of this application, using separate files for the whole CSS, improving the container for the tabs, maybe customizing the icons, and achieve some details in order to make a good user experience.
 
-After struggling a little with my forgotten memories, I made the Splash screen in pure Xcode. I think this will be temporary for four reasons:
+After struggling a little with my forgotten memories, I made the Splash screen in pure Xcode. I think this will be temporary for two reasons:
 
  1. I need to recover my old memories about the layout in pure Xcode. I was really good on this the last year, but, without practice, now days I'm a amateur again.
  2. I would like to figure out the way to use my react-native version of the Splash screen. Right now I think is not possible, but maybe I don't know some tool/framework/toy to make it.
@@ -129,3 +129,19 @@ After struggling a little with my forgotten memories, I made the Splash screen i
 Meanwhile, at this moment, the app looks like below when I open it.
 
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash.gif" width="300px">
+
+Well, after spending a time searching any solution to the Splash screen, I realized that effectively, there's no change to integrate pure Xcode Splash with any react-native interface.
+
+So, I started to create a way to tidy up my idea: I'm going to emulate an integration in a "simple" form.
+
+To do that, I need make some changes. Now, the avatar is alone in the middle of the screen. That's the Xcode Splash screen.
+
+![enter image description here](https://lh3.googleusercontent.com/w2j0j72tTNiuoXQwWB2OJ_UmWjv-D2LgHcAgVO6fw_V4iDdXfLiBtfWbetfJAm-61YEU2fS4-XQD "New Splash Screen")
+
+Then, my name and title appear with a fade-in effect. At this part, we are now in the react-native Splash. I mean, I put them together creating the illusion that there is only one screen, but, when the Xcode Splash go out, we get the react-native Splash exactly in the same position.
+
+After that last point, is a matter of the Animated component to do the rest.
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_integration.gif" width="300px">
+
+As the video shows, is not totally finished at the end, but, I think the main idea  is 90% completed.
