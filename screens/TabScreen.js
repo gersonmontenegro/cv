@@ -8,14 +8,10 @@ import Profile from './Profile';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
-import { mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
+import { profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
 
 const footerFontSize = 12;
 const footerHeight = 70;
-const profileColor = '#1fb9d7';
-const skillsColor = '#3071ae';
-const educationColor = '#4ab04a';
-const experiencieColor = '#f86236';
 
 class TabScreen extends Component{
   constructor(props){
