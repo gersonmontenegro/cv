@@ -145,3 +145,11 @@ After that last point, is a matter of the Animated component to do the rest.
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_integration.gif" width="300px">
 
 As the video shows, is not totally finished at the end, but, I think the main idea  is 90% completed.
+
+Sometimes, this history could sounds weird, because I haven't been written the text like one and unique piece. Is the work of many days. Every day I've been trying to put some of my time on this. Ok, no more sentimental moments.
+
+After the last version of the first idea to the Splash, I get a new version. It could be the final, maybe.
+
+Now, the Splash match with the profile in the same position, and I added some bars...don't know why exactly, but I like it :).
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_integration_rc.gif" width="300px">
