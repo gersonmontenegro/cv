@@ -21,6 +21,12 @@ class Splash2 extends PureComponent{
     this.barHeight = new Animated.Value(100);
     this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
     this.profileOpacity = new Animated.Value(0);
+    this.skillsMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.skillsOpacity = new Animated.Value(0);
+    this.educationMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.educationOpacity = new Animated.Value(0);
+    this.experienceMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.experienceOpacity = new Animated.Value(0);
     this.dynamicBarHeight = new Animated.Value(500);
   }
 
@@ -54,21 +60,36 @@ class Splash2 extends PureComponent{
     });
   }
 
-  showUpBars = () => {
+  showUpProfileBars = (marginVar, opacityVar) => {
     Animated.timing(
-      this.profileMarginTop,
+      marginVar,
       {
         toValue: screenHeight - 5,
         duration: defaultAnimationTime * 2
       }
     ).start();
     Animated.timing(
-      this.profileOpacity,
+      opacityVar,
       {
         toValue: 1,
         duration: defaultAnimationTime * 2
       }
     ).start();
+  }
+
+  showUpBars = () => {
+    setTimeout(() => {
+      this.showUpProfileBars(this.profileMarginTop, this.profileOpacity);
+    }, 0);
+    setTimeout(() => {
+      this.showUpProfileBars(this.skillsMarginTop, this.skillsOpacity);
+    }, 50);
+    setTimeout(() => {
+      this.showUpProfileBars(this.educationMarginTop, this.educationOpacity);
+    }, 100);
+    setTimeout(() => {
+      this.showUpProfileBars(this.experienceMarginTop, this.experienceOpacity);
+    }, 150);
   }
 
   changeAvatarScale = () => {
@@ -224,8 +245,8 @@ class Splash2 extends PureComponent{
               width: screenWidth / 4,
               height: screenHeight / 2,
               backgroundColor: skillsColor,
-              marginTop: this.profileMarginTop,
-              opacity: this.profileOpacity
+              marginTop: this.skillsMarginTop,
+              opacity: this.skillsOpacity
             }}
           />
           <Animated.View
@@ -233,8 +254,8 @@ class Splash2 extends PureComponent{
               width: screenWidth / 4,
               height: screenHeight / 2,
               backgroundColor: educationColor,
-              marginTop: this.profileMarginTop,
-              opacity: this.profileOpacity
+              marginTop: this.educationMarginTop,
+              opacity: this.educationOpacity
             }}
           />
           <Animated.View
@@ -242,8 +263,8 @@ class Splash2 extends PureComponent{
               width: screenWidth / 4,
               height: screenHeight / 2,
               backgroundColor: experiencieColor,
-              marginTop: this.profileMarginTop,
-              opacity: this.profileOpacity
+              marginTop: this.experienceMarginTop,
+              opacity: this.experienceOpacity
             }}
           />
         </View>
