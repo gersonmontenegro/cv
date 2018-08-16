@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Animated, Image, View, Text } from 'react-native';
-import { defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
+import { profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -18,6 +18,10 @@ class Splash2 extends PureComponent{
     this.avatarHeight = new Animated.Value(200);
     this.topBarHeight = new Animated.Value(0);
     this.finalAvatarDimension = 100;
+    this.barHeight = new Animated.Value(100);
+    this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.profileOpacity = new Animated.Value(0);
+    this.dynamicBarHeight = new Animated.Value(500);
   }
 
   fadeInText(){
@@ -28,7 +32,10 @@ class Splash2 extends PureComponent{
         toValue: 1,
         duration: defaultAnimationTime * 1.5
       }
-    ).start(() => this.fadeInTextBottomText());
+    ).start(() => {
+      this.showUpBars();
+      this.fadeInTextBottomText()
+    });
   }
 
   fadeInTextBottomText(){
@@ -45,6 +52,23 @@ class Splash2 extends PureComponent{
       this.getDownTexts();
       this.fadeOutTexts();
     });
+  }
+
+  showUpBars = () => {
+    Animated.timing(
+      this.profileMarginTop,
+      {
+        toValue: screenHeight - 5,
+        duration: defaultAnimationTime * 2
+      }
+    ).start();
+    Animated.timing(
+      this.profileOpacity,
+      {
+        toValue: 1,
+        duration: defaultAnimationTime * 2
+      }
+    ).start();
   }
 
   changeAvatarScale = () => {
@@ -180,6 +204,48 @@ class Splash2 extends PureComponent{
               Mobile developer
             </Text>
           </Animated.View>
+        </View>
+        <View style={{
+          position: 'absolute',
+          width: screenWidth,
+          flexDirection: 'row'
+        }}>
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: profileColor,
+              marginTop: this.profileMarginTop,
+              opacity: this.profileOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: skillsColor,
+              marginTop: this.profileMarginTop,
+              opacity: this.profileOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: educationColor,
+              marginTop: this.profileMarginTop,
+              opacity: this.profileOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: experiencieColor,
+              marginTop: this.profileMarginTop,
+              opacity: this.profileOpacity
+            }}
+          />
         </View>
       </View>
     );
