@@ -36,7 +36,7 @@ class Profile extends PureComponent{
             </Text>
           </ScrollView>
           <View style={{position: 'absolute', alignItems: 'center', marginLeft: (screenWidth/2) - 45, marginTop: -115}}>
-            <Image source={require('./../assets/img/grs_pixel_with_circle_200.png')} style={{width: 100, height: 100, resizeMode: 'contain', marginTop: 0}} />
+            <Image source={require('./../assets/img/grs_pixel_with_circle_200.png')} style={{width: 100, height: 100, resizeMode: 'contain', marginTop: 45, marginLeft: -10}} />
           </View>
         </View>
       </View>
