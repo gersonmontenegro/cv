@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Animated, Image, View, Text } from 'react-native';
-import { screenWidth, screenHeight } from './../assets/css/general';
+import { profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -17,6 +17,17 @@ class Splash2 extends PureComponent{
     this.avatarWidth = new Animated.Value(200);
     this.avatarHeight = new Animated.Value(200);
     this.topBarHeight = new Animated.Value(0);
+    this.finalAvatarDimension = 100;
+    this.barHeight = new Animated.Value(100);
+    this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.profileOpacity = new Animated.Value(0);
+    this.skillsMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.skillsOpacity = new Animated.Value(0);
+    this.educationMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.educationOpacity = new Animated.Value(0);
+    this.experienceMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.experienceOpacity = new Animated.Value(0);
+    this.dynamicBarHeight = new Animated.Value(500);
   }
 
   fadeInText(){
@@ -25,9 +36,12 @@ class Splash2 extends PureComponent{
       this.fadeInValue,
       {
         toValue: 1,
-        duration: 2000
+        duration: defaultAnimationTime * 1.5
       }
-    ).start(() => this.fadeInTextBottomText());
+    ).start(() => {
+      this.showUpBars();
+      this.fadeInTextBottomText()
+    });
   }
 
   fadeInTextBottomText(){
@@ -36,7 +50,7 @@ class Splash2 extends PureComponent{
       this.fadeInValueBottomText,
       {
         toValue: 1,
-        duration: 1000
+        duration: defaultAnimationTime
       }
     ).start(() => {
       this.changeAvatarScale();
@@ -46,19 +60,51 @@ class Splash2 extends PureComponent{
     });
   }
 
+  showUpProfileBars = (marginVar, opacityVar) => {
+    Animated.timing(
+      marginVar,
+      {
+        toValue: screenHeight - 5,
+        duration: defaultAnimationTime * 2
+      }
+    ).start();
+    Animated.timing(
+      opacityVar,
+      {
+        toValue: 1,
+        duration: defaultAnimationTime * 2
+      }
+    ).start();
+  }
+
+  showUpBars = () => {
+    setTimeout(() => {
+      this.showUpProfileBars(this.profileMarginTop, this.profileOpacity);
+    }, 0);
+    setTimeout(() => {
+      this.showUpProfileBars(this.skillsMarginTop, this.skillsOpacity);
+    }, 50);
+    setTimeout(() => {
+      this.showUpProfileBars(this.educationMarginTop, this.educationOpacity);
+    }, 100);
+    setTimeout(() => {
+      this.showUpProfileBars(this.experienceMarginTop, this.experienceOpacity);
+    }, 150);
+  }
+
   changeAvatarScale = () => {
     Animated.timing(
       this.avatarWidth,
       {
-        toValue: 82,
-        duration: 1000
+        toValue: this.finalAvatarDimension,
+        duration: defaultAnimationTime
       }
     ).start();
     Animated.timing(
       this.avatarHeight,
       {
-        toValue: 82,
-        duration: 1000
+        toValue: this.finalAvatarDimension,
+        duration: defaultAnimationTime
       }
     ).start();
   }
@@ -68,7 +114,7 @@ class Splash2 extends PureComponent{
       this.opacityAnim,
       {
         toValue: 0,
-        duration: 1000
+        duration: defaultAnimationTime
       }
     ).start();
 
@@ -76,7 +122,7 @@ class Splash2 extends PureComponent{
       this.opacityBottomTextAnim,
       {
         toValue: 0,
-        duration: 1000
+        duration: defaultAnimationTime
       }
     ).start();
   }
@@ -86,7 +132,7 @@ class Splash2 extends PureComponent{
       this.marginTopTexts,
       {
         toValue: screenHeight,
-        duration: 2000
+        duration: defaultAnimationTime * 2
       }
     ).start();
   }
@@ -96,7 +142,7 @@ class Splash2 extends PureComponent{
       this.marginTopAvatar,
       {
         toValue: 50,
-        duration: 1200
+        duration: defaultAnimationTime * 1.2
       }
     ).start(() => {
       this.showUpTopBar();
@@ -108,7 +154,7 @@ class Splash2 extends PureComponent{
       this.topBarHeight,
       {
         toValue: 120,
-        duration: 500
+        duration: defaultAnimationTime / 2
       }
     ).start(() => {
       this.openTabMenu();
@@ -179,6 +225,48 @@ class Splash2 extends PureComponent{
               Mobile developer
             </Text>
           </Animated.View>
+        </View>
+        <View style={{
+          position: 'absolute',
+          width: screenWidth,
+          flexDirection: 'row'
+        }}>
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: profileColor,
+              marginTop: this.profileMarginTop,
+              opacity: this.profileOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: skillsColor,
+              marginTop: this.skillsMarginTop,
+              opacity: this.skillsOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: educationColor,
+              marginTop: this.educationMarginTop,
+              opacity: this.educationOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: experiencieColor,
+              marginTop: this.experienceMarginTop,
+              opacity: this.experienceOpacity
+            }}
+          />
         </View>
       </View>
     );
