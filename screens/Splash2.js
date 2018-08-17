@@ -53,10 +53,16 @@ class Splash2 extends PureComponent{
         duration: defaultAnimationTime
       }
     ).start(() => {
-      this.changeAvatarScale();
-      this.getUpAvatar();
-      this.getDownTexts();
-      this.fadeOutTexts();
+      setTimeout(() => {
+        this.changeAvatarScale();
+        this.getUpAvatar();
+      }, defaultAnimationTime * 2);
+
+      setTimeout(() => {
+        this.fadeOutTexts();
+        this.getDownTexts();
+      }, defaultAnimationTime);
+
     });
   }
 
