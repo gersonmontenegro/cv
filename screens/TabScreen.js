@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 import { Footer, Content, FooterTab, Button, Icon } from 'native-base';
-import { ScrollView, Image, View, Text } from 'react-native';
+import { Animated, ScrollView, Image, View, Text } from 'react-native';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import Circle from './../components/primitives/Circle';
 import Profile from './Profile';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
-import { profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
+import { defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
 
 const footerFontSize = 12;
 const footerHeight = 70;
@@ -18,6 +18,58 @@ class TabScreen extends Component{
     super(props);
     this.renderComponent = this.renderComponent.bind(this);
     this.state = { currentInterface: 1 };
+    this.profileMarginTop = new Animated.Value(50);
+    this.profileOpacity = new Animated.Value(0);
+    this.skillsOpacity = new Animated.Value(0);
+    this.educationOpacity = new Animated.Value(0);
+    this.experienceOpacity = new Animated.Value(0);
+    this.skillsMarginTop = new Animated.Value(25);
+    this.educationMarginTop = new Animated.Value(25);
+    this.experienceMarginTop = new Animated.Value(25);
+  }
+
+  componentDidMount(){
+    this.startButtonsShowUp();
+  }
+
+  startButtonsShowUp = () => {
+    setTimeout(() => {
+      this.animatingValue(this.profileMarginTop, 0);
+    }, 0);
+
+    setTimeout(() => {
+      this.animatingValue(this.skillsOpacity, 1, defaultAnimationTime);
+    }, defaultAnimationTime / 3);
+
+    setTimeout(() => {
+      this.animatingValue(this.skillsMarginTop, 0, defaultAnimationTime);
+    }, defaultAnimationTime / 3);
+
+    setTimeout(() => {
+      this.animatingValue(this.educationOpacity, 1, defaultAnimationTime);
+    }, defaultAnimationTime / 2);
+
+    setTimeout(() => {
+      this.animatingValue(this.educationMarginTop, 0, defaultAnimationTime);
+    }, defaultAnimationTime / 2);
+
+    setTimeout(() => {
+      this.animatingValue(this.experienceOpacity, 1, defaultAnimationTime);
+    }, defaultAnimationTime);
+
+    setTimeout(() => {
+      this.animatingValue(this.experienceMarginTop, 0, defaultAnimationTime);
+    }, defaultAnimationTime);
+  }
+
+  animatingValue = (value: any, finalValue: number, durationValue: number) => {
+    Animated.timing(
+      value,
+      {
+        toValue: finalValue,
+        duration: durationValue
+      }
+    ).start();
   }
 
   renderComponent = () =>{
@@ -68,38 +120,68 @@ class TabScreen extends Component{
         </Content>
         <Footer>
           <FooterTab>
-            <Button active={this.isButtonActive(1)} vertical onPress={() => { this.changeInterface(1) }}>
-              <Icon name="ios-contact" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Profile</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: profileColor}}>
+            <Animated.View
+              style={{
+                marginTop: this.profileMarginTop
+              }}
+            >
+              <Button active={this.isButtonActive(1)} vertical onPress={() => { this.changeInterface(1) }}>
+                <Icon name="ios-contact" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Profile</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: profileColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
-            <Button active={this.isButtonActive(2)} onPress={() => { this.changeInterface(2) }}>
-              <Icon name="ios-cog" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Skills</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: skillsColor}}>
+              </Button>
+            </Animated.View>
+
+            <Animated.View
+              style={{
+                opacity: this.skillsOpacity,
+                marginTop: this.skillsMarginTop
+              }}
+            >
+              <Button active={this.isButtonActive(2)} onPress={() => { this.changeInterface(2) }}>
+                <Icon name="ios-cog" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Skills</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: skillsColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
-            <Button active={this.isButtonActive(3)} vertical onPress={() => { this.changeInterface(3) }}>
-              <Icon name="ios-book" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Educat.</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: educationColor}}>
+              </Button>
+            </Animated.View>
+
+            <Animated.View
+              style={{
+                opacity: this.educationOpacity,
+                marginTop: this.educationMarginTop
+              }}
+            >
+              <Button active={this.isButtonActive(3)} vertical onPress={() => { this.changeInterface(3) }}>
+                <Icon name="ios-book" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Educat.</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: educationColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
-            <Button active={this.isButtonActive(4)} vertical onPress={() => { this.changeInterface(4) }}>
-              <Icon name="ios-construct" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Exper.</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: experiencieColor}}>
+              </Button>
+            </Animated.View>
+
+            <Animated.View
+              style={{
+                opacity: this.experienceOpacity,
+                marginTop: this.experienceMarginTop
+              }}
+            >
+              <Button active={this.isButtonActive(4)} vertical onPress={() => { this.changeInterface(4) }}>
+                <Icon name="ios-construct" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Exper.</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: experiencieColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
+              </Button>
+            </Animated.View>
           </FooterTab>
         </Footer>
       </View>
