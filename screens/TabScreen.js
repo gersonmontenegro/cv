@@ -19,6 +19,10 @@ class TabScreen extends Component{
     this.renderComponent = this.renderComponent.bind(this);
     this.state = { currentInterface: 1 };
     this.profileMarginTop = new Animated.Value(50);
+    this.profileOpacity = new Animated.Value(0);
+    this.skillsOpacity = new Animated.Value(0);
+    this.educationOpacity = new Animated.Value(0);
+    this.experienceOpacity = new Animated.Value(0);
   }
 
   componentDidMount(){
@@ -27,15 +31,24 @@ class TabScreen extends Component{
 
   startButtonsShowUp = () => {
     setTimeout(() => {
-      this.animatingValue(this.profileMarginTop);
+      this.animatingValue(this.profileMarginTop, 0);
     }, 0);
+    setTimeout(() => {
+      this.animatingValue(this.skillsOpacity, 1);
+    }, defaultAnimationTime / 3);
+    setTimeout(() => {
+      this.animatingValue(this.educationOpacity, 1);
+    }, defaultAnimationTime / 2);
+    setTimeout(() => {
+      this.animatingValue(this.experienceOpacity, 1);
+    }, defaultAnimationTime);
   }
 
-  animatingValue = (value: any) => {
+  animatingValue = (value: any, finalValue: number) => {
     Animated.timing(
       value,
       {
-        toValue: 0,
+        toValue: finalValue,
         duration: defaultAnimationTime / 2
       }
     ).start();
@@ -104,14 +117,21 @@ class TabScreen extends Component{
               </Button>
             </Animated.View>
 
-            <Button active={this.isButtonActive(2)} onPress={() => { this.changeInterface(2) }}>
-              <Icon name="ios-cog" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Skills</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: skillsColor}}>
+            <Animated.View
+              style={{
+                opacity: this.skillsOpacity
+              }}
+            >
+              <Button active={this.isButtonActive(2)} onPress={() => { this.changeInterface(2) }}>
+                <Icon name="ios-cog" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Skills</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: skillsColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
+              </Button>
+            </Animated.View>
+
             <Button active={this.isButtonActive(3)} vertical onPress={() => { this.changeInterface(3) }}>
               <Icon name="ios-book" />
               <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Educat.</Text>
@@ -120,6 +140,8 @@ class TabScreen extends Component{
                 </View>
               </View>
             </Button>
+
+            
             <Button active={this.isButtonActive(4)} vertical onPress={() => { this.changeInterface(4) }}>
               <Icon name="ios-construct" />
               <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Exper.</Text>
