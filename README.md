@@ -153,3 +153,7 @@ After the last version of the first idea to the Splash, I get a new version. It 
 Now, the Splash match with the profile in the same position, and I added some bars...don't know why exactly, but I like it :).
 
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_integration_rc.gif" width="300px">
+
+After that, I decided break away every button in the footer in order to add some intro animation for every one. The result is below:
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_with_animated_tabs.gif" width="300px">
