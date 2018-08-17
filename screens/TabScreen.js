@@ -23,6 +23,9 @@ class TabScreen extends Component{
     this.skillsOpacity = new Animated.Value(0);
     this.educationOpacity = new Animated.Value(0);
     this.experienceOpacity = new Animated.Value(0);
+    this.skillsMarginTop = new Animated.Value(25);
+    this.educationMarginTop = new Animated.Value(25);
+    this.experienceMarginTop = new Animated.Value(25);
   }
 
   componentDidMount(){
@@ -33,23 +36,38 @@ class TabScreen extends Component{
     setTimeout(() => {
       this.animatingValue(this.profileMarginTop, 0);
     }, 0);
+
     setTimeout(() => {
-      this.animatingValue(this.skillsOpacity, 1);
+      this.animatingValue(this.skillsOpacity, 1, defaultAnimationTime);
     }, defaultAnimationTime / 3);
+
     setTimeout(() => {
-      this.animatingValue(this.educationOpacity, 1);
+      this.animatingValue(this.skillsMarginTop, 0, defaultAnimationTime);
+    }, defaultAnimationTime / 3);
+
+    setTimeout(() => {
+      this.animatingValue(this.educationOpacity, 1, defaultAnimationTime);
     }, defaultAnimationTime / 2);
+
     setTimeout(() => {
-      this.animatingValue(this.experienceOpacity, 1);
+      this.animatingValue(this.educationMarginTop, 0, defaultAnimationTime);
+    }, defaultAnimationTime / 2);
+
+    setTimeout(() => {
+      this.animatingValue(this.experienceOpacity, 1, defaultAnimationTime);
+    }, defaultAnimationTime);
+
+    setTimeout(() => {
+      this.animatingValue(this.experienceMarginTop, 0, defaultAnimationTime);
     }, defaultAnimationTime);
   }
 
-  animatingValue = (value: any, finalValue: number) => {
+  animatingValue = (value: any, finalValue: number, durationValue: number) => {
     Animated.timing(
       value,
       {
         toValue: finalValue,
-        duration: defaultAnimationTime / 2
+        duration: durationValue
       }
     ).start();
   }
@@ -119,7 +137,8 @@ class TabScreen extends Component{
 
             <Animated.View
               style={{
-                opacity: this.skillsOpacity
+                opacity: this.skillsOpacity,
+                marginTop: this.skillsMarginTop
               }}
             >
               <Button active={this.isButtonActive(2)} onPress={() => { this.changeInterface(2) }}>
@@ -132,24 +151,37 @@ class TabScreen extends Component{
               </Button>
             </Animated.View>
 
-            <Button active={this.isButtonActive(3)} vertical onPress={() => { this.changeInterface(3) }}>
-              <Icon name="ios-book" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Educat.</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: educationColor}}>
+            <Animated.View
+              style={{
+                opacity: this.educationOpacity,
+                marginTop: this.educationMarginTop
+              }}
+            >
+              <Button active={this.isButtonActive(3)} vertical onPress={() => { this.changeInterface(3) }}>
+                <Icon name="ios-book" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Educat.</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: educationColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
+              </Button>
+            </Animated.View>
 
-            
-            <Button active={this.isButtonActive(4)} vertical onPress={() => { this.changeInterface(4) }}>
-              <Icon name="ios-construct" />
-              <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Exper.</Text>
-              <View style={{ marginBottom: -6 }}>
-                <View style={{ width: screenWidth/4, height: 5, backgroundColor: experiencieColor}}>
+            <Animated.View
+              style={{
+                opacity: this.experienceOpacity,
+                marginTop: this.experienceMarginTop
+              }}
+            >
+              <Button active={this.isButtonActive(4)} vertical onPress={() => { this.changeInterface(4) }}>
+                <Icon name="ios-construct" />
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: footerFontSize }}>Exper.</Text>
+                <View style={{ marginBottom: -6 }}>
+                  <View style={{ width: screenWidth/4, height: 5, backgroundColor: experiencieColor}}>
+                  </View>
                 </View>
-              </View>
-            </Button>
+              </Button>
+            </Animated.View>
           </FooterTab>
         </Footer>
       </View>
