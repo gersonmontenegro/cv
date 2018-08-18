@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
-import { Footer, Content, FooterTab, Button, Icon } from 'native-base';
+import { Header, Footer, Content, FooterTab, Button, Icon } from 'native-base';
 import { Animated, ScrollView, Image, View, Text } from 'react-native';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import Circle from './../components/primitives/Circle';
@@ -73,27 +73,27 @@ class TabScreen extends Component{
   }
 
   renderComponent = () =>{
-    // switch(this.state.currentInterface){
-    //   case 1: {
-    //     return <Profile />
-    //     break;
-    //   }
-    //   case 2: {
-    //     return <Skills />
-    //     break;
-    //   }
-    //   case 3: {
-    //     return <Education />
-    //     break;
-    //   }
-    //   case 4: {
-    //     return <Experience />
-    //     break;
-    //   }
-    //   default:{
-    //     console.log("wot!");
-    //   }
-    // }
+    switch(this.state.currentInterface){
+      case 1: {
+        return <Profile />
+        break;
+      }
+      case 2: {
+        return <Skills />
+        break;
+      }
+      case 3: {
+        return <Education />
+        break;
+      }
+      case 4: {
+        return <Experience />
+        break;
+      }
+      default:{
+        console.log("wot!");
+      }
+    }
   }
 
   changeInterface = (i: Number) => {
@@ -111,19 +111,16 @@ class TabScreen extends Component{
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
-        <Content>
-          <View style={{marginTop: 0, marginLeft: 0, marginRight: 5}}>
-
+        <Header style={{backgroundColor: mainBackgroundColor}}>
           <View style={{
             width: screenWidth,
-            height: screenHeight,
             alignItems: 'center'
           }}>
             <View
               style={{
-                height: 120,
-                width: screenWidth,
-                backgroundColor: '#2e70ac',
+                height: 100,
+                width: screenWidth * 2,
+                backgroundColor: mainBackgroundColor,
                 justifyContent: 'center',
                 alignItems: 'center',
                 position: 'absolute',
@@ -138,11 +135,10 @@ class TabScreen extends Component{
               }}
             />
           </View>
-
-
-            <View style={{marginTop: 20}}>
-                {this.renderComponent()}
-            </View>
+        </Header>
+        <Content>
+          <View style={{marginTop: 0, marginLeft: 0, marginRight: 5}}>
+              {/*this.renderComponent()*/}
           </View>
         </Content>
         <Footer>
