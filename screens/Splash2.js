@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Animated, Image, View, Text } from 'react-native';
-import { profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
+import { finalAvatarDimension, profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -17,7 +17,6 @@ class Splash2 extends PureComponent{
     this.avatarWidth = new Animated.Value(200);
     this.avatarHeight = new Animated.Value(200);
     this.topBarHeight = new Animated.Value(0);
-    this.finalAvatarDimension = 100;
     this.barHeight = new Animated.Value(100);
     this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
     this.profileOpacity = new Animated.Value(0);
@@ -102,14 +101,14 @@ class Splash2 extends PureComponent{
     Animated.timing(
       this.avatarWidth,
       {
-        toValue: this.finalAvatarDimension,
+        toValue: finalAvatarDimension,
         duration: defaultAnimationTime
       }
     ).start();
     Animated.timing(
       this.avatarHeight,
       {
-        toValue: this.finalAvatarDimension,
+        toValue: finalAvatarDimension,
         duration: defaultAnimationTime
       }
     ).start();
