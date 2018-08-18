@@ -157,3 +157,8 @@ Now, the Splash match with the profile in the same position, and I added some ba
 After that, I decided break away every button in the footer in order to add some intro animation for every one. The result is below:
 
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_with_animated_tabs.gif" width="300px">
+
+At the moment of writing down this lines, I made a centralized header, because until 10 minutes ago, every interfaces owned his own header. Now, there is only a unique header, and every interface is loaded like always, but they don't have a header anymore.
+
+![](https://lh3.googleusercontent.com/SWhzI9KMB7FNFoHXsue8WdR4TeDl20erD81JfDKqo_yKkAuUGNJG08PRgiyY9nA_hSFYOwUxmeyB "Hierarchy")
+Above is the structure hierarchy extracted from the View debugging option on Xcode.
