@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
-import { Footer, Content, FooterTab, Button, Icon } from 'native-base';
+import { Header, Footer, Content, FooterTab, Button, Icon } from 'native-base';
 import { Animated, ScrollView, Image, View, Text } from 'react-native';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import Circle from './../components/primitives/Circle';
@@ -8,7 +8,7 @@ import Profile from './Profile';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
-import { defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
+import { finalAvatarDimension, defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
 
 const footerFontSize = 12;
 const footerHeight = 70;
@@ -111,11 +111,35 @@ class TabScreen extends Component{
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
+        <Header style={{backgroundColor: mainBackgroundColor, height: 120}}>
+          <View style={{
+            width: screenWidth,
+            alignItems: 'center'
+          }}>
+            <View
+              style={{
+                height: 100,
+                width: screenWidth * 2,
+                backgroundColor: mainBackgroundColor,
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'absolute',
+              }}
+            />
+            <Image
+              source={require('./../assets/img/grs_pixel_with_circle_200.png')}
+              style={{
+                marginTop: 12,
+                marginLeft: 4,
+                width: finalAvatarDimension,
+                height: finalAvatarDimension
+              }}
+            />
+          </View>
+        </Header>
         <Content>
           <View style={{marginTop: 0, marginLeft: 0, marginRight: 5}}>
-            <View style={{marginTop: 20}}>
-                {this.renderComponent()}
-            </View>
+              {this.renderComponent()}
           </View>
         </Content>
         <Footer>

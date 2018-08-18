@@ -9,6 +9,7 @@ export const profileColor = '#1fb9d7';
 export const skillsColor = '#3071ae';
 export const educationColor = '#4ab04a';
 export const experiencieColor = '#f86236';
+export const finalAvatarDimension = 100;
 
 export const HeaderStyle = StyleSheet.create({
   headerContainer: {
