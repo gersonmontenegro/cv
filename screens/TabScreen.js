@@ -8,7 +8,7 @@ import Profile from './Profile';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
-import { defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
+import { finalAvatarDimension, defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
 
 const footerFontSize = 12;
 const footerHeight = 70;
@@ -73,27 +73,27 @@ class TabScreen extends Component{
   }
 
   renderComponent = () =>{
-    switch(this.state.currentInterface){
-      case 1: {
-        return <Profile />
-        break;
-      }
-      case 2: {
-        return <Skills />
-        break;
-      }
-      case 3: {
-        return <Education />
-        break;
-      }
-      case 4: {
-        return <Experience />
-        break;
-      }
-      default:{
-        console.log("wot!");
-      }
-    }
+    // switch(this.state.currentInterface){
+    //   case 1: {
+    //     return <Profile />
+    //     break;
+    //   }
+    //   case 2: {
+    //     return <Skills />
+    //     break;
+    //   }
+    //   case 3: {
+    //     return <Education />
+    //     break;
+    //   }
+    //   case 4: {
+    //     return <Experience />
+    //     break;
+    //   }
+    //   default:{
+    //     console.log("wot!");
+    //   }
+    // }
   }
 
   changeInterface = (i: Number) => {
@@ -113,6 +113,33 @@ class TabScreen extends Component{
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
         <Content>
           <View style={{marginTop: 0, marginLeft: 0, marginRight: 5}}>
+
+          <View style={{
+            width: screenWidth,
+            height: screenHeight,
+            alignItems: 'center'
+          }}>
+            <View
+              style={{
+                height: 120,
+                width: screenWidth,
+                backgroundColor: '#2e70ac',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'absolute',
+              }}
+            />
+            <Image
+              source={require('./../assets/img/grs_pixel_with_circle_200.png')}
+              style={{
+                marginTop: 50,
+                width: finalAvatarDimension,
+                height: finalAvatarDimension
+              }}
+            />
+          </View>
+
+
             <View style={{marginTop: 20}}>
                 {this.renderComponent()}
             </View>
