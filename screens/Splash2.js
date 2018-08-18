@@ -146,7 +146,7 @@ class Splash2 extends PureComponent{
     Animated.timing(
       this.marginTopAvatar,
       {
-        toValue: 50,
+        toValue: 30,
         duration: defaultAnimationTime * 1.2
       }
     ).start(() => {
