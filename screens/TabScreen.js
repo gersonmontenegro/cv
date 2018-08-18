@@ -111,7 +111,7 @@ class TabScreen extends Component{
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
-        <Header style={{backgroundColor: mainBackgroundColor}}>
+        <Header style={{backgroundColor: mainBackgroundColor, height: 120}}>
           <View style={{
             width: screenWidth,
             alignItems: 'center'
@@ -129,7 +129,8 @@ class TabScreen extends Component{
             <Image
               source={require('./../assets/img/grs_pixel_with_circle_200.png')}
               style={{
-                marginTop: 50,
+                marginTop: 12,
+                marginLeft: 4,
                 width: finalAvatarDimension,
                 height: finalAvatarDimension
               }}
@@ -138,7 +139,7 @@ class TabScreen extends Component{
         </Header>
         <Content>
           <View style={{marginTop: 0, marginLeft: 0, marginRight: 5}}>
-              {/*this.renderComponent()*/}
+              {this.renderComponent()}
           </View>
         </Content>
         <Footer>
