@@ -11,13 +11,6 @@ class Profile extends PureComponent{
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1}}>
-        <View style={{
-          height: 100,
-          width: screenWidth,
-          backgroundColor: '#2e70ac',
-          alignItems: 'center'
-        }}>
-        </View>
         <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
           <ScrollView>
             <Text style={{fontFamily: 'CenturyGothic-Bold'}}>
@@ -35,9 +28,6 @@ class Profile extends PureComponent{
               I like to much learn to code and learn better ways to do my apps, but it doesn't mean that I'm only a coder, because in the last years I've had the oportunity to lead developer teams in many projects, such as C4 Systems, and
             </Text>
           </ScrollView>
-          <View style={{position: 'absolute', alignItems: 'center', marginLeft: (screenWidth/2) - 45, marginTop: -115}}>
-            <Image source={require('./../assets/img/grs_pixel_with_circle_200.png')} style={{width: 100, height: 100, resizeMode: 'contain', marginTop: 45, marginLeft: -10}} />
-          </View>
         </View>
       </View>
     );
