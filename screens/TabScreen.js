@@ -26,6 +26,10 @@ class TabScreen extends Component{
     this.skillsMarginTop = new Animated.Value(25);
     this.educationMarginTop = new Animated.Value(25);
     this.experienceMarginTop = new Animated.Value(25);
+    this.titleOpacity = new Animated.Value(1);
+    this.nameOpacity = new Animated.Value(1);
+    this.nameWidth = new Animated.Value((screenWidth - (screenWidth * .3)));
+    this.titleWidth = new Animated.Value((screenWidth - (screenWidth * .5)));
   }
 
   componentDidMount(){
@@ -111,30 +115,57 @@ class TabScreen extends Component{
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
-        <Header style={{backgroundColor: mainBackgroundColor, height: 120}}>
+        <Header style={{backgroundColor: mainBackgroundColor, height: 100}}>
           <View style={{
             width: screenWidth,
             alignItems: 'center'
           }}>
-            <View
-              style={{
-                height: 100,
-                width: screenWidth * 2,
-                backgroundColor: mainBackgroundColor,
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'absolute',
-              }}
-            />
-            <Image
-              source={require('./../assets/img/grs_pixel_with_circle_200.png')}
-              style={{
-                marginTop: 12,
-                marginLeft: 4,
-                width: finalAvatarDimension,
-                height: finalAvatarDimension
-              }}
-            />
+          <Animated.Image
+            source={require('./../assets/img/grs_pixel_with_circle_200.png')}
+            style={{
+              marginTop: this.marginTopAvatar,
+              marginLeft: this.marginLeftAvatar,
+              width: this.avatarWidth,
+              height: this.avatarHeight,
+              alignSelf: 'center',
+            }}
+          />
+          <Animated.View
+            style={{
+              width: this.nameWidth,
+              height: 25,
+              position: 'absolute',
+              backgroundColor: 'white',
+              marginRight: 10,
+              marginTop: 35,
+              alignSelf: 'flex-end',
+              borderRadius: 10,
+              justifyContent: 'center',
+              opacity: this.nameOpacity
+            }}
+          >
+            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic-Bold', marginRight: 15, fontSize: 16}}>
+              Gerson Montenegro
+            </Text>
+          </Animated.View>
+          <Animated.View
+            style={{
+              opacity: this.titleOpacity,
+              width: this.titleWidth,
+              height: 25,
+              position: 'absolute',
+              backgroundColor: 'white',
+              marginRight: 10,
+              marginTop: 65,
+              alignSelf: 'flex-end',
+              borderRadius: 10,
+              justifyContent: 'center'
+            }}
+           >
+            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic', marginRight: 15 }}>
+              Mobile developer
+            </Text>
+           </Animated.View>
           </View>
         </Header>
         <Content>
