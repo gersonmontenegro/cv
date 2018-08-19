@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Animated, Image, View, Text } from 'react-native';
 import { finalAvatarDimension, profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
-import Circle from './../components/primitives/Circle';
 import SplashScreen from 'react-native-splash-screen';
 
 class Splash2 extends PureComponent{
@@ -10,12 +9,13 @@ class Splash2 extends PureComponent{
     this.callback = props.callback;
     this.fadeInValue = new Animated.Value(0);
     this.fadeInValueBottomText = new Animated.Value(0);
-    this.marginTopAvatar = new Animated.Value((screenHeight / 2)-100);
+    this.avatarWidth = new Animated.Value(200);
+    this.avatarHeight = new Animated.Value(200);
+    this.marginTopAvatar = new Animated.Value((screenHeight / 2) - 100);
+    this.marginLeftAvatar = new Animated.Value(0);
     this.marginTopTexts = new Animated.Value((screenHeight / 2) - 150);
     this.opacityAnim = this.fadeInValue;
     this.opacityBottomTextAnim = this.fadeInValueBottomText;
-    this.avatarWidth = new Animated.Value(200);
-    this.avatarHeight = new Animated.Value(200);
     this.topBarHeight = new Animated.Value(0);
     this.barHeight = new Animated.Value(100);
     this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
@@ -146,12 +146,25 @@ class Splash2 extends PureComponent{
     Animated.timing(
       this.marginTopAvatar,
       {
-        toValue: 30,
+        toValue: 25,
         duration: defaultAnimationTime * 1.2
       }
     ).start(() => {
+      this.moveAvatarToLeft();
       this.showUpTopBar();
     });
+  }
+
+  moveAvatarToLeft = () => {
+    Animated.timing(
+      this.marginLeftAvatar,
+      {
+        toValue: -(screenWidth - 100),
+        duration: defaultAnimationTime
+      }
+    ).start(
+
+    );
   }
 
   showUpTopBar = () => {
@@ -162,7 +175,7 @@ class Splash2 extends PureComponent{
         duration: defaultAnimationTime / 2
       }
     ).start(() => {
-      this.openTabMenu();
+      // this.openTabMenu();
     });
   }
 
@@ -181,8 +194,7 @@ class Splash2 extends PureComponent{
       <View style={{marginTop: 0}}>
         <View style={{
           width: screenWidth,
-          height: screenHeight,
-          alignItems: 'center'
+          height: screenHeight
         }}>
           <Animated.View
             style={{
@@ -198,9 +210,10 @@ class Splash2 extends PureComponent{
             source={require('./../assets/img/grs_pixel_with_circle_200.png')}
             style={{
               marginTop: this.marginTopAvatar,
-              marginLeft: (screenWidth / 2)-(this.avatarWidth / 2),
+              marginLeft: this.marginLeftAvatar,
               width: this.avatarWidth,
-              height: this.avatarHeight
+              height: this.avatarHeight,
+              alignSelf: 'center',
             }}
           />
         </View>
