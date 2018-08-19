@@ -27,6 +27,10 @@ class Splash2 extends PureComponent{
     this.experienceMarginTop = new Animated.Value(-(screenHeight / 2));
     this.experienceOpacity = new Animated.Value(0);
     this.dynamicBarHeight = new Animated.Value(500);
+    this.nameWidth = new Animated.Value(0);
+    this.nameOpacity = new Animated.Value(0);
+    this.titleWidth = new Animated.Value(0);
+    this.titleOpacity = new Animated.Value(0);
   }
 
   fadeInText(){
@@ -152,7 +156,38 @@ class Splash2 extends PureComponent{
     ).start(() => {
       this.moveAvatarToLeft();
       this.showUpTopBar();
+      this.moveTopTexts();
     });
+  }
+
+  moveTopTexts = () => {
+    setTimeout(() => {
+      this.showUpTopTexts(this.nameWidth, (screenWidth - (screenWidth * .3)), this.nameOpacity, 1);
+    }, 0);
+    setTimeout(() => {
+      this.showUpTopTexts(this.titleWidth, (screenWidth - (screenWidth * .5)), this.titleOpacity, 1);
+    }, 200);
+  }
+
+  showUpTopTexts = (widthVar, widthVal, opacityVar, opacityVal) => {
+    Animated.timing(
+      widthVar,
+      {
+        toValue: widthVal,
+        duration: defaultAnimationTime
+      }
+    ).start();
+    Animated.timing(
+      opacityVar,
+      {
+        toValue: opacityVal,
+        duration: defaultAnimationTime
+      }
+    ).start(
+      () => {
+        this.openTabMenu();
+      }
+    );
   }
 
   moveAvatarToLeft = () => {
@@ -174,9 +209,7 @@ class Splash2 extends PureComponent{
         toValue: 120,
         duration: defaultAnimationTime / 2
       }
-    ).start(() => {
-      // this.openTabMenu();
-    });
+    ).start();
   }
 
   openTabMenu(){
@@ -216,6 +249,42 @@ class Splash2 extends PureComponent{
               alignSelf: 'center',
             }}
           />
+          <Animated.View
+            style={{
+              width: this.nameWidth,
+              height: 25,
+              position: 'absolute',
+              backgroundColor: 'white',
+              marginRight: 10,
+              marginTop: 35,
+              alignSelf: 'flex-end',
+              borderRadius: 10,
+              justifyContent: 'center',
+              opacity: this.nameOpacity
+            }}
+          >
+            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic-Bold', marginRight: 15, fontSize: 16}}>
+              Gerson Montenegro
+            </Text>
+          </Animated.View>
+          <Animated.View
+            style={{
+              opacity: this.titleOpacity,
+              width: this.titleWidth,
+              height: 25,
+              position: 'absolute',
+              backgroundColor: 'white',
+              marginRight: 10,
+              marginTop: 65,
+              alignSelf: 'flex-end',
+              borderRadius: 10,
+              justifyContent: 'center'
+            }}
+           >
+            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic', marginRight: 15 }}>
+              Mobile developer
+            </Text>
+           </Animated.View>
         </View>
         <View style={{
           width: screenWidth,
