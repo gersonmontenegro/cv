@@ -183,7 +183,11 @@ class Splash2 extends PureComponent{
         toValue: opacityVal,
         duration: defaultAnimationTime
       }
-    ).start();
+    ).start(
+      () => {
+        this.openTabMenu();
+      }
+    );
   }
 
   moveAvatarToLeft = () => {
@@ -205,9 +209,7 @@ class Splash2 extends PureComponent{
         toValue: 120,
         duration: defaultAnimationTime / 2
       }
-    ).start(() => {
-      // this.openTabMenu();
-    });
+    ).start();
   }
 
   openTabMenu(){
