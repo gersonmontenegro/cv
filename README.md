@@ -161,4 +161,11 @@ After that, I decided break away every button in the footer in order to add some
 At the moment of writing down this lines, I made a centralized header, because until 10 minutes ago, every interfaces owned his own header. Now, there is only a unique header, and every interface is loaded like always, but they don't have a header anymore.
 
 ![](https://lh3.googleusercontent.com/SWhzI9KMB7FNFoHXsue8WdR4TeDl20erD81JfDKqo_yKkAuUGNJG08PRgiyY9nA_hSFYOwUxmeyB "Hierarchy")
+
 Above is the structure hierarchy extracted from the View debugging option on Xcode.
+
+And, after a suggestion from a friend of mine, I decided follow up her instruction about the header design. 
+
+So, this is the preview of the new header. I uploaded the code, but is not responsive yet, but soon :)
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_with_new_header.gif" width="300px">
