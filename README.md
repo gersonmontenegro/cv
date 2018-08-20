@@ -130,7 +130,7 @@ Meanwhile, at this moment, the app looks like below when I open it.
 
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash.gif" width="300px">
 
-Well, after spending a time searching any solution to the Splash screen, I realized that effectively, there's no change to integrate pure Xcode Splash with any react-native interface.
+Well, after spending a time searching any solution to the Splash screen, I realized that effectively, there's no chance to integrate pure Xcode Splash with any react-native interface.
 
 So, I started to create a way to tidy up my idea: I'm going to emulate an integration in a "simple" form.
 
