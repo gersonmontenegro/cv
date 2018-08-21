@@ -8,6 +8,7 @@ import Profile from './Profile';
 import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
+import CustomHeader from './../components/interface/CustomHeader';
 import { finalAvatarDimension, defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, mainBackgroundColor, screenWidth, screenHeight } from './../assets/css/general.js';
 
 const footerFontSize = 12;
@@ -120,57 +121,7 @@ class TabScreen extends Component{
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
         <Header style={{backgroundColor: mainBackgroundColor, height: 120}}>
-          <View style={{
-            width: screenWidth * 1.5,
-            height: 103,
-            backgroundColor: mainBackgroundColor
-          }}>
-          <Image
-            source={require('./../assets/img/grs_pixel_with_circle_200.png')}
-            style={{
-              marginTop: 7,
-              marginLeft: 92,
-              width: 80,
-              height: 80,
-              alignSelf: 'flex-start',
-              position: 'absolute'
-            }}
-          />
-          <View
-            style={{
-              height: 25,
-              backgroundColor: 'white',
-              marginTop: 17,
-              alignSelf: 'flex-end',
-              borderRadius: 10,
-              marginRight: 78,
-              justifyContent: 'center',
-              width: this.nameWidth,
-              opacity: this.nameOpacity
-            }}
-          >
-            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic-Bold', marginRight: 15, fontSize: 16}}>
-              Gerson Montenegro
-            </Text>
-          </View>
-          <View
-            style={{
-              opacity: this.titleOpacity,
-              width: this.titleWidth,
-              height: 25,
-              backgroundColor: 'white',
-              marginRight: 78,
-              marginTop: 5,
-              alignSelf: 'flex-end',
-              borderRadius: 10,
-              justifyContent: 'center'
-            }}
-           >
-            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic', marginRight: 15 }}>
-              Mobile developer
-            </Text>
-           </View>
-          </View>
+          <CustomHeader />
         </Header>
         <Content>
           <View style={{marginTop: 0, marginLeft: 0, marginRight: 5}}>
