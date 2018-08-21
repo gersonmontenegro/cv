@@ -169,3 +169,9 @@ And, after a suggestion from a friend of mine, I decided follow up her instructi
 So, this is the preview of the new header. I uploaded the code, but is not responsive yet, but soon :)
 
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/splash_with_new_header.gif" width="300px">
+
+At the moment of write this lines, and after make the header component, it becomes responsive.
+
+It was easy because I made it in an isolate way, and works like a charm.
+
+Visually is still the same, so, there is not a new Image.
