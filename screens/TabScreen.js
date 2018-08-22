@@ -18,7 +18,7 @@ class TabScreen extends Component{
   constructor(props){
     super(props);
     this.renderComponent = this.renderComponent.bind(this);
-    this.state = { currentInterface: 1 };
+    this.state = { currentInterface: 2 };
     this.profileMarginTop = new Animated.Value(50);
     this.profileOpacity = new Animated.Value(0);
     this.skillsOpacity = new Animated.Value(0);
