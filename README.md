@@ -175,3 +175,15 @@ At the moment of write this lines, and after make the header component, it becom
 It was easy because I made it in an isolate way, and works like a charm.
 
 Visually is still the same, so, there is not a new Image.
+
+Now is time to changue the charts, because I didn't like it after to receive a few feedback from people who works on design.
+
+So, I thought in use some library, because there is a lot of nice libraries, and the one that I like the most (at least in Bars style) was the used in [NBA App](https://github.com/wwayne/react-native-nba-app).
+
+But, I wanted something different, and I wanted to learn a little more, so, I scratched something with basic react-native components, and I found it not only easy, but fun to make graphs, and of course, I know that the more spectacular is the graphic, the more complex is the process to make it.
+
+After an hour of play with this, I got the first version of the component:
+
+![enter image description here](https://lh3.googleusercontent.com/UviLmUf_qDoK49SsXldLa6pdqPtVpVhDtd6ZzvjEOcxvuTdrO61fN_RoYR2e3tAE-iVuCaMO_iZT "Bars")
+
+Now is time to animated them.
