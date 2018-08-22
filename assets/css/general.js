@@ -3,7 +3,6 @@ import { StyleSheet, Dimensions } from 'react-native';
 export const screenWidth = Dimensions.get('window').width;
 export const screenHeight = Dimensions.get('window').height;
 export const mainBackgroundColor = '#2e70ac';
-export const defaultAnimationTime = 50;
 export const defaultAnimationTime = 500;
 export const profileColor = '#1fb9d7';
 export const skillsColor = '#3071ae';
