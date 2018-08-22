@@ -33,6 +33,24 @@ class Skills extends PureComponent{
                 </View>
               </View>
             </View>
+
+            <View style={{width: screenWidth - 10, flexDirection: 'column', marginTop: 5}}>
+              <View style={{width: screenWidth - 15, borderRadius: 5}}>
+                <Text style={{fontFamily: 'CocoGothic-Bold', marginLeft: 5}}>
+                  Ionic
+                </Text>
+              </View>
+              <View style={{width: screenWidth - 15, backgroundColor: 'lightblue', borderRadius: 5}}>
+                <View style={{height: 20, width: screenWidth - 15, backgroundColor: '#FCBD24', borderRadius: 5, opacity: 0.3}}>
+                </View>
+                <View style={{alignItems: 'center', position: 'absolute', height: 20, width: screenWidth - 90, backgroundColor: '#FCBD24', borderRadius: 5}}>
+                  <Text style={{position: 'absolute', color: '#000', fontFamily: 'CenturyGothic-Bold'}}>
+                    70%
+                  </Text>
+                </View>
+              </View>
+            </View>
+
             <PieDetail color="green" percent={95} pie_title="ActionScript" pie_description="iOS, Android, and Desktop developer" />
             <PieDetail color="lightblue" percent={70} pie_title="Ionic" pie_description="iOS and Android developer" />
             <PieDetail color="blue" percent={50} pie_title="React-Native" pie_description="iOS and Android developer" />
