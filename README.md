@@ -187,3 +187,6 @@ After an hour of play with this, I got the first version of the component:
 ![enter image description here](https://lh3.googleusercontent.com/UviLmUf_qDoK49SsXldLa6pdqPtVpVhDtd6ZzvjEOcxvuTdrO61fN_RoYR2e3tAE-iVuCaMO_iZT "Bars")
 
 Now is time to animated them.
+For that, I'm used the same Animated component for a very easy implementation, and the result is below:
+
+<img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/new_bars_animation.gif" width="300px">
