@@ -190,3 +190,14 @@ Now is time to animated them.
 For that, I'm used the same Animated component for a very easy implementation, and the result is below:
 
 <img src="https://github.com/gersonmontenegro/cv/blob/master/assets/img/new_bars_animation.gif" width="300px">
+
+And the [Skills interface](https://github.com/gersonmontenegro/cv/blob/master/screens/Skills.js) was reduced (well, before this change it was as long as now, but now is better) to :
+
+````javascript
+<Bars name='ActionScript' startAt={0} percentaje={90} primaryColor='#db4e4e' />
+<Bars name='Ionic' startAt={90} percentaje={70} primaryColor='#2f9cfc' />
+<Bars name='PHP' startAt={180} percentaje={75} primaryColor='#627dbc' />
+<Bars name='Laravel' startAt={270} percentaje={50} primaryColor='#f0514b' />
+<Bars name='React Native' startAt={360} percentaje={30} primaryColor='#1ca6cd' />
+````
+
