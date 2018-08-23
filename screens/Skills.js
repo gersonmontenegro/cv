@@ -23,12 +23,6 @@ class Skills extends PureComponent{
             <Bars name='PHP' startAt={180} percentaje={75} primaryColor='#627dbc' />
             <Bars name='Laravel' startAt={270} percentaje={50} primaryColor='#f0514b' />
             <Bars name='React Native' startAt={360} percentaje={30} primaryColor='#1ca6cd' />
-
-            {/* <PieDetail color="green" percent={95} pie_title="ActionScript" pie_description="iOS, Android, and Desktop developer" />
-            <PieDetail color="lightblue" percent={70} pie_title="Ionic" pie_description="iOS and Android developer" />
-            <PieDetail color="blue" percent={50} pie_title="React-Native" pie_description="iOS and Android developer" />
-            <PieDetail color="orange" percent={70} pie_title="PHP" pie_description="Web developer" />
-            <PieDetail color="red" percent={50} pie_title="Laravel" pie_description="PHP developer" /> */}
           </ScrollView>
         </View>
       </View>
