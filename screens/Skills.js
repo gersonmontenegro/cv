@@ -18,11 +18,11 @@ class Skills extends PureComponent{
       <View style={{justifyContent: 'flex-start', flex: 1}}>
         <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
           <ScrollView style={{marginTop: 20}}>
-            <Bars name='ActionScript' percentaje={90} primaryColor='#db4e4e' />
-            <Bars name='Ionic' percentaje={70} primaryColor='#2f9cfc' />
-            <Bars name='PHP' percentaje={75} primaryColor='#627dbc' />
-            <Bars name='Laravel' percentaje={50} primaryColor='#f0514b' />
-            <Bars name='React Native' percentaje={30} primaryColor='#1ca6cd' />
+            <Bars name='ActionScript' startAt={0} percentaje={90} primaryColor='#db4e4e' />
+            <Bars name='Ionic' startAt={90} percentaje={70} primaryColor='#2f9cfc' />
+            <Bars name='PHP' startAt={180} percentaje={75} primaryColor='#627dbc' />
+            <Bars name='Laravel' startAt={270} percentaje={50} primaryColor='#f0514b' />
+            <Bars name='React Native' startAt={360} percentaje={30} primaryColor='#1ca6cd' />
 
             {/* <PieDetail color="green" percent={95} pie_title="ActionScript" pie_description="iOS, Android, and Desktop developer" />
             <PieDetail color="lightblue" percent={70} pie_title="Ionic" pie_description="iOS and Android developer" />
