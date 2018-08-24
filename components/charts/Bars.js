@@ -62,6 +62,7 @@ class Bars extends PureComponent{
           <Animated.View style={{alignItems: 'center', position: 'absolute', height: 20, width: this.dynamicWidth, backgroundColor: this.primaryColor, borderRadius: 5}}>
             <Text style={{position: 'absolute', color: '#000', fontFamily: 'CenturyGothic-Bold'}}>
               {this.props.percentaje}
+              <AnimateNumber value={this.props.percentaje} countBy={1} timing="linear" />%
             </Text>
           </Animated.View>
         </View>
