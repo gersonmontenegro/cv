@@ -201,3 +201,13 @@ And the [Skills interface](https://github.com/gersonmontenegro/cv/blob/master/sc
 <Bars name='React Native' startAt={360} percentaje={30} primaryColor='#1ca6cd' />
 ````
 
+Well, a last detail about my new Bar component. I wanted add an animation for the number as well, but, this time, I rather t use a existing component: [AnimateNumber](https://github.com/wkh237/react-native-animate-number).
+
+At the beginning I had my doubts, because is not as recent as I wish, but is still working, and it gave to my Bar component a nice extra detail animating the number, so, at least by now, I'll keep it.
+
+The implementation was not traumatic, it just took a simple line in the same place where I had the value:
+```javascript
+<Text style={{position: 'absolute', color: '#000', fontFamily: 'CenturyGothic-Bold'}}>
+ <AnimateNumber value={this.props.percentaje} countBy={1} timing="linear" />%
+</Text>
+````
