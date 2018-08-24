@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Animated, View, Text } from 'react-native';
 
+import AnimateNumber from 'react-native-animate-number';
 import { defaultAnimationTime, screenWidth } from './../../assets/css/general';
 
 class Bars extends PureComponent{
