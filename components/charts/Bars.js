@@ -9,23 +9,42 @@ class Bars extends PureComponent{
     super(props);
     this.chartWidth = screenWidth - 15;
     this.percentajeToWidth = ((this.chartWidth * props.percentaje) / 100);
-    // this.percentajeToWidth = 10;
     this.primaryColor = props.primaryColor != '' ? props.primaryColor : '#FCBD24';
     this.dynamicWidth = new Animated.Value(0);
+    this.dynamicPercentaje = new Animated.Value(0);
   }
 
   componentDidMount(){
+    this.increaseBarWidth();
   }
 
   increaseBarWidth = () => {
+    this.increasePercentajeValue();
     Animated.timing(
       this.dynamicWidth,
       {
         toValue: this.percentajeToWidth,
-        duration: defaultAnimationTime
+        duration: 1000,
         delay: this.props.startAt
+        // duration: defaultAnimationTime
       }
     ).start();
+  }
+
+  increasePercentajeValue = () => {
+    Animated.timing(
+      this.dynamicPercentaje,
+      {
+        toValue: this.props.percentaje,
+        duration: 1000
+        // duration: defaultAnimationTime
+      }
+    ).start();
+  }
+
+  value2String = (value: any) => {
+    console.log("--->", JSON.stringify(this.dynamicWidth));
+    return value.toString();
   }
 
   render(){
