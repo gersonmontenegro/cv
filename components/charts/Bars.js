@@ -15,10 +15,6 @@ class Bars extends PureComponent{
   }
 
   componentDidMount(){
-    setTimeout(() => {
-      this.increaseBarWidth();
-    }, this.props.startAt != null ? this.props.startAt : 0);
-
   }
 
   increaseBarWidth = () => {
@@ -27,6 +23,7 @@ class Bars extends PureComponent{
       {
         toValue: this.percentajeToWidth,
         duration: defaultAnimationTime
+        delay: this.props.startAt
       }
     ).start();
   }
