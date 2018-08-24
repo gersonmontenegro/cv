@@ -11,6 +11,18 @@ const timer = require('react-native-timer');
 class Skills extends PureComponent{
   constructor(props){
     super(props);
+    this.data = [
+      {name: 'Ionic', percentaje: 70, primaryColor: '#2f9cfc'},
+      {name: 'Typescript', percentaje: 60, primaryColor: '#1176be'},
+      {name: 'Firebase - Ionic', percentaje: 20, primaryColor: '#f38226'},
+      {name: 'PHP', percentaje: 75, primaryColor: '#627dbc'},
+      {name: 'Laravel', percentaje: 50, primaryColor: '#f0514b'},
+      {name: 'React Native', percentaje: 30, primaryColor: '#1ca6cd'},
+      {name: 'Javascript', percentaje: 80, primaryColor: '#d4b840'},
+      {name: 'ActionScript', percentaje: 90, primaryColor: '#db4e4e'},
+      {name: 'Adobe Flash Builder', percentaje: 75, primaryColor: '#cdbec3'},
+      {name: 'Adobe Flash', percentaje: 80, primaryColor: '#cd1018'},
+    ];
   }
 
   render(){
