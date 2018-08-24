@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Animated, View, Text } from 'react-native';
 
+import AnimateNumber from 'react-native-animate-number';
 import { defaultAnimationTime, screenWidth } from './../../assets/css/general';
 
 class Bars extends PureComponent{
@@ -19,32 +20,14 @@ class Bars extends PureComponent{
   }
 
   increaseBarWidth = () => {
-    this.increasePercentajeValue();
     Animated.timing(
       this.dynamicWidth,
       {
         toValue: this.percentajeToWidth,
-        duration: 1000,
-        delay: this.props.startAt
-        // duration: defaultAnimationTime
+        delay: this.props.startAt,
+        duration: defaultAnimationTime
       }
     ).start();
-  }
-
-  increasePercentajeValue = () => {
-    Animated.timing(
-      this.dynamicPercentaje,
-      {
-        toValue: this.props.percentaje,
-        duration: 1000
-        // duration: defaultAnimationTime
-      }
-    ).start();
-  }
-
-  value2String = (value: any) => {
-    console.log("--->", JSON.stringify(this.dynamicWidth));
-    return value.toString();
   }
 
   render(){
@@ -60,7 +43,7 @@ class Bars extends PureComponent{
           </View>
           <Animated.View style={{alignItems: 'center', position: 'absolute', height: 20, width: this.dynamicWidth, backgroundColor: this.primaryColor, borderRadius: 5}}>
             <Text style={{position: 'absolute', color: '#000', fontFamily: 'CenturyGothic-Bold'}}>
-              {this.props.percentaje}
+              <AnimateNumber value={this.props.percentaje} countBy={1} timing="linear" />%
             </Text>
           </Animated.View>
         </View>
