@@ -25,6 +25,16 @@ class Skills extends PureComponent{
     ];
   }
 
+  createBars = () => {
+    let intervalValue = 90;
+    return this.data.map(
+      (item, index) => {
+        return (
+          <Bars key={index} name={item.name} startAt={index * intervalValue} percentaje={item.percentaje} primaryColor={item.primaryColor} />
+        );
+      }
+    );
+  }
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1}}>
