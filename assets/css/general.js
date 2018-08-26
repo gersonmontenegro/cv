@@ -3,8 +3,8 @@ import { StyleSheet, Dimensions } from 'react-native';
 export const screenWidth = Dimensions.get('window').width;
 export const screenHeight = Dimensions.get('window').height;
 export const mainBackgroundColor = '#2e70ac';
-export const defaultAnimationTime = 500;
 export const lightMainBackgroundColor = '#f5fcff';
+export const defaultAnimationTime = 100;
 export const profileColor = '#1fb9d7';
 export const skillsColor = '#3071ae';
 export const educationColor = '#4ab04a';
@@ -18,20 +18,18 @@ export const HeaderStyle = StyleSheet.create({
   headerContainer: {
     width: screenWidth,
     height: 102,
+    // height: 102,
     backgroundColor: mainBackgroundColor,
-    flexDirection: 'row'
     flexDirection: 'row',
   },
   avatarStyle: {
     marginTop: 7,
-    marginLeft: 12,
     marginLeft: 5,
     width: 80,
     height: 80,
   },
   textsContainer: {
     width: (screenWidth - 90),
-    alignItems: 'flex-end',
     alignItems: 'flex-start',
     marginLeft: 5,
     flexDirection: 'column'
@@ -45,13 +43,11 @@ export const HeaderStyle = StyleSheet.create({
     justifyContent: 'center'
   },
   nameTextStyle: {
-    alignSelf: 'flex-end',
     alignSelf: 'flex-start',
     fontFamily: 'CocoGothic-Bold',
-    marginRight: 15,
-    fontSize: 16
     fontSize: 16,
     marginLeft: 5,
+    color: '#000000'
   },
   titleStyle: {
     width: titleWidth,
@@ -62,10 +58,9 @@ export const HeaderStyle = StyleSheet.create({
     justifyContent: 'center'
   },
   titleTextStyle: {
-    alignSelf: 'flex-end',
     alignSelf: 'flex-start',
     fontFamily: 'CocoGothic',
-    marginRight: 15
     marginLeft: 5,
+    color: '#000000'
   }
 });
