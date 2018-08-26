@@ -6,12 +6,15 @@ import { defaultAnimationTime, mainBackgroundColor, finalAvatarDimension, Header
 class AvatarHeader extends PureComponent{
   constructor(props){
     super(props);
-    this.marginLeftHeader = new Animated.Value((screenWidth / 2) - 40);
+    this.marginLeftHeader = new Animated.Value((screenWidth / 2) - 40 - 5);
     this.headerOpacity = new Animated.Value(0);
     this.nameOpacity = new Animated.Value(0);
+    this.titleOpacity = new Animated.Value(0);
     this.refOpenTabMenu = null;
-    this.nameWidth = new Animated.Value((screenWidth - (screenWidth * .5)));
-    this.nameMarginLeft = new Animated.Value(0);
+    this.nameWidth = new Animated.Value((screenWidth - (screenWidth * .3)));
+    this.nameMarginLeft = new Animated.Value(200);
+    this.titleMarginLeft = new Animated.Value(290);
+    this.HeaderHeight = new Animated.Value(0);
   }
 
   startAnimation(value: number, showTabMenu: any){
@@ -22,7 +25,6 @@ class AvatarHeader extends PureComponent{
     // animations.push(this.changeNameOpacity());
     Animated.parallel(animations).start(
       () => {
-        // this.refOpenTabMenu(false);
         this.showName();
       }
     );
@@ -32,7 +34,31 @@ class AvatarHeader extends PureComponent{
     var textsAnimations = [];
     textsAnimations.push(this.changeAnimatedVariable(this.nameOpacity, 1, defaultAnimationTime * 5));
     textsAnimations.push(this.changeAnimatedVariable(this.nameMarginLeft, 0, defaultAnimationTime * 5));
-    Animated.parallel(textsAnimations).start();
+    Animated.parallel(textsAnimations).start(
+      () => {
+        this.showTitle();
+      }
+    );
+  }
+
+  showTitle(){
+    var textsAnimations = [];
+    textsAnimations.push(this.changeAnimatedVariable(this.titleOpacity, 1, defaultAnimationTime * 5));
+    textsAnimations.push(this.changeAnimatedVariable(this.titleMarginLeft, 0, defaultAnimationTime * 5));
+    Animated.parallel(textsAnimations).start(
+      () => {
+        this.backWallEmerge();
+      }
+    );
+  }
+
+  backWallEmerge(){
+    this.changeAnimatedVariable(this.HeaderHeight, 100, defaultAnimationTime * 5)
+    .start(
+      () => {
+        this.refOpenTabMenu(false);
+      }
+    );
   }
 
   changeAnimatedVariable(variable, value, time){
@@ -51,13 +77,25 @@ class AvatarHeader extends PureComponent{
         marginLeft: this.marginLeftHeader,
         marginTop: 20,
         width: screenWidth,
+        height: 100,
         flexDirection: 'row',
         opacity: this.headerOpacity
       }}>
+
+      <Animated.View style={{
+        width: screenWidth,
+        height: this.HeaderHeight,
+        backgroundColor: mainBackgroundColor,
+        position: 'absolute'
+      }}>
+      </Animated.View>
+
+
         <Image
           source={require('./../../assets/img/grs_pixel_with_circle_200.png')}
           style={{
             marginTop: 7,
+            marginLeft: 5,
             width: 80,
             height: 80,
           }}
@@ -78,7 +116,10 @@ class AvatarHeader extends PureComponent{
             </Text>
           </Animated.View>
 
-          <Animated.View style={HeaderStyle.titleStyle}>
+          <Animated.View style={[HeaderStyle.titleStyle, {
+            marginLeft: this.titleMarginLeft,
+            opacity: this.titleOpacity
+          }]}>
             <Text style={HeaderStyle.titleTextStyle}>
               Mobile developer
             </Text>
