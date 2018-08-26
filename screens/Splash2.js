@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Animated, Image, View, Text } from 'react-native';
-import { finalAvatarDimension, profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
+import { mainBackgroundColor, finalAvatarDimension, profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
+import { Header, Footer, Content, FooterTab, Button, Icon } from 'native-base';
 import SplashScreen from 'react-native-splash-screen';
+import AnimatedHeader from './../components/interface/AnimatedHeader';
 
 class Splash2 extends PureComponent{
   constructor(props){
@@ -185,7 +187,7 @@ class Splash2 extends PureComponent{
       }
     ).start(
       () => {
-        this.openTabMenu();
+        // this.openTabMenu();
       }
     );
   }
@@ -212,150 +214,16 @@ class Splash2 extends PureComponent{
     ).start();
   }
 
-  openTabMenu(){
-    this.callback(false);
-  }
-
   componentDidMount(){
     this.fadeInText();
   }
 
   render(){
-    // let opacityAnim = this.fadeInValue;
-    // let opacityBottomTextAnim = this.fadeInValueBottomText;
+    console.log("-->[5]", this.callback);
     return (
-      <View style={{marginTop: 0}}>
-        <View style={{
-          width: screenWidth,
-          height: screenHeight
-        }}>
-          <Animated.View
-            style={{
-              height: this.topBarHeight,
-              width: screenWidth,
-              backgroundColor: '#2e70ac',
-              justifyContent: 'center',
-              alignItems: 'center',
-              position: 'absolute'
-            }}
-          />
-          <Animated.Image
-            source={require('./../assets/img/grs_pixel_with_circle_200.png')}
-            style={{
-              marginTop: this.marginTopAvatar,
-              marginLeft: this.marginLeftAvatar,
-              width: this.avatarWidth,
-              height: this.avatarHeight,
-              alignSelf: 'center',
-            }}
-          />
-          <Animated.View
-            style={{
-              width: this.nameWidth,
-              height: 25,
-              position: 'absolute',
-              backgroundColor: 'white',
-              marginRight: 10,
-              marginTop: 35,
-              alignSelf: 'flex-end',
-              borderRadius: 10,
-              justifyContent: 'center',
-              opacity: this.nameOpacity
-            }}
-          >
-            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic-Bold', marginRight: 15, fontSize: 16}}>
-              Gerson Montenegro
-            </Text>
-          </Animated.View>
-          <Animated.View
-            style={{
-              opacity: this.titleOpacity,
-              width: this.titleWidth,
-              height: 25,
-              position: 'absolute',
-              backgroundColor: 'white',
-              marginRight: 10,
-              marginTop: 65,
-              alignSelf: 'flex-end',
-              borderRadius: 10,
-              justifyContent: 'center'
-            }}
-           >
-            <Text style={{ alignSelf: 'flex-end', fontFamily: 'CocoGothic', marginRight: 15 }}>
-              Mobile developer
-            </Text>
-           </Animated.View>
-        </View>
-        <View style={{
-          width: screenWidth,
-          position: 'absolute',
-          alignItems: 'center',
-          flexDirection: 'column'
-        }}>
-          <Animated.View
-            style={{
-              opacity: this.opacityAnim,
-              marginTop: this.marginTopTexts
-            }}
-          >
-            <Text style={{fontFamily: 'CocoGothic-Bold', fontSize: 25}}>
-              Gerson Montenegro
-            </Text>
-          </Animated.View>
-
-          <Animated.View
-          style={{
-            opacity: this.opacityBottomTextAnim
-          }}
-          >
-            <Text style={{marginTop: 230, fontFamily: 'CocoGothic', fontSize: 20}}>
-              Mobile developer
-            </Text>
-          </Animated.View>
-        </View>
-        <View style={{
-          position: 'absolute',
-          width: screenWidth,
-          flexDirection: 'row'
-        }}>
-          <Animated.View
-            style={{
-              width: screenWidth / 4,
-              height: screenHeight / 2,
-              backgroundColor: profileColor,
-              marginTop: this.profileMarginTop,
-              opacity: this.profileOpacity
-            }}
-          />
-          <Animated.View
-            style={{
-              width: screenWidth / 4,
-              height: screenHeight / 2,
-              backgroundColor: skillsColor,
-              marginTop: this.skillsMarginTop,
-              opacity: this.skillsOpacity
-            }}
-          />
-          <Animated.View
-            style={{
-              width: screenWidth / 4,
-              height: screenHeight / 2,
-              backgroundColor: educationColor,
-              marginTop: this.educationMarginTop,
-              opacity: this.educationOpacity
-            }}
-          />
-          <Animated.View
-            style={{
-              width: screenWidth / 4,
-              height: screenHeight / 2,
-              backgroundColor: experiencieColor,
-              marginTop: this.experienceMarginTop,
-              opacity: this.experienceOpacity
-            }}
-          />
-        </View>
-      </View>
+      <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
+        <AnimatedHeader refOpenTabMenu={this.callback} />
+    </View>
     );
   }
 }
