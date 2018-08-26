@@ -16,6 +16,10 @@ class AnimatedHeader extends PureComponent{
     this.marginTitle = new Animated.Value(200);
     this.nameOpacity = new Animated.Value(0);
     this.titleOpacity = new Animated.Value(0);
+    this.avatarOpacity = new Animated.Value(1);
+    this.tmpProp = 'abc';
+    this.executeMoveHeader = true;
+    this.refOpenTabMenu = this.props.refOpenTabMenu;
   }
 
   componentDidMount(){
@@ -40,8 +44,28 @@ class AnimatedHeader extends PureComponent{
     animations.push(this.raiseAvatar());
     animations.push(this.changeScaleXAvatar());
     animations.push(this.changeScaleYAvatar());
-    Animated.parallel(animations).start();
+    Animated.parallel(animations).start(() => {
+      if(this.executeMoveHeader){
+        this.executeMoveHeader = false;
+        this.moveHeader();
+      }
+    });
     this.showHideNameAndTitle(0, 7);
+  }
+
+  moveHeader(){
+    this.hideShowOpacity(this.avatarOpacity, 0);
+    this.avatarHeaderRef.startAnimation(5, this.refOpenTabMenu);
+  }
+
+  hideShowOpacity(variable, value){
+    Animated.timing(
+      variable,
+      {
+        toValue: value,
+        duration: 0
+      }
+    ).start();
   }
 
   changeScaleXAvatar(){
@@ -122,7 +146,12 @@ class AnimatedHeader extends PureComponent{
         backgroundColor: lightMainBackgroundColor,
         marginTop: -20
       }}>
-        <AvatarHeader opacity={1} />
+        <AvatarHeader ref={
+            avatarHeaderRef => {
+              this.avatarHeaderRef = avatarHeaderRef;
+            }
+          }
+        />
         <Animated.View style={{
           position: 'absolute',
           justifyContent: 'center',
@@ -135,7 +164,8 @@ class AnimatedHeader extends PureComponent{
               width: this.avatarWidth,
               height: this.avatarHeight,
               alignSelf: 'center',
-              marginTop: this.marginTopAvatar
+              marginTop: this.marginTopAvatar,
+              opacity: this.avatarOpacity
             }}
           />
 
@@ -145,7 +175,6 @@ class AnimatedHeader extends PureComponent{
               height: screenHeight,
               borderRadius: 10,
               justifyContent: 'center',
-              opacity: 1,
               position: 'absolute'
             }}
           >
