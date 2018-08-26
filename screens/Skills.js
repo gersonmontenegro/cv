@@ -17,11 +17,15 @@ class Skills extends PureComponent{
       {name: 'Laravel', percentaje: 50, primaryColor: '#f0514b'},
       {name: 'React Native', percentaje: 30, primaryColor: '#1ca6cd'},
       {name: 'Javascript', percentaje: 80, primaryColor: '#d4b840'},
+      {name: 'Cordova', percentaje: 70, primaryColor: '#6d767d'},
+      {name: 'jQuery', percentaje: 80, primaryColor: '#075da1'},
+      {name: 'jQueryMobile', percentaje: 85, primaryColor: '#7fbf51'},
       {name: 'Startup Mentality', percentaje: 90, primaryColor: '#46617A'},
       {name: 'Team leading', percentaje: 80, primaryColor: '#f0d89e'},
       {name: 'ActionScript', percentaje: 90, primaryColor: '#db4e4e'},
       {name: 'Adobe Flash Builder', percentaje: 75, primaryColor: '#cdbec3'},
       {name: 'Adobe Flash', percentaje: 80, primaryColor: '#cd1018'},
+      {name: 'Pixel art', percentaje: 75, primaryColor: '#eee9cd'},
     ];
   }
 
