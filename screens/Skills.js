@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import { ScrollView, Image, View, Text } from 'react-native';
 import { screenWidth } from './../assets/css/general';
 import Circle from './../components/primitives/Circle';
-import { VictoryPie } from 'victory-native';
-import PieDetail from './../components/PieDetail';
 import Bars from './../components/charts/Bars';
 
 const timer = require('react-native-timer');

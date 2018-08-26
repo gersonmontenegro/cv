@@ -4,6 +4,7 @@ export const screenWidth = Dimensions.get('window').width;
 export const screenHeight = Dimensions.get('window').height;
 export const mainBackgroundColor = '#2e70ac';
 export const defaultAnimationTime = 500;
+export const lightMainBackgroundColor = '#f5fcff';
 export const profileColor = '#1fb9d7';
 export const skillsColor = '#3071ae';
 export const educationColor = '#4ab04a';
