@@ -20,16 +20,20 @@ export const HeaderStyle = StyleSheet.create({
     height: 102,
     backgroundColor: mainBackgroundColor,
     flexDirection: 'row'
+    flexDirection: 'row',
   },
   avatarStyle: {
     marginTop: 7,
     marginLeft: 12,
+    marginLeft: 5,
     width: 80,
     height: 80,
   },
   textsContainer: {
     width: (screenWidth - 90),
     alignItems: 'flex-end',
+    alignItems: 'flex-start',
+    marginLeft: 5,
     flexDirection: 'column'
   },
   nameStyle: {
@@ -42,9 +46,12 @@ export const HeaderStyle = StyleSheet.create({
   },
   nameTextStyle: {
     alignSelf: 'flex-end',
+    alignSelf: 'flex-start',
     fontFamily: 'CocoGothic-Bold',
     marginRight: 15,
     fontSize: 16
+    fontSize: 16,
+    marginLeft: 5,
   },
   titleStyle: {
     width: titleWidth,
@@ -56,7 +63,9 @@ export const HeaderStyle = StyleSheet.create({
   },
   titleTextStyle: {
     alignSelf: 'flex-end',
+    alignSelf: 'flex-start',
     fontFamily: 'CocoGothic',
     marginRight: 15
+    marginLeft: 5,
   }
 });
