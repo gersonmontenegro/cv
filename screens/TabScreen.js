@@ -120,7 +120,7 @@ class TabScreen extends Component{
   render(){
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
-        <Header style={{backgroundColor: mainBackgroundColor, height: 120}}>
+        <Header style={{backgroundColor: mainBackgroundColor, height: 100}}>
           <CustomHeader />
         </Header>
         <Content>
