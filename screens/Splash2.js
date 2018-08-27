@@ -77,6 +77,7 @@ class Splash2 extends PureComponent{
       {
         toValue: screenHeight - 5,
         duration: defaultAnimationTime * 2
+        duration: defaultAnimationTime * 4
       }
     ).start();
     Animated.timing(
@@ -84,6 +85,7 @@ class Splash2 extends PureComponent{
       {
         toValue: 1,
         duration: defaultAnimationTime * 2
+        duration: defaultAnimationTime * 4
       }
     ).start();
   }

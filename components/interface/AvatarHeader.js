@@ -20,7 +20,7 @@ class AvatarHeader extends PureComponent{
   startAnimation(value: number, showTabMenu: any){
     this.refOpenTabMenu = showTabMenu;
     const animations = [];
-    animations.push(this.changeAnimatedVariable(this.marginLeftHeader, value, defaultAnimationTime * 5));
+    animations.push(this.changeAnimatedVariable(this.marginLeftHeader, value, defaultAnimationTime * 2.5));
     animations.push(this.changeAnimatedVariable(this.headerOpacity, 1, 0));
     // animations.push(this.changeNameOpacity());
     Animated.parallel(animations).start(
@@ -32,8 +32,8 @@ class AvatarHeader extends PureComponent{
 
   showName(){
     var textsAnimations = [];
-    textsAnimations.push(this.changeAnimatedVariable(this.nameOpacity, 1, defaultAnimationTime * 5));
-    textsAnimations.push(this.changeAnimatedVariable(this.nameMarginLeft, 0, defaultAnimationTime * 5));
+    textsAnimations.push(this.changeAnimatedVariable(this.nameOpacity, 1, defaultAnimationTime * 2.5));
+    textsAnimations.push(this.changeAnimatedVariable(this.nameMarginLeft, 0, defaultAnimationTime * 2.5));
     Animated.parallel(textsAnimations).start(
       () => {
         this.showTitle();
@@ -43,8 +43,8 @@ class AvatarHeader extends PureComponent{
 
   showTitle(){
     var textsAnimations = [];
-    textsAnimations.push(this.changeAnimatedVariable(this.titleOpacity, 1, defaultAnimationTime * 5));
-    textsAnimations.push(this.changeAnimatedVariable(this.titleMarginLeft, 0, defaultAnimationTime * 5));
+    textsAnimations.push(this.changeAnimatedVariable(this.titleOpacity, 1, defaultAnimationTime * 2.5));
+    textsAnimations.push(this.changeAnimatedVariable(this.titleMarginLeft, 0, defaultAnimationTime * 2.5));
     Animated.parallel(textsAnimations).start(
       () => {
         this.backWallEmerge();
@@ -53,7 +53,7 @@ class AvatarHeader extends PureComponent{
   }
 
   backWallEmerge(){
-    this.changeAnimatedVariable(this.HeaderHeight, 100, defaultAnimationTime * 5)
+    this.changeAnimatedVariable(this.HeaderHeight, 100, defaultAnimationTime * 2)
     .start(
       () => {
         this.refOpenTabMenu(false);

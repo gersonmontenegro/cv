@@ -47,27 +47,27 @@ class TabScreen extends Component{
     }, 0);
 
     setTimeout(() => {
-      this.animatingValue(this.skillsOpacity, 1, defaultAnimationTime);
+      this.animatingValue(this.skillsOpacity, 1, defaultAnimationTime * 3);
     }, defaultAnimationTime / 3);
 
     setTimeout(() => {
-      this.animatingValue(this.skillsMarginTop, 0, defaultAnimationTime);
+      this.animatingValue(this.skillsMarginTop, 0, defaultAnimationTime * 3);
     }, defaultAnimationTime / 3);
 
     setTimeout(() => {
-      this.animatingValue(this.educationOpacity, 1, defaultAnimationTime);
+      this.animatingValue(this.educationOpacity, 1, defaultAnimationTime * 3);
     }, defaultAnimationTime / 2);
 
     setTimeout(() => {
-      this.animatingValue(this.educationMarginTop, 0, defaultAnimationTime);
+      this.animatingValue(this.educationMarginTop, 0, defaultAnimationTime * 3);
     }, defaultAnimationTime / 2);
 
     setTimeout(() => {
-      this.animatingValue(this.experienceOpacity, 1, defaultAnimationTime);
+      this.animatingValue(this.experienceOpacity, 1, defaultAnimationTime * 3);
     }, defaultAnimationTime);
 
     setTimeout(() => {
-      this.animatingValue(this.experienceMarginTop, 0, defaultAnimationTime);
+      this.animatingValue(this.experienceMarginTop, 0, defaultAnimationTime * 3);
     }, defaultAnimationTime);
   }
 
