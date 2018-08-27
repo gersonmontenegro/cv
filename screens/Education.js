@@ -23,6 +23,13 @@ class Education extends PureComponent{
         imageUrl: require('./../assets/img/education.png')
       },
       {
+        time: '2015',
+        title: 'Agile methodologies',
+        icon: require('./../assets/img/book.png'),
+        description: 'With this training, I learned how to command a software developer team better than before, and how to keep one analytica eye in every task, every issue, without bother at every engineering on my charge. Actually, I confirmed that some of my habits about to deal with developers match with the rules of Agile methodologies.',
+        imageUrl: require('./../assets/img/education.png')
+      },
+      {
         time: '2006',
         title: 'Systems engineering',
         icon: require('./../assets/img/graduate.png'),
