@@ -33,6 +33,15 @@ class Splash2 extends PureComponent{
     this.nameOpacity = new Animated.Value(0);
     this.titleWidth = new Animated.Value(0);
     this.titleOpacity = new Animated.Value(0);
+
+    this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.profileOpacity = new Animated.Value(0);
+    this.skillsMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.skillsOpacity = new Animated.Value(0);
+    this.educationMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.educationOpacity = new Animated.Value(0);
+    this.experienceMarginTop = new Animated.Value(-(screenHeight / 2));
+    this.experienceOpacity = new Animated.Value(0);
   }
 
   fadeInText(){
@@ -76,14 +85,14 @@ class Splash2 extends PureComponent{
       marginVar,
       {
         toValue: screenHeight - 5,
-        duration: defaultAnimationTime * 2
+        duration: defaultAnimationTime * 4
       }
     ).start();
     Animated.timing(
       opacityVar,
       {
         toValue: 1,
-        duration: defaultAnimationTime * 2
+        duration: defaultAnimationTime * 4
       }
     ).start();
   }
@@ -215,10 +224,51 @@ class Splash2 extends PureComponent{
   }
 
   render(){
-    console.log("-->[5]", this.callback);
     return (
       <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
         <AnimatedHeader refOpenTabMenu={this.callback} />
+        <View style={{
+          position: 'absolute',
+          width: screenWidth,
+          flexDirection: 'row'
+        }}>
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: profileColor,
+              marginTop: this.profileMarginTop,
+              opacity: this.profileOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: skillsColor,
+              marginTop: this.skillsMarginTop,
+              opacity: this.skillsOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: educationColor,
+              marginTop: this.educationMarginTop,
+              opacity: this.educationOpacity
+            }}
+          />
+          <Animated.View
+            style={{
+              width: screenWidth / 4,
+              height: screenHeight / 2,
+              backgroundColor: experiencieColor,
+              marginTop: this.experienceMarginTop,
+              opacity: this.experienceOpacity
+            }}
+          />
+        </View>
     </View>
     );
   }

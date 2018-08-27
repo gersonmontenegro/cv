@@ -23,7 +23,7 @@ class AnimatedHeader extends PureComponent{
   }
 
   componentDidMount(){
-    this.showHideNameAndTitle(1, 10);
+    this.showHideNameAndTitle(1, 4);
   }
 
   showHideNameAndTitle(value: number, factor: number){
@@ -32,7 +32,10 @@ class AnimatedHeader extends PureComponent{
     animations.push(this.fadeInTitleText(value, factor));
     Animated.sequence(animations).start(
       () => {
-        this.textsGoToBottom();
+        setTimeout(() => {
+          this.textsGoToBottom();
+        }, defaultAnimationTime * 4)
+
       }
     );
   }
@@ -50,7 +53,7 @@ class AnimatedHeader extends PureComponent{
         this.moveHeader();
       }
     });
-    this.showHideNameAndTitle(0, 7);
+    this.showHideNameAndTitle(0, 4);
   }
 
   moveHeader(){
@@ -73,7 +76,7 @@ class AnimatedHeader extends PureComponent{
       this.avatarWidth,
       {
         toValue: 80,
-        duration: defaultAnimationTime * 10
+        duration: defaultAnimationTime * 1.5
       }
     );
   }
@@ -83,7 +86,7 @@ class AnimatedHeader extends PureComponent{
       this.avatarHeight,
       {
         toValue: 80,
-        duration: defaultAnimationTime * 10
+        duration: defaultAnimationTime * 1.5
       }
     );
   }
@@ -93,7 +96,7 @@ class AnimatedHeader extends PureComponent{
       this.marginTopAvatar,
       {
         toValue: -(screenHeight / 2) - 160,
-        duration: defaultAnimationTime * 10
+        duration: defaultAnimationTime * 1.5
       }
     );
   }
@@ -103,7 +106,7 @@ class AnimatedHeader extends PureComponent{
       this.marginName,
       {
         toValue: 2000,
-        duration: defaultAnimationTime * 10
+        duration: defaultAnimationTime * 1.5
       }
     );
   }
@@ -113,7 +116,7 @@ class AnimatedHeader extends PureComponent{
       this.marginTitle,
       {
         toValue: 1000,
-        duration: defaultAnimationTime * 10
+        duration: defaultAnimationTime * 1.5
       }
     );
   }
