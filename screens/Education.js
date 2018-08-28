@@ -12,7 +12,7 @@ class Education extends PureComponent{
         time: '2017',
         title: 'Soft. engineering specialist',
         icon: require('./../assets/img/graduate.png'),
-        description: 'Skills to take the leader of any software or technologic project, with abilities to organize works team, mostly, software teams, imporving their stimations, and resources administration.',
+        description: 'Skills to take the leader of any software or technologic project, with abilities to organize works team, mostly, software teams, improving their stimations, and resources administration.',
         imageUrl: require('./../assets/img/unillanos.png')
       },
       {
@@ -26,14 +26,14 @@ class Education extends PureComponent{
         time: '2015',
         title: 'Agile methodologies',
         icon: require('./../assets/img/book.png'),
-        description: 'With this training, I learned how to command a software developer team better than before, and how to keep one analytica eye in every task, every issue, without bother at every engineering on my charge. Actually, I confirmed that some of my habits about to deal with developers match with the rules of Agile methodologies.',
+        description: 'With this training, I learned how to command a software developer team better than before, and how to keep one analytical eye in every task, every issue, without bother at every engineering on my charge. Actually, I confirmed that some of my habits about to deal with developers match with the rules of Agile methodologies.',
         imageUrl: require('./../assets/img/education.png')
       },
       {
         time: '2006',
         title: 'Systems engineering',
         icon: require('./../assets/img/graduate.png'),
-        description: 'According to my alma mater, I got the skills to optimize process, and improving the resources management of any kind of project, and even know some of networks infrastructure. But, I has been focusing my career in the software industry, making a lot of projects in many areas, from desktop applications, passing for videogames, social applications, and ending with mobile applications, and those lasts ones are my favorites, because, you know, I love code!.',
+        description: 'According to my alma mater, I got the skills to optimize process, and improving the resources management of any kind of project, and even know some of networks infrastructure. But, I have been focusing my career in the software industry, making a lot of projects in many areas, from desktop applications, passing for videogames, social applications, and ending with mobile applications, and those last ones are my favorites, because, you know, I love code!.',
         imageUrl: require('./../assets/img/unillanos.png')
       },
     ];
