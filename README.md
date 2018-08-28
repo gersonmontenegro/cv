@@ -1,5 +1,9 @@
+Since August 28th this app is available in the Play Store. Check it out!
 
+![enter image description here](https://lh3.googleusercontent.com/x6fD4v8L2z6PUdzeARkEye6R0I7u0VZRU_8C6WNTHVnmu7F62tCS5-NSU3TsN-jmWyZdQ6-Tdp3A=s100)[![alt text][image]][hyperlink]
 
+  [hyperlink]: https://play.google.com/store/apps/details?id=com.gersonmontenegro.cv
+  [image]: https://lh3.googleusercontent.com/o18ZiflyX7huqdevAf-FxGJudUxYyrYG0MRNKsf7M-tMF7pgEHp5_1EdZIswMEI2JJAAU5rB6fnB=s100?s=128&d=identicon&r=PG (tooltip)
 # cv
 **My Curriculum Vitae in an App**
 
@@ -211,3 +215,9 @@ The implementation was not traumatic, it just took a simple line in the same pla
  <AnimateNumber value={this.props.percentaje} countBy={1} timing="linear" />%
 </Text>
 ````
+
+Finally, after a month, today (28/08/18), early in the morning, I published the app in Play Store, and is available [here].(https://play.google.com/store/apps/details?id=com.gersonmontenegro.cv) 
+
+I thought that after that I could rest a couple of days, but no. I received a lot of feedback from my closer friends, and I want to implement some details, and correct some grammar.
+
+Anyway, I'm going to keep this app and its content updated, because is my presentation.
