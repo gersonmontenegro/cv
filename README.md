@@ -221,3 +221,13 @@ Finally, after a month, today (28/08/18), early in the morning, I published the 
 I thought that after that I could rest a couple of days, but no. I received a lot of feedback from my closer friends, and I want to implement some details, and correct some grammar.
 
 Anyway, I'm going to keep this app and its content updated, because is my presentation.
+
+At this moment, I got enough feedback to know what do I need to do: Improve the Skills interface.
+
+So, I'm gonna increase the information opening a new interface when I touch a skill bar. Like always, I got a first scratch
+
+![enter image description here](https://lh3.googleusercontent.com/S4Dx6EW_4Y60NFr_ZSycnHKyp3wKQ2CG8xwCOLllPerSzytc5zBiDwsQSdJqDaKfJY6FRLt-ZX6e=s600)
+
+I would prefer to put a radar graphic rather than put bars, or cakes, because I think that's the coolest graphic for what I want to represent.
+
+It's not finish right now, but is importan for me to have a north where I need go.
