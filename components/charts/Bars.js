@@ -37,6 +37,14 @@ class Bars extends PureComponent{
     ).start();
   }
 
+  yearsToMonths = (time: any) => {
+    if(time < 1){
+      return Math.floor(time * 12) + ' months';
+    }else{
+      return time + ' years';
+    }
+  }
+
   setModalVisible(visible){
     this.setState({ modalVisible: visible });
   }
