@@ -66,6 +66,39 @@ class Bars extends PureComponent{
             <Text>
               I'm the modal!
             </Text>
+            <View style={{ marginLeft: 10, marginRight: 10}}>
+              <View style={{width: '100%', backgroundColor: '#cccccc', borderRadius: 10}}>
+                <Text style={{ fontFamily: 'CenturyGothic', fontSize: 12, alignSelf: 'center', color: '#000000'}}>
+                  Skills resume
+                </Text>
+              </View>
+              <View style={{backgroundColor: '#f5f5f5', borderRadius: 10, flexDirection: 'row'}}>
+                <View style={{width: (screenWidth / 3)}}>
+                  <Text style={{ fontFamily: 'CenturyGothic', fontSize: 12}}>
+                    PROJECTS
+                  </Text>
+                </View>
+                <View>
+                  <Text style={{fontFamily: 'CenturyGothic-Bold', fontSize: 12, color: '#000000'}}>
+                    {this.props.projects.quantity}
+                  </Text>
+                </View>
+              </View>
+
+              <View style={{backgroundColor: '#f5f5f5', borderRadius: 10, flexDirection: 'row'}}>
+                <View style={{width: (screenWidth / 3)}}>
+                  <Text style={{ fontFamily: 'CenturyGothic', fontSize: 12}}>
+                    Time
+                  </Text>
+                </View>
+                <View>
+                  <Text style={{fontFamily: 'CenturyGothic-Bold', fontSize: 12, color: '#000000'}}>
+                    {this.yearsToMonths(this.props.projects.time)}
+                  </Text>
+                </View>
+              </View>
+            </View>
+
             <TouchableHighlight
               style={{
                 marginLeft: 10,
