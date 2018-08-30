@@ -67,14 +67,27 @@ class Bars extends PureComponent{
               I'm the modal!
             </Text>
             <TouchableHighlight
+              style={{
+                marginLeft: 10,
+                width: 150,
+                height: 30,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: mainBackgroundColor,
+                borderRadius: 10,
+              }}
               onPress={
                 () => {
                   this.setModalVisible(!this.state.modalVisible);
                 }
               }
               >
-              <Text>
-                Close modal
+              <Text style={{
+                color: 'white',
+                alignSelf: 'center',
+                fontFamily: 'CocoGothic'
+              }}>
+                Close
               </Text>
             </TouchableHighlight>
           </View>
