@@ -231,3 +231,85 @@ So, I'm gonna increase the information opening a new interface when I touch a sk
 I would prefer to put a radar graphic rather than put bars, or cakes, because I think that's the coolest graphic for what I want to represent.
 
 It's not finish right now, but is importan for me to have a north where I need go.
+
+After struggling for a little while, I think at least I got the design that I wanted:
+
+![enter image description here](https://lh3.googleusercontent.com/e1lfGaVfDFoNTycf6WIwC-zJzkhsxtsR2KGeaj7KTQ5ZPDIzg-1w4PFiDIcsbIcWScZBSNrQxkXa=s600 "First RC Skill detail")
+
+I had some problems at the beginning of the implementation, because I didn't really know exactly how to put texts and icon over the background, until I understood that a children can't to overlay to a parent, so, I made them all siblings, and then, I could do what I wanted.
+
+So, I leave the structure of the skills item (actually is another component) like this:
+
+    render() {
+	    return (
+		    <View  style={itemStyle.itemContainer}>
+			    <View  style={[itemStyle.back]}  />
+				    <View  style={[itemStyle.iconContainer]}>
+				    <Image  style={itemStyle.iconImage}  source={this.props.icon}  />
+			    </View>
+				    <View  style={itemStyle.nameContainer}>
+				    <Text  style={itemStyle.nameStyle}>{this.props.name}</Text>
+			    </View>
+				    <View  style={itemStyle.valueContainer}>
+				    <Text  style={itemStyle.valueStyle}>{this.props.value}</Text>
+			    </View>
+		    </View>
+    );
+
+And, in the styles files I wrote:
+
+    export  const  itemStyle  =  StyleSheet.create({
+	    back: {
+		    backgroundColor:  itemBackgroundColor,
+		    width:  screenWidth  -  30,
+		    borderRadius:  10,
+		    height:  iconSpace,
+		    zIndex:  1
+	    },
+	    iconContainer: {
+		    width:  iconSpace,
+		    justifyContent:  "center",
+		    alignItems:  "center",
+		    marginLeft:  -screenWidth  +  10,
+		    zIndex:  2
+	    },
+	    iconImage: {
+		    width:  iconDimension,
+		    height:  iconDimension
+	    },
+	    shadow: {
+		    shadowColor:  "#000",
+		    shadowOffset: { width:  8, height:  2 },
+		    shadowOpacity:  1,
+		    shadowRadius:  10
+	    },
+	    nameContainer: {
+		    width: (screenWidth  -  iconSpace) /  2,
+		    justifyContent:  "center",
+		    zIndex:  1
+	    },
+	    nameStyle: {
+		    fontFamily:  "CenturyGothic",
+		    fontSize:  15,
+		    color:  "black"
+	    },
+	    valueContainer: {
+		    width: (screenWidth  -  iconSpace) /  2,
+		    justifyContent:  "center",
+		    zIndex:  1
+	    },
+	    valueStyle: {
+		    fontFamily:  "CenturyGothic-Bold",
+		    fontSize:  15,
+		    color:  "#000000"
+	    },
+    
+	    itemContainer: {
+		    height:  iconSpace,
+		    marginTop:  5,
+		    flexDirection:  "row",
+		    marginLeft:  20
+	    }
+    });
+
+I've don't implemented the shadows yet, but I will.
