@@ -6,7 +6,7 @@ import {
   Animated,
   View,
   Text,
-  Image
+  ScrollView
 } from "react-native";
 
 import { Button } from "native-base";
@@ -30,6 +30,7 @@ import {
 } from "victory-native";
 
 import LinearGradient from "react-native-linear-gradient";
+import ItemDetail from "./ItemDetail";
 
 const characterData = [
   { time: 5, projects: 20, feeling: 100 },
@@ -50,8 +51,6 @@ class Bars extends PureComponent {
       props.primaryColor != "" ? props.primaryColor : "#ff00ff";
     this.dynamicWidth = new Animated.Value(0);
     this.dynamicPercentaje = new Animated.Value(0);
-    this.iconSpace = 40;
-    this.iconDimension = 25;
   }
 
   getMaxima(data) {
@@ -216,7 +215,12 @@ class Bars extends PureComponent {
               </VictoryChart>
             </LinearGradient>
             {/* </View> */}
-            <View style={{ marginLeft: 15, marginRight: 15, marginTop: -20 }}>
+            <View
+              style={{
+                marginTop: -20,
+                flexDirection: "column"
+              }}
+            >
               {/* <View
                 style={{
                   width: "100%",
@@ -235,59 +239,23 @@ class Bars extends PureComponent {
                   Skills resume
                 </Text>
               </View> */}
-
-              <View
-                style={{
-                  backgroundColor: "white",
-                  borderRadius: 10,
-                  flexDirection: "row",
-                  height: this.iconSpace
-                }}
-              >
-                <View
-                  style={{
-                    width: this.iconSpace,
-                    justifyContent: "center",
-                    alignItems: "center"
-                  }}
-                >
-                  <Image
-                    source={require("./../../assets/img/icons/projects.png")}
-                    style={{
-                      width: this.iconDimension,
-                      height: this.iconDimension
-                    }}
-                  />
-                </View>
-
-                <View
-                  style={{
-                    width: (screenWidth - this.iconSpace) / 2,
-                    justifyContent: "center"
-                  }}
-                >
-                  <Text style={{ fontFamily: "CenturyGothic", fontSize: 12 }}>
-                    Projects
-                  </Text>
-                </View>
-
-                <View
-                  style={{
-                    width: (screenWidth - this.iconSpace) / 2,
-                    justifyContent: "center"
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: "CenturyGothic-Bold",
-                      fontSize: 12,
-                      color: "#000000"
-                    }}
-                  >
-                    {this.props.projects.quantity}
-                  </Text>
-                </View>
-              </View>
+              <ScrollView>
+                <ItemDetail
+                  name="Projects"
+                  value="4"
+                  icon={require("./../../assets/img/icons/projects.png")}
+                />
+                <ItemDetail
+                  name="Time"
+                  value="7 months"
+                  icon={require("./../../assets/img/icons/time.png")}
+                />
+                <ItemDetail
+                  name="Feeling"
+                  value="75%"
+                  icon={require("./../../assets/img/icons/feeling.png")}
+                />
+              </ScrollView>
             </View>
 
             <TouchableHighlight
