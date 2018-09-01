@@ -1,18 +1,76 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from "react-native";
 
-export const screenWidth = Dimensions.get('window').width;
-export const screenHeight = Dimensions.get('window').height;
-export const mainBackgroundColor = '#2e70ac';
-export const lightMainBackgroundColor = '#f5fcff';
-export const defaultAnimationTime = 300;
-export const profileColor = '#1fb9d7';
-export const skillsColor = '#3071ae';
-export const educationColor = '#4ab04a';
-export const experiencieColor = '#f86236';
+export const screenWidth = Dimensions.get("window").width;
+export const screenHeight = Dimensions.get("window").height;
+export const mainBackgroundColor = "#2e70ac";
+export const lightMainBackgroundColor = "#f5fcff";
+export const itemBackgroundColor = "#f0f7ef";
+export const defaultAnimationTime = 30;
+// export const defaultAnimationTime = 300;
+export const profileColor = "#1fb9d7";
+export const skillsColor = "#3071ae";
+export const educationColor = "#4ab04a";
+export const experiencieColor = "#f86236";
 export const finalAvatarDimension = 80;
 
-const nameWidth: numner = screenWidth - (screenWidth * .3);
-const titleWidth: numner = screenWidth - (screenWidth * .5);
+export const iconSpace = 40;
+export const iconDimension = 25;
+
+const nameWidth = screenWidth - screenWidth * 0.3;
+const titleWidth = screenWidth - screenWidth * 0.5;
+
+export const itemStyle = StyleSheet.create({
+  back: {
+    backgroundColor: itemBackgroundColor,
+    width: screenWidth - 30,
+    borderRadius: 10,
+    height: iconSpace,
+    zIndex: 1
+  },
+  iconContainer: {
+    width: iconSpace,
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: -screenWidth + 10,
+    zIndex: 2
+  },
+  iconImage: {
+    width: iconDimension,
+    height: iconDimension
+  },
+  shadow: {
+    shadowColor: "#000",
+    shadowOffset: { width: 8, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 10
+  },
+  nameContainer: {
+    width: (screenWidth - iconSpace) / 2,
+    justifyContent: "center",
+    zIndex: 1
+  },
+  nameStyle: {
+    fontFamily: "CenturyGothic",
+    fontSize: 15,
+    color: "black"
+  },
+  valueContainer: {
+    width: (screenWidth - iconSpace) / 2,
+    justifyContent: "center",
+    zIndex: 1
+  },
+  valueStyle: {
+    fontFamily: "CenturyGothic-Bold",
+    fontSize: 15,
+    color: "#000000"
+  },
+  itemContainer: {
+    height: iconSpace,
+    marginTop: 5,
+    flexDirection: "row",
+    marginLeft: 20
+  }
+});
 
 export const HeaderStyle = StyleSheet.create({
   headerContainer: {
@@ -20,47 +78,47 @@ export const HeaderStyle = StyleSheet.create({
     height: 102,
     // height: 102,
     backgroundColor: mainBackgroundColor,
-    flexDirection: 'row',
+    flexDirection: "row"
   },
   avatarStyle: {
     marginTop: 7,
     marginLeft: 5,
     width: 80,
-    height: 80,
+    height: 80
   },
   textsContainer: {
-    width: (screenWidth - 90),
-    alignItems: 'flex-start',
+    width: screenWidth - 90,
+    alignItems: "flex-start",
     marginLeft: 5,
-    flexDirection: 'column'
+    flexDirection: "column"
   },
   nameStyle: {
     height: 25,
     width: nameWidth,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginTop: 17,
     borderRadius: 10,
-    justifyContent: 'center'
+    justifyContent: "center"
   },
   nameTextStyle: {
-    alignSelf: 'flex-start',
-    fontFamily: 'CocoGothic-Bold',
+    alignSelf: "flex-start",
+    fontFamily: "CocoGothic-Bold",
     fontSize: 16,
     marginLeft: 5,
-    color: '#000000'
+    color: "#000000"
   },
   titleStyle: {
     width: titleWidth,
     height: 25,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginTop: 5,
     borderRadius: 10,
-    justifyContent: 'center'
+    justifyContent: "center"
   },
   titleTextStyle: {
-    alignSelf: 'flex-start',
-    fontFamily: 'CocoGothic',
+    alignSelf: "flex-start",
+    fontFamily: "CocoGothic",
     marginLeft: 5,
-    color: '#000000'
+    color: "#000000"
   }
 });
