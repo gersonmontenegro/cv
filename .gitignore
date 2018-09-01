@@ -56,3 +56,6 @@ buck-out/
 *.jsbundle
 
 android/gradle.properties
+./.vscode
+.vscode/settings.json
+.vscode/launch.json
