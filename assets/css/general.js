@@ -13,9 +13,10 @@ export const educationColor = "#4ab04a";
 export const experiencieColor = "#f86236";
 export const finalAvatarDimension = 80;
 
-export const iconSpace = 40;
-export const iconDimension = 25;
+const iconSpace = 40;
+const iconDimension = 25;
 
+const itemQuantity = 5;
 const nameWidth = screenWidth - screenWidth * 0.3;
 const titleWidth = screenWidth - screenWidth * 0.5;
 
@@ -45,7 +46,7 @@ export const itemStyle = StyleSheet.create({
     shadowRadius: 10
   },
   nameContainer: {
-    width: (screenWidth - iconSpace) / 2,
+    width: (screenWidth - iconSpace) / (itemQuantity - 3),
     justifyContent: "center",
     zIndex: 1
   },
@@ -55,8 +56,9 @@ export const itemStyle = StyleSheet.create({
     color: "black"
   },
   valueContainer: {
-    width: (screenWidth - iconSpace) / 2,
+    width: (screenWidth - iconSpace) / (itemQuantity - 2),
     justifyContent: "center",
+    alignItems: "flex-end",
     zIndex: 1
   },
   valueStyle: {
@@ -69,6 +71,27 @@ export const itemStyle = StyleSheet.create({
     marginTop: 5,
     flexDirection: "row",
     marginLeft: 20
+  },
+  arrowContainer: {
+    width: iconSpace,
+    height: iconSpace,
+    zIndex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingLeft: 20
+  },
+  arrowTouchContainer: {
+    width: iconDimension,
+    height: 30,
+    justifyContent: "center",
+    alignItems: "flex-end"
+  },
+  arrowStyle: {
+    width: 20,
+    height: 20,
+    alignSelf: "center",
+    borderRadius: 12,
+    backgroundColor: "#c0d6e4"
   }
 });
 

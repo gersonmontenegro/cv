@@ -221,39 +221,24 @@ class Bars extends PureComponent {
                 flexDirection: "column"
               }}
             >
-              {/* <View
-                style={{
-                  width: "100%",
-                  backgroundColor: "#666666"
-                  // borderRadius: 10
-                }}
-              >
-                <Text
-                  style={{
-                    fontFamily: "CenturyGothic-Bold",
-                    fontSize: 13,
-                    alignSelf: "center",
-                    color: "#000000"
-                  }}
-                >
-                  Skills resume
-                </Text>
-              </View> */}
               <ScrollView>
                 <ItemDetail
                   name="Projects"
                   value="4"
                   icon={require("./../../assets/img/icons/projects.png")}
+                  arrow={true}
                 />
                 <ItemDetail
                   name="Time"
                   value="7 months"
                   icon={require("./../../assets/img/icons/time.png")}
+                  arrow={false}
                 />
                 <ItemDetail
                   name="Feeling"
                   value="75%"
                   icon={require("./../../assets/img/icons/feeling.png")}
+                  arrow={false}
                 />
               </ScrollView>
             </View>
