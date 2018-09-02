@@ -73,12 +73,11 @@ export const itemStyle = StyleSheet.create({
     marginLeft: 20
   },
   arrowContainer: {
-    width: iconSpace,
+    width: iconSpace + 10,
     height: iconSpace,
     zIndex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    paddingLeft: 20
+    alignItems: "flex-end"
   },
   arrowTouchContainer: {
     width: iconDimension,
