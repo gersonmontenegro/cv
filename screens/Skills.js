@@ -111,7 +111,7 @@ class Skills extends PureComponent {
         primaryColor: "#f0514b",
         projects: {
           quantity: 10,
-          time: 10,
+          time: 3,
           feeling: 75,
           details: []
         }
@@ -122,7 +122,7 @@ class Skills extends PureComponent {
         primaryColor: "#1ca6cd",
         projects: {
           quantity: 2,
-          time: 0.4,
+          time: 0.5,
           feeling: 95,
           details: []
         }
