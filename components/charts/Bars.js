@@ -92,6 +92,14 @@ class Bars extends PureComponent {
     }).start();
   };
 
+  quantityText = quantity => {
+    if (quantity >= 20) {
+      return "20+";
+    } else {
+      return quantity;
+    }
+  };
+
   yearsToMonths = time => {
     if (time < 1) {
       return Math.floor(time * 12) + " months";
@@ -107,6 +115,10 @@ class Bars extends PureComponent {
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }
+
+  percentajeText = percentaje => {
+    return percentaje + "%";
+  };
 
   render() {
     return (
@@ -154,13 +166,6 @@ class Bars extends PureComponent {
                 {this.props.name}
               </Text>
             </View>
-            {/* <View
-              style={{
-                width: screenWidth,
-                marginLeft: 0,
-                backgroundColor: "white"
-              }}
-            > */}
             <LinearGradient
               colors={["#ffffff", mainBackgroundColor]}
               style={{
@@ -220,7 +225,6 @@ class Bars extends PureComponent {
                 />
               </VictoryChart>
             </LinearGradient>
-            {/* </View> */}
             <View
               style={{
                 marginTop: -20,
@@ -230,7 +234,7 @@ class Bars extends PureComponent {
               <ScrollView>
                 <ItemDetail
                   name="Projects"
-                  value={this.props.projects.quantity}
+                  value={this.quantityText(this.props.projects.quantity)}
                   icon={require("./../../assets/img/icons/projects.png")}
                   arrow={true}
                 />
@@ -244,7 +248,7 @@ class Bars extends PureComponent {
                 />
                 <ItemDetail
                   name="Feeling"
-                  value="75%"
+                  value={this.percentajeText(this.props.projects.feeling)}
                   icon={require("./../../assets/img/icons/feeling.png")}
                   arrow={false}
                 />
