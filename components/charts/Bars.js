@@ -9,8 +9,6 @@ import {
   ScrollView
 } from "react-native";
 
-import { Button } from "native-base";
-
 import AnimateNumber from "react-native-animate-number";
 import {
   mainBackgroundColor,
@@ -32,14 +30,18 @@ import {
 import LinearGradient from "react-native-linear-gradient";
 import ItemDetail from "./ItemDetail";
 
-const characterData = [
-  { time: 5, projects: 20, feeling: 100 },
-  { time: 1, projects: 5, feeling: 50 }
-];
+characterData = [];
 
 class Bars extends PureComponent {
   constructor(props) {
     super(props);
+    let t = parseFloat(this.props.projects.time);
+    characterData[0] = { time: 5, projects: 20, feeling: 100 };
+    characterData[1] = {
+      time: t,
+      projects: this.props.projects.quantity,
+      feeling: this.props.projects.feeling
+    };
     this.state = {
       modalVisible: false,
       data: this.processData(characterData),
@@ -94,7 +96,11 @@ class Bars extends PureComponent {
     if (time < 1) {
       return Math.floor(time * 12) + " months";
     } else {
-      return time + " years";
+      if (time >= 5) {
+        return time + "+ years";
+      } else {
+        return time + " years";
+      }
     }
   };
 
@@ -224,13 +230,15 @@ class Bars extends PureComponent {
               <ScrollView>
                 <ItemDetail
                   name="Projects"
-                  value="4"
+                  value={this.props.projects.quantity}
                   icon={require("./../../assets/img/icons/projects.png")}
                   arrow={true}
                 />
                 <ItemDetail
                   name="Time"
-                  value="7 months"
+                  value={this.yearsToMonths(
+                    parseFloat(this.props.projects.time)
+                  )}
                   icon={require("./../../assets/img/icons/time.png")}
                   arrow={false}
                 />
@@ -245,13 +253,14 @@ class Bars extends PureComponent {
 
             <TouchableHighlight
               style={{
-                marginLeft: 10,
                 width: 150,
                 height: 30,
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: mainBackgroundColor,
-                borderRadius: 10
+                borderRadius: 10,
+                alignSelf: "center",
+                marginTop: 5
               }}
               onPress={() => {
                 this.setModalVisible(!this.state.modalVisible);
