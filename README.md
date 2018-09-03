@@ -1,3 +1,5 @@
+Last version published: 1.0.6, 3th September, 2018.
+
 Since August 28th this app is available in the Play Store. Check it out!
 
 ![enter image description here](https://lh3.googleusercontent.com/x6fD4v8L2z6PUdzeARkEye6R0I7u0VZRU_8C6WNTHVnmu7F62tCS5-NSU3TsN-jmWyZdQ6-Tdp3A=s100)[![alt text][image]][hyperlink]
@@ -313,3 +315,9 @@ And, in the styles files I wrote:
     });
 
 I've don't implemented the shadows yet, but I will.
+
+At this moment, I just published the last release, with only one change related to the last screen. I added a new button in order to indicate that a section (3 the current are: projects, time, and feeling) has more information.
+
+![enter image description here](https://lh3.googleusercontent.com/kkXxflQ1mYDH0eZIgnJTkrTdnL7pMYEdIblxtW6zJznDhW49yk_7-vfCTMAwejpbH3JOM-_FWtwt=s600 "Skill detail")
+
+Is still not working, but in the close future, that button will be able to open a new interface with screenshots about some projects.
