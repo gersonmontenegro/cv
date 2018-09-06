@@ -40,10 +40,10 @@ export const itemStyle = StyleSheet.create({
     height: iconDimension
   },
   shadow: {
-    shadowColor: "#000",
-    shadowOffset: { width: 8, height: 2 },
+    shadowColor: "gray",
+    shadowOffset: { width: 4, height: 2 },
     shadowOpacity: 1,
-    shadowRadius: 10
+    shadowRadius: 2
   },
   nameContainer: {
     width: (screenWidth - iconSpace) / (itemQuantity - 3),
@@ -68,7 +68,8 @@ export const itemStyle = StyleSheet.create({
   },
   itemContainer: {
     height: iconSpace,
-    marginTop: 5,
+    marginTop: 3,
+    marginBottom: 3,
     flexDirection: "row",
     marginLeft: 20
   },

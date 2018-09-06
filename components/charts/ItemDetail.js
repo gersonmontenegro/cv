@@ -10,7 +10,7 @@ class ItemDetail extends PureComponent {
   addArrow() {
     if (this.props.arrow) {
       return (
-        <View style={[itemStyle.arrowContainer]}>
+        <View style={[itemStyle.arrowContainer, itemStyle.shadow]}>
           <TouchableHighlight style={itemStyle.arrowTouchContainer}>
             <Image
               style={itemStyle.arrowStyle}
