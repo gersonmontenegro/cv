@@ -1,0 +1,12 @@
+I don't know how to star to write this one, but, in order to publish the app to Play Store, I have to make a policy privacy,
+because there is a request for to use READ_PHONE_STATE. Actually, my app doesn't requiere any data, any access from the mobile
+as well. I'm going to require Internet permission when I start to load the data from a server, but not yet.
+
+But, somehow, that permission is added in the procces of create the APK. I'm going to solve that, but right now I need this
+document.
+
+So, I think I need to be clear, I'm not going to extract any data to whoever install the application. At least from me, I'm 
+not going to use privacy data from anybody, because this app only has a unique purpose: Present myself like a mobile developer,
+and to learn more and more React Native.
+
+That's all. I hope this can be useful.

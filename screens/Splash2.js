@@ -1,21 +1,28 @@
-import React, { PureComponent } from 'react';
-import { Animated, Image, View, Text } from 'react-native';
-import { mainBackgroundColor, finalAvatarDimension, profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from './../assets/css/general';
-import { Header, Footer, Content, FooterTab, Button, Icon } from 'native-base';
-import SplashScreen from 'react-native-splash-screen';
-import AnimatedHeader from './../components/interface/AnimatedHeader';
+import React, { PureComponent } from "react";
+import { Animated, View } from "react-native";
+import {
+  finalAvatarDimension,
+  profileColor,
+  skillsColor,
+  educationColor,
+  experiencieColor,
+  defaultAnimationTime,
+  screenWidth,
+  screenHeight
+} from "./../assets/css/general";
+import AnimatedHeader from "./../components/interface/AnimatedHeader";
 
-class Splash2 extends PureComponent{
-  constructor(props){
+class Splash2 extends PureComponent {
+  constructor(props) {
     super(props);
     this.callback = props.callback;
     this.fadeInValue = new Animated.Value(0);
     this.fadeInValueBottomText = new Animated.Value(0);
     this.avatarWidth = new Animated.Value(200);
     this.avatarHeight = new Animated.Value(200);
-    this.marginTopAvatar = new Animated.Value((screenHeight / 2) - 100);
+    this.marginTopAvatar = new Animated.Value(screenHeight / 2 - 100);
     this.marginLeftAvatar = new Animated.Value(0);
-    this.marginTopTexts = new Animated.Value((screenHeight / 2) - 150);
+    this.marginTopTexts = new Animated.Value(screenHeight / 2 - 150);
     this.opacityAnim = this.fadeInValue;
     this.opacityBottomTextAnim = this.fadeInValueBottomText;
     this.topBarHeight = new Animated.Value(0);
@@ -44,29 +51,23 @@ class Splash2 extends PureComponent{
     this.experienceOpacity = new Animated.Value(0);
   }
 
-  fadeInText(){
+  fadeInText() {
     this.fadeInValue.setValue(0);
-    Animated.timing(
-      this.fadeInValue,
-      {
-        toValue: 1,
-        duration: defaultAnimationTime * 1.5
-      }
-    ).start(() => {
+    Animated.timing(this.fadeInValue, {
+      toValue: 1,
+      duration: defaultAnimationTime * 1.5
+    }).start(() => {
       this.showUpBars();
-      this.fadeInTextBottomText()
+      this.fadeInTextBottomText();
     });
   }
 
-  fadeInTextBottomText(){
+  fadeInTextBottomText() {
     this.fadeInValueBottomText.setValue(0);
-    Animated.timing(
-      this.fadeInValueBottomText,
-      {
-        toValue: 1,
-        duration: defaultAnimationTime
-      }
-    ).start(() => {
+    Animated.timing(this.fadeInValueBottomText, {
+      toValue: 1,
+      duration: defaultAnimationTime
+    }).start(() => {
       setTimeout(() => {
         this.changeAvatarScale();
         this.getUpAvatar();
@@ -76,26 +77,19 @@ class Splash2 extends PureComponent{
         this.fadeOutTexts();
         this.getDownTexts();
       }, defaultAnimationTime);
-
     });
   }
 
   showUpProfileBars = (marginVar, opacityVar) => {
-    Animated.timing(
-      marginVar,
-      {
-        toValue: screenHeight - 5,
-        duration: defaultAnimationTime * 4
-      }
-    ).start();
-    Animated.timing(
-      opacityVar,
-      {
-        toValue: 1,
-        duration: defaultAnimationTime * 4
-      }
-    ).start();
-  }
+    Animated.timing(marginVar, {
+      toValue: screenHeight - 5,
+      duration: defaultAnimationTime * 4
+    }).start();
+    Animated.timing(opacityVar, {
+      toValue: 1,
+      duration: defaultAnimationTime * 4
+    }).start();
+  };
 
   showUpBars = () => {
     setTimeout(() => {
@@ -110,128 +104,110 @@ class Splash2 extends PureComponent{
     setTimeout(() => {
       this.showUpProfileBars(this.experienceMarginTop, this.experienceOpacity);
     }, 150);
-  }
+  };
 
   changeAvatarScale = () => {
-    Animated.timing(
-      this.avatarWidth,
-      {
-        toValue: finalAvatarDimension,
-        duration: defaultAnimationTime
-      }
-    ).start();
-    Animated.timing(
-      this.avatarHeight,
-      {
-        toValue: finalAvatarDimension,
-        duration: defaultAnimationTime
-      }
-    ).start();
-  }
+    Animated.timing(this.avatarWidth, {
+      toValue: finalAvatarDimension,
+      duration: defaultAnimationTime
+    }).start();
+    Animated.timing(this.avatarHeight, {
+      toValue: finalAvatarDimension,
+      duration: defaultAnimationTime
+    }).start();
+  };
 
   fadeOutTexts = () => {
-    Animated.timing(
-      this.opacityAnim,
-      {
-        toValue: 0,
-        duration: defaultAnimationTime
-      }
-    ).start();
+    Animated.timing(this.opacityAnim, {
+      toValue: 0,
+      duration: defaultAnimationTime
+    }).start();
 
-    Animated.timing(
-      this.opacityBottomTextAnim,
-      {
-        toValue: 0,
-        duration: defaultAnimationTime
-      }
-    ).start();
-  }
+    Animated.timing(this.opacityBottomTextAnim, {
+      toValue: 0,
+      duration: defaultAnimationTime
+    }).start();
+  };
 
   getDownTexts = () => {
-    Animated.timing(
-      this.marginTopTexts,
-      {
-        toValue: screenHeight,
-        duration: defaultAnimationTime * 2
-      }
-    ).start();
-  }
+    Animated.timing(this.marginTopTexts, {
+      toValue: screenHeight,
+      duration: defaultAnimationTime * 2
+    }).start();
+  };
 
   getUpAvatar = () => {
-    Animated.timing(
-      this.marginTopAvatar,
-      {
-        toValue: 25,
-        duration: defaultAnimationTime * 1.2
-      }
-    ).start(() => {
+    Animated.timing(this.marginTopAvatar, {
+      toValue: 25,
+      duration: defaultAnimationTime * 1.2
+    }).start(() => {
       this.moveAvatarToLeft();
       this.showUpTopBar();
       this.moveTopTexts();
     });
-  }
+  };
 
   moveTopTexts = () => {
     setTimeout(() => {
-      this.showUpTopTexts(this.nameWidth, (screenWidth - (screenWidth * .3)), this.nameOpacity, 1);
+      this.showUpTopTexts(
+        this.nameWidth,
+        screenWidth - screenWidth * 0.3,
+        this.nameOpacity,
+        1
+      );
     }, 0);
     setTimeout(() => {
-      this.showUpTopTexts(this.titleWidth, (screenWidth - (screenWidth * .5)), this.titleOpacity, 1);
+      this.showUpTopTexts(
+        this.titleWidth,
+        screenWidth - screenWidth * 0.5,
+        this.titleOpacity,
+        1
+      );
     }, 200);
-  }
+  };
 
   showUpTopTexts = (widthVar, widthVal, opacityVar, opacityVal) => {
-    Animated.timing(
-      widthVar,
-      {
-        toValue: widthVal,
-        duration: defaultAnimationTime
-      }
-    ).start();
-    Animated.timing(
-      opacityVar,
-      {
-        toValue: opacityVal,
-        duration: defaultAnimationTime
-      }
-    ).start();
-  }
+    Animated.timing(widthVar, {
+      toValue: widthVal,
+      duration: defaultAnimationTime
+    }).start();
+    Animated.timing(opacityVar, {
+      toValue: opacityVal,
+      duration: defaultAnimationTime
+    }).start();
+  };
 
   moveAvatarToLeft = () => {
-    Animated.timing(
-      this.marginLeftAvatar,
-      {
-        toValue: -(screenWidth - 100),
-        duration: defaultAnimationTime
-      }
-    ).start(
-
-    );
-  }
+    Animated.timing(this.marginLeftAvatar, {
+      toValue: -(screenWidth - 100),
+      duration: defaultAnimationTime
+    }).start();
+  };
 
   showUpTopBar = () => {
-    Animated.timing(
-      this.topBarHeight,
-      {
-        toValue: 120,
-        duration: defaultAnimationTime / 2
-      }
-    ).start();
-  }
+    Animated.timing(this.topBarHeight, {
+      toValue: 120,
+      duration: defaultAnimationTime / 2
+    }).start();
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     this.fadeInText();
   }
 
-  render(){
+  render() {
     return (
-      <View style={{justifyContent: 'flex-start', flex: 1, width: screenWidth}}>
+      <View
+        style={{ justifyContent: "flex-start", flex: 1, width: screenWidth }}
+      >
         <AnimatedHeader refOpenTabMenu={this.callback} />
-        <View style={{
-          position: 'absolute',
-          width: screenWidth,
-          flexDirection: 'row'
-        }}>
+        <View
+          style={{
+            position: "absolute",
+            width: screenWidth,
+            flexDirection: "row"
+          }}
+        >
           <Animated.View
             style={{
               width: screenWidth / 4,
@@ -269,7 +245,7 @@ class Splash2 extends PureComponent{
             }}
           />
         </View>
-    </View>
+      </View>
     );
   }
 }

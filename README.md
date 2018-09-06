@@ -1,5 +1,11 @@
+Last version published: 1.0.6, 3th September, 2018.
 
+Since August 28th this app is available in the Play Store. Check it out!
 
+![enter image description here](https://lh3.googleusercontent.com/x6fD4v8L2z6PUdzeARkEye6R0I7u0VZRU_8C6WNTHVnmu7F62tCS5-NSU3TsN-jmWyZdQ6-Tdp3A=s100)[![alt text][image]][hyperlink]
+
+  [hyperlink]: https://play.google.com/store/apps/details?id=com.gersonmontenegro.cv
+  [image]: https://lh3.googleusercontent.com/o18ZiflyX7huqdevAf-FxGJudUxYyrYG0MRNKsf7M-tMF7pgEHp5_1EdZIswMEI2JJAAU5rB6fnB=s100?s=128&d=identicon&r=PG (tooltip)
 # cv
 **My Curriculum Vitae in an App**
 
@@ -211,3 +217,107 @@ The implementation was not traumatic, it just took a simple line in the same pla
  <AnimateNumber value={this.props.percentaje} countBy={1} timing="linear" />%
 </Text>
 ````
+
+Finally, after a month, today (28/08/18), early in the morning, I published the app in Play Store, and is available [here].(https://play.google.com/store/apps/details?id=com.gersonmontenegro.cv) 
+
+I thought that after that I could rest a couple of days, but no. I received a lot of feedback from my closer friends, and I want to implement some details, and correct some grammar.
+
+Anyway, I'm going to keep this app and its content updated, because is my presentation.
+
+At this moment, I got enough feedback to know what do I need to do: Improve the Skills interface.
+
+So, I'm gonna increase the information opening a new interface when I touch a skill bar. Like always, I got a first scratch
+
+![enter image description here](https://lh3.googleusercontent.com/S4Dx6EW_4Y60NFr_ZSycnHKyp3wKQ2CG8xwCOLllPerSzytc5zBiDwsQSdJqDaKfJY6FRLt-ZX6e=s600)
+
+I would prefer to put a radar graphic rather than put bars, or cakes, because I think that's the coolest graphic for what I want to represent.
+
+It's not finish right now, but is importan for me to have a north where I need go.
+
+After struggling for a little while, I think at least I got the design that I wanted:
+
+![enter image description here](https://lh3.googleusercontent.com/e1lfGaVfDFoNTycf6WIwC-zJzkhsxtsR2KGeaj7KTQ5ZPDIzg-1w4PFiDIcsbIcWScZBSNrQxkXa=s600 "First RC Skill detail")
+
+I had some problems at the beginning of the implementation, because I didn't really know exactly how to put texts and icon over the background, until I understood that a children can't to overlay to a parent, so, I made them all siblings, and then, I could do what I wanted.
+
+So, I leave the structure of the skills item (actually is another component) like this:
+
+    render() {
+	    return (
+		    <View  style={itemStyle.itemContainer}>
+			    <View  style={[itemStyle.back]}  />
+				    <View  style={[itemStyle.iconContainer]}>
+				    <Image  style={itemStyle.iconImage}  source={this.props.icon}  />
+			    </View>
+				    <View  style={itemStyle.nameContainer}>
+				    <Text  style={itemStyle.nameStyle}>{this.props.name}</Text>
+			    </View>
+				    <View  style={itemStyle.valueContainer}>
+				    <Text  style={itemStyle.valueStyle}>{this.props.value}</Text>
+			    </View>
+		    </View>
+    );
+
+And, in the styles files I wrote:
+
+    export  const  itemStyle  =  StyleSheet.create({
+	    back: {
+		    backgroundColor:  itemBackgroundColor,
+		    width:  screenWidth  -  30,
+		    borderRadius:  10,
+		    height:  iconSpace,
+		    zIndex:  1
+	    },
+	    iconContainer: {
+		    width:  iconSpace,
+		    justifyContent:  "center",
+		    alignItems:  "center",
+		    marginLeft:  -screenWidth  +  10,
+		    zIndex:  2
+	    },
+	    iconImage: {
+		    width:  iconDimension,
+		    height:  iconDimension
+	    },
+	    shadow: {
+		    shadowColor:  "#000",
+		    shadowOffset: { width:  8, height:  2 },
+		    shadowOpacity:  1,
+		    shadowRadius:  10
+	    },
+	    nameContainer: {
+		    width: (screenWidth  -  iconSpace) /  2,
+		    justifyContent:  "center",
+		    zIndex:  1
+	    },
+	    nameStyle: {
+		    fontFamily:  "CenturyGothic",
+		    fontSize:  15,
+		    color:  "black"
+	    },
+	    valueContainer: {
+		    width: (screenWidth  -  iconSpace) /  2,
+		    justifyContent:  "center",
+		    zIndex:  1
+	    },
+	    valueStyle: {
+		    fontFamily:  "CenturyGothic-Bold",
+		    fontSize:  15,
+		    color:  "#000000"
+	    },
+    
+	    itemContainer: {
+		    height:  iconSpace,
+		    marginTop:  5,
+		    flexDirection:  "row",
+		    marginLeft:  20
+	    }
+    });
+
+I've don't implemented the shadows yet, but I will.
+
+At this moment, I just published the last release, with only one change related to the last screen. I added a new button in order to indicate that a section (3 the current are: projects, time, and feeling) has more information.
+
+![enter image description here](https://lh3.googleusercontent.com/kkXxflQ1mYDH0eZIgnJTkrTdnL7pMYEdIblxtW6zJznDhW49yk_7-vfCTMAwejpbH3JOM-_FWtwt=s600 "Skill detail")
+
+Is still not working, but in the close future, that button will be able to open a new interface with screenshots about some projects.
