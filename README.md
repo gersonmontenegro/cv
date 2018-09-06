@@ -321,3 +321,13 @@ At this moment, I just published the last release, with only one change related 
 ![enter image description here](https://lh3.googleusercontent.com/kkXxflQ1mYDH0eZIgnJTkrTdnL7pMYEdIblxtW6zJznDhW49yk_7-vfCTMAwejpbH3JOM-_FWtwt=s600 "Skill detail")
 
 Is still not working, but in the close future, that button will be able to open a new interface with screenshots about some projects.
+
+After a few days where I didn't test the app on iOS, I decided start to prepare the iOS version, and I figured out that the shadows styles are working perfectly....I mean, they works!!
+
+I should of seen that in the documentation, but, I didn't remember because my memory and I are a sad love story.
+
+![enter image description here](https://lh3.googleusercontent.com/D9belTIAmqfGn3tUEX9yQJbpn60l4Bku8WiVoV7_nYnEHErOxvjcyLGKBBvfmn24qdkMQnczzdxM=s600 "Shadows on iOS")
+
+Like the above image shows, now the icons buttons has shadows. I don't know if I'll keep them, but for now is ok.
+
+I was supposed that the iOS app was going to be published, like de Android version, but I think it'll take a few more days.
