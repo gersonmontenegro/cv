@@ -16,7 +16,7 @@ export default class App extends Component<Props> {
     SplashScreen.hide();
   }
 
-  showUpMessage = (v: boolean) => {
+  showUpMessage = (v) => {
     this.setState({ splash: v })
   }
 
