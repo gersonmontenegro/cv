@@ -1,32 +1,29 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import Splash from './screens/Splash';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import Splash2 from './screens/Splash2';
-import Profile from './screens/Profile';
-import Skills from './screens/Skills';
-import Education from './screens/Education';
 import TabScreen from './screens/TabScreen';
 import SplashScreen from 'react-native-splash-screen';
 
+
 export default class App extends Component<Props> {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = { splash: true };
     SplashScreen.hide();
   }
 
-  componentDidMount(){
+  componentDidMount() {
     SplashScreen.hide();
   }
 
   showUpMessage = (v: boolean) => {
-    this.setState( { splash: v } )
+    this.setState({ splash: v })
   }
 
   renderInterface = () => {
-    if(this.state.splash){
+    if (this.state.splash) {
       return <Splash2 callback={this.showUpMessage} />;
-    }else{
+    } else {
       return <TabScreen />;
     }
   }
