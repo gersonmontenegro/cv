@@ -335,3 +335,5 @@ I was supposed that the iOS app was going to be published, like de Android versi
 I think is time to add a Navigation system to moving between interfaces, or screens. 
 
 I did another application with a nice Navigation system that includes a lateral menu (Drawer). This time I don't need so much, just the necessary to go from one of the tabs interface, to another and isolate interface, and back to the tabs interface again.
+
+After a few days working in another [personal project](https://github.com/gersonmontenegro/cinemapp), I need to make some changes and improve a lot of things to get a better application.
