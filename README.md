@@ -337,3 +337,11 @@ I think is time to add a Navigation system to moving between interfaces, or scre
 I did another application with a nice Navigation system that includes a lateral menu (Drawer). This time I don't need so much, just the necessary to go from one of the tabs interface, to another and isolate interface, and back to the tabs interface again.
 
 After a few days working in another [personal project](https://github.com/gersonmontenegro/cinemapp), I need to make some changes and improve a lot of things to get a better application.
+
+For the last 24 hours, I've been struggling with this project because I screwed it up with some experiments. So, I decided to start a new project (yes, I know, is awful, but I needed to make a decision quickly without waste more time) from scratch, and put every part in their place.
+
+And at least my project is working again, just like the published version.
+
+But, in this adventure, I realized a lot of things that I would like to change. Things like best practices, modularizing, and make the code tidier.
+
+So, I will spend a few more hours making not only this issue but integrate it with the repository. And I think this last thing will be a bit traumatic, but, everything will be al right.
