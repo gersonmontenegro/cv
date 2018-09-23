@@ -106,8 +106,8 @@ android {
         applicationId "com.cv2"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 7
+        versionName "1.0.7"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
