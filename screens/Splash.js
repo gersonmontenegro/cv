@@ -6,7 +6,12 @@ import AnimatedHeader from "../components/interface/AnimatedHeader";
 class Splash extends PureComponent {
     constructor(props) {
         super(props);
-        this.callback = props.callback;
+        this.createSingletonGroup();
+        this.creatingAnimatedValues();
+        this.creatingSimpleValues();
+    }
+
+    creatingAnimatedValues() {
         this.fadeInValue = new Animated.Value(0);
         this.fadeInValueBottomText = new Animated.Value(0);
         this.avatarWidth = new Animated.Value(200);
@@ -14,8 +19,6 @@ class Splash extends PureComponent {
         this.marginTopAvatar = new Animated.Value(screenHeight / 2 - 100);
         this.marginLeftAvatar = new Animated.Value(0);
         this.marginTopTexts = new Animated.Value(screenHeight / 2 - 150);
-        this.opacityAnim = this.fadeInValue;
-        this.opacityBottomTextAnim = this.fadeInValueBottomText;
         this.topBarHeight = new Animated.Value(0);
         this.barHeight = new Animated.Value(100);
         this.profileMarginTop = new Animated.Value(-(screenHeight / 2));
@@ -40,6 +43,16 @@ class Splash extends PureComponent {
         this.educationOpacity = new Animated.Value(0);
         this.experienceMarginTop = new Animated.Value(-(screenHeight / 2));
         this.experienceOpacity = new Animated.Value(0);
+    }
+
+    creatingSimpleValues() {
+        this.callback = this.props.callback;
+        this.opacityAnim = this.fadeInValue;
+        this.opacityBottomTextAnim = this.fadeInValueBottomText;
+    }
+
+    createSingletonGroup() {
+        this.helper = HelperProvider.getInstance();
     }
 
     fadeInText() {
