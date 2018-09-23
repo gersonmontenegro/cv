@@ -59,3 +59,5 @@ android/gradle.properties
 ./.vscode
 .vscode/settings.json
 .vscode/launch.json
+
+providers/DataSource.js
