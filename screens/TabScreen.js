@@ -7,12 +7,26 @@ import Education from "./Education";
 import Experience from "./Experience";
 import CustomHeader from "./../components/interface/CustomHeader";
 import { footerFontSize, defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, screenWidth } from "./../assets/css/general.js";
+import HelperProvider from "../providers/HelperProvider";
 
 class TabScreen extends Component {
     constructor(props) {
         super(props);
-        this.renderComponent = this.renderComponent.bind(this);
+        this.creatingSingletonGroup();
+        this.bindingFunctions()
+        this.settingState();
+        this.creatingAnimatedValues();
+    }
+
+    settingState() {
         this.state = { currentInterface: 2 };
+    }
+
+    bindingFunctions() {
+        this.renderComponent = this.renderComponent.bind(this);
+    }
+
+    creatingAnimatedValues() {
         this.profileMarginTop = new Animated.Value(50);
         this.profileOpacity = new Animated.Value(0);
         this.skillsOpacity = new Animated.Value(0);
@@ -31,49 +45,22 @@ class TabScreen extends Component {
         this.avatarHeight = new Animated.Value(100);
     }
 
+    creatingSingletonGroup() {
+        this.helper = HelperProvider.getInstance();
+    }
+
     componentDidMount() {
         this.startButtonsShowUp();
     }
 
     startButtonsShowUp = () => {
-        setTimeout(() => {
-            this.animatingValue(this.profileMarginTop, 0);
-        }, 0);
-
-        setTimeout(() => {
-            this.animatingValue(this.skillsOpacity, 1, defaultAnimationTime * 3);
-        }, defaultAnimationTime / 3);
-
-        setTimeout(() => {
-            this.animatingValue(this.skillsMarginTop, 0, defaultAnimationTime * 3);
-        }, defaultAnimationTime / 3);
-
-        setTimeout(() => {
-            this.animatingValue(this.educationOpacity, 1, defaultAnimationTime * 3);
-        }, defaultAnimationTime / 2);
-
-        setTimeout(() => {
-            this.animatingValue(this.educationMarginTop, 0, defaultAnimationTime * 3);
-        }, defaultAnimationTime / 2);
-
-        setTimeout(() => {
-            this.animatingValue(this.experienceOpacity, 1, defaultAnimationTime * 3);
-        }, defaultAnimationTime);
-
-        setTimeout(() => {
-            this.animatingValue(
-                this.experienceMarginTop,
-                0,
-                defaultAnimationTime * 3
-            );
-        }, defaultAnimationTime);
-    };
-
-    animatingValue = (value, finalValue, durationValue) => {
-        Animated.timing(value, {
-            toValue: finalValue,
-            duration: durationValue
-        }).start();
+        this.helper.animateVariable(this.profileMarginTop, 0, 0, 0).start();
+        this.helper.animateVariable(this.skillsOpacity, 1, defaultAnimationTime * 3, defaultAnimationTime / 3).start();
+        this.helper.animateVariable(this.skillsMarginTop, 0, defaultAnimationTime * 3, defaultAnimationTime / 3).start();
+        this.helper.animateVariable(this.educationOpacity, 1, defaultAnimationTime * 3, defaultAnimationTime / 2).start();
+        this.helper.animateVariable(this.educationMarginTop, 0, defaultAnimationTime * 3, defaultAnimationTime / 2).start();
+        this.helper.animateVariable(this.experienceOpacity, 1, defaultAnimationTime * 3, defaultAnimationTime).start();
+        this.helper.animateVariable(this.experienceMarginTop, 0, defaultAnimationTime * 3, defaultAnimationTime).start();
     };
 
     renderComponent = () => {
