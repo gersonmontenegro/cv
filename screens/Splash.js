@@ -66,10 +66,7 @@ class Splash extends PureComponent {
 
     fadeInTextBottomText() {
         this.fadeInValueBottomText.setValue(0);
-        Animated.timing(this.fadeInValueBottomText, {
-            toValue: 1,
-            duration: defaultAnimationTime
-        }).start(() => {
+        this.helper.animateVariable(this.fadeInValueBottomText, 1, defaultAnimationTime).start(() => {
             setTimeout(() => {
                 this.changeAvatarScale();
                 this.getUpAvatar();
@@ -79,7 +76,8 @@ class Splash extends PureComponent {
                 this.fadeOutTexts();
                 this.getDownTexts();
             }, defaultAnimationTime);
-        });
+        }
+        );
     }
 
     showUpProfileBars = (marginVar, opacityVar, delay) => {
@@ -95,40 +93,21 @@ class Splash extends PureComponent {
     };
 
     changeAvatarScale = () => {
-        Animated.timing(this.avatarWidth, {
-            toValue: finalAvatarDimension,
-            duration: defaultAnimationTime
-        }).start();
-        Animated.timing(this.avatarHeight, {
-            toValue: finalAvatarDimension,
-            duration: defaultAnimationTime
-        }).start();
+        this.helper.animateVariable(this.avatarWidth, finalAvatarDimension, defaultAnimationTime).start();
+        this.helper.animateVariable(this.avatarHeight, finalAvatarDimension, defaultAnimationTime).start();
     };
 
     fadeOutTexts = () => {
-        Animated.timing(this.opacityAnim, {
-            toValue: 0,
-            duration: defaultAnimationTime
-        }).start();
-
-        Animated.timing(this.opacityBottomTextAnim, {
-            toValue: 0,
-            duration: defaultAnimationTime
-        }).start();
+        this.helper.animateVariable(this.opacityAnim, 0, defaultAnimationTime).start();
+        this.helper.animateVariable(this.opacityBottomTextAnim, 0, defaultAnimationTime).start();
     };
 
     getDownTexts = () => {
-        Animated.timing(this.marginTopTexts, {
-            toValue: screenHeight,
-            duration: defaultAnimationTime * 2
-        }).start();
+        this.helper.animateVariable(this.marginTopTexts, screenHeight, defaultAnimationTime * 2).start();
     };
 
     getUpAvatar = () => {
-        Animated.timing(this.marginTopAvatar, {
-            toValue: 25,
-            duration: defaultAnimationTime * 1.2
-        }).start(() => {
+        this.helper.animateVariable(this.marginTopAvatar, 25, defaultAnimationTime * 1.2).start(() => {
             this.moveAvatarToLeft();
             this.showUpTopBar();
             this.moveTopTexts();
@@ -155,28 +134,16 @@ class Splash extends PureComponent {
     };
 
     showUpTopTexts = (widthVar, widthVal, opacityVar, opacityVal) => {
-        Animated.timing(widthVar, {
-            toValue: widthVal,
-            duration: defaultAnimationTime
-        }).start();
-        Animated.timing(opacityVar, {
-            toValue: opacityVal,
-            duration: defaultAnimationTime
-        }).start();
+        this.helper.animateVariable(widthVar, widthVal, defaultAnimationTime).start();
+        this.helper.animateVariable(opacityVar, opacityVal, defaultAnimationTime).start();
     };
 
     moveAvatarToLeft = () => {
-        Animated.timing(this.marginLeftAvatar, {
-            toValue: -(screenWidth - 100),
-            duration: defaultAnimationTime
-        }).start();
+        this.helper.animateVariable(this.marginLeftAvatar, -(screenWidth - 100), defaultAnimationTime).start();
     };
 
     showUpTopBar = () => {
-        Animated.timing(this.topBarHeight, {
-            toValue: 120,
-            duration: defaultAnimationTime / 2
-        }).start();
+        this.helper.animateVariable(this.topBarHeight, 120, defaultAnimationTime).start();
     };
 
     componentDidMount() {
