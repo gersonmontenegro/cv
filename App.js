@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
-import { Animated, StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import Splash from './screens/Splash';
 import TabScreen from './screens/TabScreen';
+import { MainAppStyle } from './assets/css/general';
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -28,18 +29,9 @@ export default class App extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={MainAppStyle.container}>
         {this.renderInterface()}
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-  },
-});

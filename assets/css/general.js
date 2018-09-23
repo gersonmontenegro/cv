@@ -12,6 +12,7 @@ export const skillsColor = "#3071ae";
 export const educationColor = "#4ab04a";
 export const experiencieColor = "#f86236";
 export const finalAvatarDimension = 80;
+export const footerFontSize = 12;
 
 const iconSpace = 40;
 const iconDimension = 25;
@@ -144,4 +145,13 @@ export const HeaderStyle = StyleSheet.create({
     marginLeft: 5,
     color: "#000000"
   }
+});
+
+export const MainAppStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+  },
 });
