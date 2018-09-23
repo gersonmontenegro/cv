@@ -1,15 +1,11 @@
 import React, { PureComponent } from "react";
 import { Animated, View, Text } from "react-native";
-import {
-  defaultAnimationTime,
-  lightMainBackgroundColor,
-  screenWidth,
-  screenHeight
-} from "./../../assets/css/general";
+import { defaultAnimationTime, lightMainBackgroundColor, screenWidth, screenHeight } from "./../../assets/css/general";
 import AvatarHeader from "./AvatarHeader";
 
 class AnimatedHeader extends PureComponent {
   constructor(props) {
+    super(props);
     super(props);
     this.fadeInValue = new Animated.Value(0);
     this.fadeInValueBottomText = new Animated.Value(0);
@@ -125,7 +121,7 @@ class AnimatedHeader extends PureComponent {
           width: screenWidth,
           height: screenHeight,
           backgroundColor: lightMainBackgroundColor,
-          marginTop: -20
+          marginTop: 0
         }}
       >
         <AvatarHeader
@@ -173,7 +169,7 @@ class AnimatedHeader extends PureComponent {
                 }}
               >
                 Gerson Montenegro
-              </Text>
+                  </Text>
             </Animated.View>
 
             <Animated.View
@@ -191,13 +187,14 @@ class AnimatedHeader extends PureComponent {
                 }}
               >
                 Mobile developer
-              </Text>
+                  </Text>
             </Animated.View>
           </Animated.View>
         </Animated.View>
       </View>
     );
   }
+
 }
 
 export default AnimatedHeader;

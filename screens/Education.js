@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, ScrollView, Image, View, Text } from 'react-native';
 import { screenWidth } from './../assets/css/general';
-import Circle from './../components/primitives/Circle';
 import TimeLine from 'react-native-timeline-listview';
 
-class Education extends PureComponent{
-  constructor(props){
+class Education extends PureComponent {
+  constructor(props) {
     super(props);
     this.data = [
       {
@@ -43,31 +42,31 @@ class Education extends PureComponent{
   renderDetail = (rowData, sectionID, rowID) => {
     let title = <Text style={[styles.title]}>{rowData.title}</Text>
     var desc = null
-    if(rowData.description && rowData.imageUrl)
+    if (rowData.description && rowData.imageUrl)
       desc = (
         <View style={styles.descriptionContainer}>
-          <Image source={rowData.imageUrl} style={styles.image}/>
+          <Image source={rowData.imageUrl} style={styles.image} />
           <Text style={[styles.textDescription]}>{rowData.description}</Text>
         </View>
       )
 
     return (
-      <View style={{flex:1}}>
+      <View style={{ flex: 1 }}>
         {title}
         {desc}
       </View>
     )
   }
 
-  render(){
+  render() {
     return (
-      <View style={{justifyContent: 'flex-start', flex: 1}}>
-        <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
-          <ScrollView style={{marginTop: 20}}>
+      <View style={{ justifyContent: 'flex-start', flex: 1 }}>
+        <View style={{ marginTop: 0, marginLeft: 5, marginRight: 5 }}>
+          <ScrollView style={{ marginTop: 20 }}>
             <TimeLine
-              timeStyle={{fontFamily: 'CenturyGothic-Bold', textAlign: 'center', backgroundColor:'#ff9797', color:'white', padding:5, borderRadius:13, overflow: 'hidden'}}
-              descriptionStyle={{fontFamily: 'CenturyGothic'}}
-              titleStyle={{fontFamily: 'CenturyGothic-Bold'}}
+              timeStyle={{ fontFamily: 'CenturyGothic-Bold', textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13, overflow: 'hidden' }}
+              descriptionStyle={{ fontFamily: 'CenturyGothic' }}
+              titleStyle={{ fontFamily: 'CenturyGothic-Bold' }}
               data={this.data}
               innerCircle={'icon'}
               circleColor='rgb(255,255,255)'
@@ -86,23 +85,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-	paddingTop:65,
-    backgroundColor:'white'
+    paddingTop: 65,
+    backgroundColor: 'white'
   },
   list: {
     flex: 1,
-    marginTop:20,
+    marginTop: 20,
   },
-  title:{
-    fontSize:16,
+  title: {
+    fontSize: 16,
     fontWeight: 'bold',
     fontFamily: 'CenturyGothic-Bold'
   },
-  descriptionContainer:{
+  descriptionContainer: {
     flexDirection: 'row',
     paddingRight: 50
   },
-  image:{
+  image: {
     width: 50,
     height: 50,
     borderRadius: 25

@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Splash2 from './screens/Splash2';
-import TabScreen from './screens/TabScreen';
+import React, { PureComponent } from 'react';
+import { Animated, StyleSheet, Text, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import Splash from './screens/Splash';
+import TabScreen from './screens/TabScreen';
 
-
-export default class App extends Component<Props> {
+export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { splash: true };
-    SplashScreen.hide();
   }
 
   componentDidMount() {
@@ -22,7 +20,7 @@ export default class App extends Component<Props> {
 
   renderInterface = () => {
     if (this.state.splash) {
-      return <Splash2 callback={this.showUpMessage} />;
+      return <Splash callback={this.showUpMessage} />;
     } else {
       return <TabScreen />;
     }
@@ -42,16 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    backgroundColor: '#FFFFFF',
   },
 });

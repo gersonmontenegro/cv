@@ -1,15 +1,10 @@
 import React, { PureComponent } from "react";
 import { Animated, View, Text, Image } from "react-native";
-
-import {
-  defaultAnimationTime,
-  mainBackgroundColor,
-  HeaderStyle,
-  screenWidth
-} from "./../../assets/css/general";
+import { defaultAnimationTime, mainBackgroundColor, HeaderStyle, screenWidth } from "./../../assets/css/general";
 
 class AvatarHeader extends PureComponent {
   constructor(props) {
+    super(props);
     super(props);
     this.marginLeftHeader = new Animated.Value(screenWidth / 2 - 40 - 5);
     this.headerOpacity = new Animated.Value(0);
@@ -103,7 +98,6 @@ class AvatarHeader extends PureComponent {
       <Animated.View
         style={{
           marginLeft: this.marginLeftHeader,
-          marginTop: 20,
           width: screenWidth,
           height: 100,
           flexDirection: "row",

@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, ScrollView, Image, View, Text } from 'react-native';
 import { screenWidth } from './../assets/css/general';
-import Circle from './../components/primitives/Circle';
 import TimeLine from 'react-native-timeline-listview';
 
-class Experience extends PureComponent{
-  constructor(props){
+class Experience extends PureComponent {
+  constructor(props) {
     super(props);
     this.data = [
       {
@@ -29,15 +28,15 @@ class Experience extends PureComponent{
     ];
   }
 
-  render(){
+  render() {
     return (
-      <View style={{justifyContent: 'flex-start', flex: 1}}>
-        <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
-          <ScrollView style={{marginTop: 20}}>
+      <View style={{ justifyContent: 'flex-start', flex: 1 }}>
+        <View style={{ marginTop: 0, marginLeft: 5, marginRight: 5 }}>
+          <ScrollView style={{ marginTop: 20 }}>
             <TimeLine
-              timeStyle={{fontFamily: 'CenturyGothic-Bold', textAlign: 'center', backgroundColor:'#ff9797', color:'white', padding:5, borderRadius:13, overflow: 'hidden'}}
-              descriptionStyle={{fontFamily: 'CenturyGothic'}}
-              titleStyle={{fontFamily: 'CenturyGothic-Bold'}}
+              timeStyle={{ fontFamily: 'CenturyGothic-Bold', textAlign: 'center', backgroundColor: '#ff9797', color: 'white', padding: 5, borderRadius: 13, overflow: 'hidden' }}
+              descriptionStyle={{ fontFamily: 'CenturyGothic' }}
+              titleStyle={{ fontFamily: 'CenturyGothic-Bold' }}
               data={this.data}
               innerCircle={'icon'}
               circleColor='rgb(255,255,255)'

@@ -1,24 +1,22 @@
 import React, { PureComponent } from 'react';
 import { ScrollView, Image, View, Text } from 'react-native';
-import { mainBackgroundColor, screenWidth } from './../assets/css/general';
-import Circle from './../components/primitives/Circle';
 
-class Profile extends PureComponent{
-  constructor(props){
+class Profile extends PureComponent {
+  constructor(props) {
     super(props);
   }
 
-  render(){
+  render() {
     return (
-      <View style={{justifyContent: 'flex-start', flex: 1}}>
-        <View style={{marginTop: 0, marginLeft: 5, marginRight: 5}}>
+      <View style={{ justifyContent: 'flex-start', flex: 1 }}>
+        <View style={{ marginTop: 0, marginLeft: 5, marginRight: 5 }}>
           <ScrollView>
-            <Text style={{fontFamily: 'CenturyGothic-Bold'}}>
+            <Text style={{ fontFamily: 'CenturyGothic-Bold' }}>
               {"\n"}
               Professional profile
               {"\n"}
             </Text>
-            <Text style={{fontFamily: 'CenturyGothic', textAlign: 'left'}}>
+            <Text style={{ fontFamily: 'CenturyGothic', textAlign: 'left' }}>
               I'm a Systems Engineering with a long (13 years as a Job, 20 as a hobbie) experience developing almost all kind of software, from desktop applications (using C#/Java), to real time video games (using ActionScript 3 and Java). But, in the last 5 years, I've been focused on mobile applications, so, I made a lot of applications too many years ago using ActionScript3, Javascript, jQuery, and jQuery Mobile, then I learned Ionic, and I've been doing applications in this great technology, and now I'm learging react-native, a beautiful framework to deal with. I made some things using Swift and Java as well, but I realized that react-native is more atrative for me than Swift, or Java. That's why I'm making this app, but is not the first one.
               {"\n"}
               {"\n"}

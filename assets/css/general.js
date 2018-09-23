@@ -5,7 +5,7 @@ export const screenHeight = Dimensions.get("window").height;
 export const mainBackgroundColor = "#2e70ac";
 export const lightMainBackgroundColor = "#f5fcff";
 export const itemBackgroundColor = "#f0f7ef";
-export const defaultAnimationTime = 30;
+export const defaultAnimationTime = 100;
 // export const defaultAnimationTime = 300;
 export const profileColor = "#1fb9d7";
 export const skillsColor = "#3071ae";
@@ -98,10 +98,10 @@ export const itemStyle = StyleSheet.create({
 export const HeaderStyle = StyleSheet.create({
   headerContainer: {
     width: screenWidth,
-    height: 102,
-    // height: 102,
+    height: 100,
     backgroundColor: mainBackgroundColor,
-    flexDirection: "row"
+    flexDirection: "row",
+    marginTop: 0
   },
   avatarStyle: {
     marginTop: 7,

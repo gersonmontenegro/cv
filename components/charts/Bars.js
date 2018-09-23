@@ -9,7 +9,7 @@ import {
   ScrollView
 } from "react-native";
 
-import AnimateNumber from "react-native-animate-number";
+// import AnimateNumber from "react-native-animate-number";
 import {
   mainBackgroundColor,
   lightMainBackgroundColor,
@@ -328,12 +328,12 @@ class Bars extends PureComponent {
                 fontFamily: "CenturyGothic-Bold"
               }}
             >
-              <AnimateNumber
+              {/* <AnimateNumber
                 value={this.props.percentaje}
                 countBy={3}
                 timing="linear"
-              />
-              %
+              /> */}
+              {this.props.percentaje}%
             </Text>
           </Animated.View>
         </TouchableOpacity>
