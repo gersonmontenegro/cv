@@ -20,7 +20,7 @@ class Skills extends PureComponent {
 
   createBars = () => {
     let intervalValue = 90;
-    return this.data.map((item, index) => {
+    return this.state.data.map((item, index) => {
       return (
         <Bars
           key={index}
