@@ -1,25 +1,12 @@
 import React, { Component } from "react";
 import { Header, Footer, Content, FooterTab, Button, Icon } from "native-base";
-import { Animated, ScrollView, Image, View, Text } from "react-native";
+import { Animated, View, Text } from "react-native";
 import Profile from "./Profile";
 import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
 import CustomHeader from "./../components/interface/CustomHeader";
-import {
-    finalAvatarDimension,
-    defaultAnimationTime,
-    profileColor,
-    skillsColor,
-    educationColor,
-    experiencieColor,
-    mainBackgroundColor,
-    screenWidth,
-    screenHeight
-} from "./../assets/css/general.js";
-
-const footerFontSize = 12;
-const footerHeight = 70;
+import { footerFontSize, defaultAnimationTime, profileColor, skillsColor, educationColor, experiencieColor, screenWidth } from "./../assets/css/general.js";
 
 class TabScreen extends Component {
     constructor(props) {
