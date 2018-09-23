@@ -5,43 +5,7 @@ import Bars from "./../components/charts/Bars";
 class Skills extends PureComponent {
   constructor(props) {
     super(props);
-    this.data = [
-      {
-        name: "Ionic",
-        percentaje: 50,
-        primaryColor: "#2f9cfc",
-        projects: {
-          quantity: 4,
-          time: 0.6,
-          feeling: 75,
-          details: [
-            {
-              name: "AnimalApp",
-              technologies:
-                "Ionic, Typescript, Firebase (Notifications, Storage, Database)",
-              url: "",
-              images: [
-                { "0": "./assets/img/projects/mockup.png" },
-                { "1": "./assets/img/projects/mockup.png" },
-                { "2": "./assets/img/projects/mockup.png" },
-                { "3": "./assets/img/projects/mockup.png" }
-              ],
-              stores: {},
-              date: "January 2018"
-            },
-            {
-              name: "Docentes App",
-              technologies: "Ionic, Typescript, Laravel 5.x",
-              stores: [
-                {
-                  url:
-                    "https://play.google.com/store/apps/details?id=co.mobilecorp.simulacrodocentes",
-                  icon: "./assets/img/projects/playstore.png"
-                },
-                {
-                  url:
-                    "https://itunes.apple.com/co/app/simulacro-docentes/id1386790039?mt=8",
-                  icon: "./assets/img/projects/applestore.png"
+    this.settingState();
                 }
               ],
               images: [
@@ -251,6 +215,10 @@ class Skills extends PureComponent {
       );
     });
   };
+
+  settingState() {
+    this.state = { data: [] };
+  }
 
   render() {
     return (
