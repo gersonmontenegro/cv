@@ -344,4 +344,4 @@ And at least my project is working again, just like the published version.
 
 But, in this adventure, I realized a lot of things that I would like to change. Things like best practices, modularizing, and make the code tidier.
 
-So, I will spend a few more hours making not only this issue but integrate it with the repository. And I think this last thing will be a bit traumatic, but, everything will be al right.
+So, I will spend a few more hours making not only this issue but integrate it with the repository. And I think this last thing will be a bit traumatic, but, everything will be all right.
