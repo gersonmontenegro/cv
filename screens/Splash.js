@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { Animated, View } from "react-native";
 import { finalAvatarDimension, profileColor, skillsColor, educationColor, experiencieColor, defaultAnimationTime, screenWidth, screenHeight } from "./../assets/css/general";
 import AnimatedHeader from "../components/interface/AnimatedHeader";
+import HelperProvider from "../providers/HelperProvider";
 
 class Splash extends PureComponent {
     constructor(props) {
@@ -57,10 +58,7 @@ class Splash extends PureComponent {
 
     fadeInText() {
         this.fadeInValue.setValue(0);
-        Animated.timing(this.fadeInValue, {
-            toValue: 1,
-            duration: defaultAnimationTime * 1.5
-        }).start(() => {
+        this.helper.animateVariable(this.fadeInValue, 1, defaultAnimationTime * 1.5).start(() => {
             this.showUpBars();
             this.fadeInTextBottomText();
         });
@@ -84,30 +82,16 @@ class Splash extends PureComponent {
         });
     }
 
-    showUpProfileBars = (marginVar, opacityVar) => {
-        Animated.timing(marginVar, {
-            toValue: screenHeight - 5,
-            duration: defaultAnimationTime * 4
-        }).start();
-        Animated.timing(opacityVar, {
-            toValue: 1,
-            duration: defaultAnimationTime * 4
-        }).start();
+    showUpProfileBars = (marginVar, opacityVar, delay) => {
+        this.helper.animateVariable(marginVar, screenHeight - 5, defaultAnimationTime * 4, delay).start();
+        this.helper.animateVariable(opacityVar, 1, defaultAnimationTime * 4, delay).start();
     };
 
     showUpBars = () => {
-        setTimeout(() => {
-            this.showUpProfileBars(this.profileMarginTop, this.profileOpacity);
-        }, 0);
-        setTimeout(() => {
-            this.showUpProfileBars(this.skillsMarginTop, this.skillsOpacity);
-        }, 50);
-        setTimeout(() => {
-            this.showUpProfileBars(this.educationMarginTop, this.educationOpacity);
-        }, 100);
-        setTimeout(() => {
-            this.showUpProfileBars(this.experienceMarginTop, this.experienceOpacity);
-        }, 150);
+        this.showUpProfileBars(this.profileMarginTop, this.profileOpacity, 0);
+        this.showUpProfileBars(this.skillsMarginTop, this.skillsOpacity, 50);
+        this.showUpProfileBars(this.educationMarginTop, this.educationOpacity, 100);
+        this.showUpProfileBars(this.experienceMarginTop, this.experienceOpacity, 150);
     };
 
     changeAvatarScale = () => {
