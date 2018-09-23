@@ -12,6 +12,7 @@ export const skillsColor = "#3071ae";
 export const educationColor = "#4ab04a";
 export const experiencieColor = "#f86236";
 export const finalAvatarDimension = 80;
+export const footerFontSize = 12;
 
 const iconSpace = 40;
 const iconDimension = 25;
