@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import { ScrollView, Image, View, Text } from "react-native";
 import Bars from "./../components/charts/Bars";
+import FetchData from "../providers/FetchData";
+import { URL_DATA } from "../providers/DataSource";
 
 class Skills extends PureComponent {
   constructor(props) {
@@ -8,15 +10,17 @@ class Skills extends PureComponent {
     this.createSingletonGroup();
     this.settingState();
     this.loadData();
-                }
+  }
+
   createSingletonGroup() {
     this.fetchData = FetchData.getInstance();
-            }
+  }
+
   loadData() {
     this.fetchData.getData(URL_DATA).then((data) => {
       this.setState({ data: data });
     });
-        }
+  }
 
   createBars = () => {
     let intervalValue = 90;
