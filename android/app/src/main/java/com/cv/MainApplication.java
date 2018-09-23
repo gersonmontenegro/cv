@@ -2,12 +2,12 @@ package com.cv;
 
 import android.app.Application;
 
+import com.cv2.BuildConfig;
 import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.horcrux.svg.SvgPackage;
-import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -27,12 +27,12 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new VectorIconsPackage(),
-            new LinearGradientPackage(),
-            new SplashScreenReactPackage(),
-            new SvgPackage(),
-            new MPAndroidChartPackage()
+              new MainReactPackage(),
+              new VectorIconsPackage(),
+              new SvgPackage(),
+              new LinearGradientPackage(),
+              new SplashScreenReactPackage(),
+              new LinearGradientPackage()
       );
     }
 
