@@ -5,40 +5,11 @@ import Bars from "./../components/charts/Bars";
 class Skills extends PureComponent {
   constructor(props) {
     super(props);
+    this.createSingletonGroup();
     this.settingState();
                 }
-              ],
-              images: [
-                { "0": "./assets/img/projects/mockup.png" },
-                { "1": "./assets/img/projects/mockup.png" },
-                { "2": "./assets/img/projects/mockup.png" },
-                { "3": "./assets/img/projects/mockup.png" }
-              ],
-              date: "March 2018"
-            },
-            {
-              name: "PuertOriente",
-              technologies: "Ionic, Typescript, Laravel 5.x",
-              stores: {},
-              images: [
-                { "0": "./assets/img/projects/mockup.png" },
-                { "1": "./assets/img/projects/mockup.png" },
-                { "2": "./assets/img/projects/mockup.png" },
-                { "3": "./assets/img/projects/mockup.png" }
-              ],
-              date: "June 2018"
-            },
-            {
-              name: "TaxiVIP",
-              technologies: "Ionic, Typescript, Firebase (Storage, Database)",
-              stores: {},
-              images: [
-                { "0": "./assets/img/projects/mockup.png" },
-                { "1": "./assets/img/projects/mockup.png" },
-                { "2": "./assets/img/projects/mockup.png" },
-                { "3": "./assets/img/projects/mockup.png" }
-              ],
-              date: "August 2018"
+  createSingletonGroup() {
+    this.fetchData = FetchData.getInstance();
             }
           ]
         }
