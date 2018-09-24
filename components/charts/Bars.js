@@ -51,27 +51,7 @@ class Bars extends PureComponent {
   createAnimatedValues() {
     this.dynamicWidth = new Animated.Value(0);
     this.dynamicPercentaje = new Animated.Value(0);
-  }
 
-  getMaxima(data) {
-    const groupedData = Object.keys(data[0]).reduce((memo, key) => {
-      memo[key] = data.map(d => d[key]);
-      return memo;
-    }, {});
-    return Object.keys(groupedData).reduce((memo, key) => {
-      memo[key] = Math.max(...groupedData[key]);
-      return memo;
-    }, {});
-  }
-
-  processData(data) {
-    const maxByGroup = this.getMaxima(data);
-    const makeDataArray = d => {
-      return Object.keys(d).map(key => {
-        return { x: key, y: d[key] / maxByGroup[key] };
-      });
-    };
-    return data.map(datum => makeDataArray(datum));
   }
 
   componentDidMount() {
