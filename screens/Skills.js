@@ -9,6 +9,9 @@ class Skills extends PureComponent {
     super(props);
     this.createSingletonGroup();
     this.settingState();
+  }
+
+  componentDidMount() {
     this.loadData();
   }
 
@@ -17,9 +20,14 @@ class Skills extends PureComponent {
   }
 
   loadData() {
-    this.fetchData.getData(URL_DATA).then((data) => {
-      this.setState({ data: data });
-    });
+    if (this.fetchData.skills_data == null) {
+      this.fetchData.getData(URL_DATA).then((data) => {
+        this.fetchData.skills_data = data;
+        this.setState({ data: data });
+      });
+    } else {
+      this.setState({ data: this.fetchData.skills_data });
+    }
   }
 
   createBars = () => {
