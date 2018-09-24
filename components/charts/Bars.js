@@ -14,24 +14,41 @@ class Bars extends PureComponent {
   constructor(props) {
     super(props);
     this.createSingletonGroup();
+    this.settingSimpleValues();
+    this.definingInitialData();
+    this.settingState();
+    this.createAnimatedValues();
+  }
+
   createSingletonGroup() {
     this.helper = HelperProvider.getInstance();
   }
+
+  settingSimpleValues() {
+    this.t = parseFloat(this.props.projects.time);
+    this.chartWidth = screenWidth - 15;
+    this.percentajeToWidth = (this.chartWidth * this.props.percentaje) / 100;
+    this.primaryColor = this.props.primaryColor != "" ? this.props.primaryColor : "#ff00ff";
+  }
+
+  definingInitialData() {
     characterData[0] = { time: 5, projects: 20, feeling: 100 };
     characterData[1] = {
-      time: t,
+      time: this.t,
       projects: this.props.projects.quantity,
       feeling: this.props.projects.feeling
     };
+  }
+
+  settingState() {
     this.state = {
       modalVisible: false,
       data: this.helper.processData(characterData),
       maxima: this.helper.getMaxima(characterData)
     };
-    this.chartWidth = screenWidth - 15;
-    this.percentajeToWidth = (this.chartWidth * props.percentaje) / 100;
-    this.primaryColor =
-      props.primaryColor != "" ? props.primaryColor : "#ff00ff";
+  }
+
+  createAnimatedValues() {
     this.dynamicWidth = new Animated.Value(0);
     this.dynamicPercentaje = new Animated.Value(0);
   }
