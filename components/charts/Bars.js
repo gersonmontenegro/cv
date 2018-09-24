@@ -6,13 +6,17 @@ import { VictoryChart, VictoryTheme, VictoryGroup, VictoryPolarAxis, VictoryLabe
 
 import LinearGradient from "react-native-linear-gradient";
 import ItemDetail from "./ItemDetail";
+import HelperProvider from "../../providers/HelperProvider";
 
 characterData = [];
 
 class Bars extends PureComponent {
   constructor(props) {
     super(props);
-    let t = parseFloat(this.props.projects.time);
+    this.createSingletonGroup();
+  createSingletonGroup() {
+    this.helper = HelperProvider.getInstance();
+  }
     characterData[0] = { time: 5, projects: 20, feeling: 100 };
     characterData[1] = {
       time: t,
@@ -21,8 +25,8 @@ class Bars extends PureComponent {
     };
     this.state = {
       modalVisible: false,
-      data: this.processData(characterData),
-      maxima: this.getMaxima(characterData)
+      data: this.helper.processData(characterData),
+      maxima: this.helper.getMaxima(characterData)
     };
     this.chartWidth = screenWidth - 15;
     this.percentajeToWidth = (this.chartWidth * props.percentaje) / 100;
