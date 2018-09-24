@@ -1,31 +1,8 @@
 import React, { PureComponent } from "react";
-import {
-  Modal,
-  TouchableHighlight,
-  TouchableOpacity,
-  Animated,
-  View,
-  Text,
-  ScrollView
-} from "react-native";
-
+import { Modal, TouchableHighlight, TouchableOpacity, Animated, View, Text, ScrollView } from "react-native";
 // import AnimateNumber from "react-native-animate-number";
-import {
-  mainBackgroundColor,
-  lightMainBackgroundColor,
-  screenHeight,
-  defaultAnimationTime,
-  screenWidth
-} from "./../../assets/css/general";
-
-import {
-  VictoryChart,
-  VictoryTheme,
-  VictoryGroup,
-  VictoryPolarAxis,
-  VictoryLabel,
-  VictoryArea
-} from "victory-native";
+import { mainBackgroundColor, lightMainBackgroundColor, screenHeight, defaultAnimationTime, screenWidth } from "./../../assets/css/general";
+import { VictoryChart, VictoryTheme, VictoryGroup, VictoryPolarAxis, VictoryLabel, VictoryArea } from "victory-native";
 
 import LinearGradient from "react-native-linear-gradient";
 import ItemDetail from "./ItemDetail";
