@@ -1,4 +1,6 @@
 class FetchData {
+    skills_data = null;
+
     static instance = null;
 
     static createInstance() {
