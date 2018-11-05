@@ -1,79 +1,57 @@
 import React, { PureComponent } from "react";
-import {
-  Modal,
-  TouchableHighlight,
-  TouchableOpacity,
-  Animated,
-  View,
-  Text,
-  ScrollView
-} from "react-native";
-
+import { Modal, TouchableHighlight, TouchableOpacity, Animated, View, Text, ScrollView } from "react-native";
 // import AnimateNumber from "react-native-animate-number";
-import {
-  mainBackgroundColor,
-  lightMainBackgroundColor,
-  screenHeight,
-  defaultAnimationTime,
-  screenWidth
-} from "./../../assets/css/general";
-
-import {
-  VictoryChart,
-  VictoryTheme,
-  VictoryGroup,
-  VictoryPolarAxis,
-  VictoryLabel,
-  VictoryArea
-} from "victory-native";
+import { mainBackgroundColor, lightMainBackgroundColor, screenHeight, defaultAnimationTime, screenWidth } from "./../../assets/css/general";
+import { VictoryChart, VictoryTheme, VictoryGroup, VictoryPolarAxis, VictoryLabel, VictoryArea } from "victory-native";
 
 import LinearGradient from "react-native-linear-gradient";
 import ItemDetail from "./ItemDetail";
+import HelperProvider from "../../providers/HelperProvider";
 
 characterData = [];
 
 class Bars extends PureComponent {
   constructor(props) {
     super(props);
-    let t = parseFloat(this.props.projects.time);
+    this.createSingletonGroup();
+    this.settingSimpleValues();
+    this.definingInitialData();
+    this.settingState();
+    this.createAnimatedValues();
+  }
+
+  createSingletonGroup() {
+    this.helper = HelperProvider.getInstance();
+  }
+
+  settingSimpleValues() {
+    this.t = parseFloat(this.props.projects.time);
+    this.chartWidth = screenWidth - 15;
+    this.percentajeToWidth = (this.chartWidth * this.props.percentaje) / 100;
+    this.primaryColor = this.props.primaryColor != "" ? this.props.primaryColor : "#ff00ff";
+  }
+
+  definingInitialData() {
     characterData[0] = { time: 5, projects: 20, feeling: 100 };
     characterData[1] = {
-      time: t,
+      time: this.t,
       projects: this.props.projects.quantity,
       feeling: this.props.projects.feeling
     };
+  }
+
+  settingState() {
     this.state = {
       modalVisible: false,
-      data: this.processData(characterData),
-      maxima: this.getMaxima(characterData)
+      data: this.helper.processData(characterData),
+      maxima: this.helper.getMaxima(characterData)
     };
-    this.chartWidth = screenWidth - 15;
-    this.percentajeToWidth = (this.chartWidth * props.percentaje) / 100;
-    this.primaryColor =
-      props.primaryColor != "" ? props.primaryColor : "#ff00ff";
+  }
+
+  createAnimatedValues() {
     this.dynamicWidth = new Animated.Value(0);
     this.dynamicPercentaje = new Animated.Value(0);
-  }
 
-  getMaxima(data) {
-    const groupedData = Object.keys(data[0]).reduce((memo, key) => {
-      memo[key] = data.map(d => d[key]);
-      return memo;
-    }, {});
-    return Object.keys(groupedData).reduce((memo, key) => {
-      memo[key] = Math.max(...groupedData[key]);
-      return memo;
-    }, {});
-  }
-
-  processData(data) {
-    const maxByGroup = this.getMaxima(data);
-    const makeDataArray = d => {
-      return Object.keys(d).map(key => {
-        return { x: key, y: d[key] / maxByGroup[key] };
-      });
-    };
-    return data.map(datum => makeDataArray(datum));
   }
 
   componentDidMount() {

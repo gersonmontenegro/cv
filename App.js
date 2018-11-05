@@ -28,10 +28,16 @@ export default class App extends PureComponent {
   }
 
   render() {
+
     return (
       <View style={MainAppStyle.container}>
         {this.renderInterface()}
       </View>
     );
+    // return (
+    //   <View style={MainAppStyle.container}>
+    //     <RootStack />
+    //   </View>
+    // );
   }
 }
