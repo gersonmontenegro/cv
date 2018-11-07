@@ -55,7 +55,7 @@ class AnimatedHeader extends PureComponent {
 
   moveHeader() {
     this.hideShowOpacity(this.avatarOpacity, 0);
-    this.avatarHeaderRef.startAnimation(0, this.refOpenTabMenu);
+    this.avatarHeaderRef.startAnimation(0, this.props.refNavigation);
   }
 
   hideShowOpacity(variable, value) {
