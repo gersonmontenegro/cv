@@ -74,6 +74,10 @@ const RootStack = createStackNavigator(
 );
 
 export default class App extends React.PureComponent {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
   render() {
     return (
       <RootStack />
