@@ -200,7 +200,7 @@ class Splash2 extends PureComponent {
       <View
         style={{ justifyContent: "flex-start", flex: 1, width: screenWidth }}
       >
-        <AnimatedHeader refOpenTabMenu={this.callback} />
+        <AnimatedHeader refNavigation={this.props.navigation} />
         <View
           style={{
             position: "absolute",

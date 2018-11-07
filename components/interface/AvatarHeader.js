@@ -10,15 +10,16 @@ class AvatarHeader extends PureComponent {
     this.headerOpacity = new Animated.Value(0);
     this.nameOpacity = new Animated.Value(0);
     this.titleOpacity = new Animated.Value(0);
-    this.refOpenTabMenu = null;
+    this.refNavigation = null;
     this.nameWidth = new Animated.Value(screenWidth - screenWidth * 0.3);
     this.nameMarginLeft = new Animated.Value(200);
     this.titleMarginLeft = new Animated.Value(290);
     this.HeaderHeight = new Animated.Value(0);
+
   }
 
-  startAnimation(value, showTabMenu) {
-    this.refOpenTabMenu = showTabMenu;
+  startAnimation(value, refNavigation) {
+    this.refNavigation = refNavigation;
     const animations = [];
     animations.push(
       this.changeAnimatedVariable(
@@ -82,7 +83,7 @@ class AvatarHeader extends PureComponent {
       100,
       defaultAnimationTime * 2
     ).start(() => {
-      this.refOpenTabMenu(false);
+      this.refNavigation.navigate("Tabs");
     });
   }
 
