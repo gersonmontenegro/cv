@@ -1,29 +1,8 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
-class SplashScreen extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.onClickGo2Tabs = this.onClickGo2Tabs.bind(this)
-  }
-
-  onClickGo2Tabs = () => {
-    this.props.navigation.navigate('Tabs');
-  }
-
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Splash Screen</Text>
-        <Button
-          title="Go to tabs"
-          onPress={() => this.onClickGo2Tabs()}
-        />
-      </View>
-    );
-  }
-}
+import Splash2 from './screens/Splash2';
 
 class Profile extends React.PureComponent {
   constructor(props) {
@@ -61,7 +40,7 @@ const TabNavigation = createBottomTabNavigator(
 const RootStack = createStackNavigator(
   {
     Splash: {
-      screen: SplashScreen
+      screen: Splash2
     },
     Tabs: {
       screen: TabNavigation
