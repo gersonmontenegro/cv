@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { ScrollView, Image, View, Text } from 'react-native';
+import AvatarHeader from '../components/interface/AvatarHeader';
 
 class Profile extends PureComponent {
   constructor(props) {
@@ -9,8 +10,9 @@ class Profile extends PureComponent {
   render() {
     return (
       <View style={{ justifyContent: 'flex-start', flex: 1 }}>
-        <View style={{ marginTop: 0, marginLeft: 5, marginRight: 5 }}>
-          <ScrollView>
+        <View>
+          <AvatarHeader static={true} />
+          <ScrollView style={{ marginTop: 0, marginLeft: 5, marginRight: 5 }}>
             <Text style={{ fontFamily: 'CenturyGothic-Bold' }}>
               {"\n"}
               Professional profile
