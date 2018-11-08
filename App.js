@@ -48,7 +48,14 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Splash',
-    headerMode: 'none'
+    headerMode: 'none',
+    transitionConfig: () => ({
+      transitionSpec: {
+        duration: 0,
+        timing: Animated.timing,
+        easing: Easing.step0,
+      }
+    })
   }
 );
 
