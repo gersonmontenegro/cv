@@ -5,17 +5,35 @@ import { defaultAnimationTime, mainBackgroundColor, HeaderStyle, screenWidth } f
 class AvatarHeader extends PureComponent {
   constructor(props) {
     super(props);
-    super(props);
-    this.marginLeftHeader = new Animated.Value(screenWidth / 2 - 40 - 5);
+    this.refNavigation = null;
+    this.nameWidth = new Animated.Value(screenWidth - screenWidth * 0.3);
+
+    if (this.props.static === true) {
+      this.initStaticVersion();
+    } else {
+      this.initAnimatedVersion();
+    }
+  }
+
+  initStaticVersion() {
+    this.headerOpacity = new Animated.Value(1);
+    this.nameOpacity = new Animated.Value(1);
+    this.titleOpacity = new Animated.Value(1);
+    this.HeaderHeight = new Animated.Value(100);
+
+    this.marginLeftHeader = new Animated.Value(0);
+    this.nameMarginLeft = new Animated.Value(0);
+    this.titleMarginLeft = new Animated.Value(0);
+  }
+
+  initAnimatedVersion() {
     this.headerOpacity = new Animated.Value(0);
     this.nameOpacity = new Animated.Value(0);
     this.titleOpacity = new Animated.Value(0);
-    this.refNavigation = null;
-    this.nameWidth = new Animated.Value(screenWidth - screenWidth * 0.3);
+    this.HeaderHeight = new Animated.Value(0);
+    this.marginLeftHeader = new Animated.Value(screenWidth / 2 - 40 - 5);
     this.nameMarginLeft = new Animated.Value(200);
     this.titleMarginLeft = new Animated.Value(290);
-    this.HeaderHeight = new Animated.Value(0);
-
   }
 
   startAnimation(value, refNavigation) {
