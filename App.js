@@ -45,6 +45,7 @@ const TabNavigation = createBottomTabNavigator(
     }
   },
   {
+    initialRouteName: 'Skills',
     navigationOptions: {
       tabBarOptions: {
         showIcon: true
