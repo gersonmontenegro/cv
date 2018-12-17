@@ -4,6 +4,7 @@ import Bars from "./../components/charts/Bars";
 import { Spinner } from 'native-base';
 import FetchData from "../providers/FetchData";
 import { URL_DATA } from "../providers/DataSource";
+import { screenHeight } from "../assets/css/general";
 
 class Skills extends PureComponent {
   constructor(props) {
@@ -53,22 +54,27 @@ class Skills extends PureComponent {
 
   showInterface() {
     if (this.state.data.length > 0) {
-      return <ScrollView style={{ marginTop: 20 }}>{this.createBars()}</ScrollView>;
+      return (
+        <View style={{ justifyContent: "flex-start", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
+          <ScrollView >
+            {this.createBars()}
+          </ScrollView>
+        </View>
+      );
     } else {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ justifyContent: 'center', alignItems: 'center', height: screenHeight - 70 }}>
           <Spinner color='green' />
           <Text>Loading data...</Text>
         </View>
-      )
-        ;
+      );
     }
   }
 
   render() {
     return (
-      <View style={{ justifyContent: "flex-start", flex: 1 }}>
-        <View style={{ marginTop: 0, marginLeft: 5, marginRight: 5 }}>
+      <View style={{ flex: 1 }}>
+        <View >
           {this.showInterface()}
         </View>
       </View>
