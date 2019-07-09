@@ -27,11 +27,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new VectorIconsPackage(),
-          new SvgPackage(),
-          new LinearGradientPackage(),
-          new SplashScreenReactPackage(),
-          new LinearGradientPackage()
+            new VectorIconsPackage(),
+            new SvgPackage(),
+            new SplashScreenReactPackage(),
+            new LinearGradientPackage()
       );
     }
 
