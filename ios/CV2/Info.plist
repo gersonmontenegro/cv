@@ -55,6 +55,16 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Century Gothic.ttf</string>
+		<string>CenturyGothic.ttf</string>
+		<string>GOTHIC.TTF</string>
+		<string>GOTHICB.TTF</string>
+		<string>GOTHICB0.TTF</string>
+		<string>GOTHICBI.TTF</string>
+		<string>GOTHICI.TTF</string>
+		<string>CenturyGothic-Bold.ttf</string>
+		<string>CocoGothic-Bold.ttf</string>
+		<string>CocoGothic.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
 		<string>Feather.ttf</string>
@@ -69,16 +79,6 @@
 		<string>rubicon-icon-font.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>Century Gothic.ttf</string>
-		<string>CenturyGothic.ttf</string>
-		<string>GOTHIC.TTF</string>
-		<string>GOTHICB.TTF</string>
-		<string>GOTHICB0.TTF</string>
-		<string>GOTHICBI.TTF</string>
-		<string>GOTHICI.TTF</string>
-		<string>CenturyGothic-Bold.ttf</string>
-		<string>CocoGothic-Bold.ttf</string>
-		<string>CocoGothic.ttf</string>
 		<string>FontAwesome5_Brands.ttf</string>
 		<string>FontAwesome5_Regular.ttf</string>
 		<string>FontAwesome5_Solid.ttf</string>

@@ -12,16 +12,17 @@
     ]
   },
   "dependencies": {
-    "native-base": "^2.8.0",
+    "native-base": "2.8.0",
     "react": "16.5.0",
     "react-native": "0.57.1",
-    "react-native-linear-gradient": "^2.4.2",
-    "react-native-splash-screen": "^3.1.1",
-    "react-native-svg": "^7.0.3",
-    "react-native-timeline-listview": "^0.2.3",
-    "react-native-vector-icons": "^5.0.0",
-    "react-navigation": "^2.16.0",
-    "victory-native": "^30.4.0"
+    "react-native-linear-gradient": "2.4.2",
+    "react-native-splash-screen": "3.1.1",
+    "react-native-svg": "7.0.3",
+    "react-native-timeline-listview": "0.2.3",
+    "react-native-vector-icons": "^.0.0",
+    "react-navigation": "2.16.0",
+    "react-timer-mixin": "0.13.4",
+    "victory-native": "30.4.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
