@@ -37,7 +37,7 @@ class Skills extends PureComponent {
     return this.state.data.map((item, index) => {
       return (
         <Bars
-          key={index}
+          key={index.toString()}
           name={item.name}
           startAt={index * intervalValue}
           percentaje={item.percentaje}
@@ -57,7 +57,7 @@ class Skills extends PureComponent {
       return (
         <View style={{ justifyContent: "flex-start", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
           <ScrollView >
-            {this.createBars()}
+              {this.createBars()}
           </ScrollView>
         </View>
       );
